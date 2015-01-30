@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/175495679140580?access_token=CAACEdEose0cBAMaCV6qSEGXmjfF82y2MXDpenKcAQLdv2VQSKdhxaU3wSSutZCFA91ZARA04bGW4soiiS5Xa0PrcQ6dw7KkZAfTUwXTPETbsTQbe8qhHrr7yA7dWDZB88AInI8dTYLxxF2ZBJRpbFGPAs5RnkcizZA9SmC786SlmJMFILzr06f5HP8zwUepJrD51ATkmIOnKNOYGgRMZBfuGT3M8BPuO47fWH3wVJitgsfYKk0KCUdo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Rev:
+      - '1578068'
+      Etag:
+      - '"c437f832059ff120227c75a116a48a10c5c74494"'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.0
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - 9yem79n9lKBJ4aLP7lcDA8WJfXyYBD0KYyYPJ6bJBf9B8kGowxDewS07i7SJwg7bB9dzISqJb6eVhmDfQyivNg==
+      Date:
+      - Wed, 28 Jan 2015 16:17:49 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1372'
+    body:
+      encoding: UTF-8
+      string: '{"id":"175495679140580","about":"Vegetarian\/Vegan\/Raw","can_post":true,"category":"Restaurant\/cafe","category_list":[{"id":"192108214153222","name":"Breakfast
+        & Brunch Restaurant"},{"id":"200742186618963","name":"Vegetarian & Vegan Restaurant"},{"id":"188296324525457","name":"Sandwich
+        Shop"}],"checkins":3110,"cover":{"cover_id":"815107695179372","offset_x":0,"offset_y":40,"source":"https:\/\/fbcdn-sphotos-f-a.akamaihd.net\/hphotos-ak-xpa1\/v\/t1.0-9\/s720x720\/10801561_815107695179372_2923279076534289718_n.jpg?oh=3e82200785cf337e0fcaddaec34124bc&oe=555B8CDB&__gda__=1431335229_93062d117bbdf788493e25f667437b7e","id":"815107695179372"},"description":"Bartertown
+        Diner has taken over the space at 6 Jefferson, in Grand Rapids, Michigan.
+        Bartertown Diner is a vegetarian\/vegan\/raw, worker owned and operated diner.
+        The goal of the restaurant is to promote fresh, local ingredients along with
+        a positive, fair working environment. Raw vegan desserts are provided by Deliciosity
+        and other treats by Wednesday Evening Cookies.\n\nOn Wednesday, Thursday,
+        Friday and Saturday nights from 10 p.m. to 3 a.m., Burritotown offers creative
+        vegan burritos from $4 to $9 along with other menu items.\n\n\n\n\n\n","general_manager":"Each
+        member of our collective is charged equally with management. ","has_added_app":false,"hours":{"mon_1_open":"11:00","mon_1_close":"15:00","wed_1_open":"11:00","wed_1_close":"21:00","thu_1_open":"11:00","thu_1_close":"21:00","fri_1_open":"11:00","fri_1_close":"21:00","sat_1_open":"09:00","sat_1_close":"21:00","sun_1_open":"09:00","sun_1_close":"14:00","thu_2_open":"22:00","thu_2_close":"03:00","fri_2_open":"22:00","fri_2_close":"03:00","sat_2_open":"22:00","sat_2_close":"03:00"},"is_community_page":false,"is_published":true,"likes":5757,"link":"https:\/\/www.facebook.com\/pages\/Bartertown-Diner\/175495679140580","location":{"city":"Grand
+        Rapids","country":"United States","latitude":42.962910113333,"longitude":-85.664197562811,"state":"MI","street":"6
+        Jefferson Ave SE","zip":"49503"},"name":"Bartertown Diner","parking":{"lot":0,"street":1,"valet":0},"payment_options":{"amex":1,"cash_only":0,"discover":1,"mastercard":1,"visa":1},"phone":"(616)
+        233-3219","price_range":"$ (0-10)","public_transit":"Rapid routes 14, 15,
+        4 and 3 all stop near our location.","restaurant_services":{"delivery":0,"catering":1,"groups":1,"kids":0,"outdoor":1,"reserve":0,"takeout":1,"waiter":1,"walkins":1},"restaurant_specialties":{"breakfast":1,"coffee":1,"dinner":1,"drinks":0,"lunch":1},"talking_about_count":157,"website":"www.bartertowngr.com","were_here_count":3110}'
+    http_version: 
+  recorded_at: Wed, 28 Jan 2015 16:17:48 GMT
+recorded_with: VCR 2.9.3
