@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/foundersbrewing?access_token=CAACEdEose0cBALJgOQ84SQcdZB34YDs4M7O2ZBsSaWOeZAbNOBjvuHxW0iltwx0b473NwSEy1NFLNRuQfiZB5txqc50lruZC9cPIcuE5mfELnWWM3tuFKZB9xZCIB3BYzPRqvRinPJ9ZCrFZCqHjSdambKI5KeXZC4irZB3B4x8fVrUgMvPXdyoclTmHrLrEnCj5ssHwpFJJMI09XCFUTy1zjJPitTSUpHmhhyCgzowZB16q5sjZCsvGbuv5O
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Rev:
+      - '1580909'
+      Etag:
+      - '"81b4af39a23456956991121c32b8d2b8b54086dc"'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.0
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Accept-Encoding
+      X-Fb-Debug:
+      - m1kfsNbhNTWo8PYUxshIiqPKiEhpJQxDCOmu24zMzftWel3twrs9K1azix0X0p+LKV9a1E4Vsw2ljIe0hstuwA==
+      Date:
+      - Fri, 30 Jan 2015 16:56:33 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1325'
+    body:
+      encoding: UTF-8
+      string: '{"id":"103505493030242","about":"Brewed for us.","can_post":true,"category":"Food\/beverages","category_list":[{"id":"144535972273084","name":"Brewery"}],"checkins":10176,"cover":{"cover_id":"798408716873246","offset_x":0,"offset_y":0,"source":"https:\/\/fbcdn-sphotos-f-a.akamaihd.net\/hphotos-ak-xfa1\/t31.0-8\/s720x720\/10854251_798408716873246_7282015399451496948_o.jpg","id":"798408716873246"},"description":"The
+        official Founders Brewing Co. fan page. Updates on beer releases, the brewery,
+        and Founders events across this fine nation.  Check out our taproom page for
+        what''s on tap, live music, and more: http:\/\/www.facebook.com\/founderstaproom\n\nCOMMUNITY
+        POLICY\n\nThis Facebook page is administered by Founders Brewing Co. and is
+        not run in conjunction with or endorsed by Facebook. Founders Brewing Co.
+        reserves the right to remove inappropriate comments or posts from this page.
+        We will not tolerate abusive language; harassing, threatening or attacking
+        other users; nor will we allow trolling or deliberate disruption of discussion.
+        We ask that all posts and comments on our page related to Founders or the
+        craft beer community in some way so that they contribute to a relevant ongoing
+        conversation. Please keep it clean and respect your fellow beer enthusiasts.
+        Thanks for being a part of the extended Founders Family and for joining us
+        on this ride. Cheers!","founded":"1997","has_added_app":false,"is_community_page":false,"is_published":true,"likes":107548,"link":"https:\/\/www.facebook.com\/foundersbrewing","location":{"city":"Grand
+        Rapids","country":"United States","latitude":42.958605,"longitude":-85.673631,"state":"MI","street":"235
+        Grandville Ave SW","zip":"49503"},"mission":"Founders has built its brewery
+        on the exploration of recipe development and brewing techniques. The philosophy
+        is simple. We are not the standard microbrewery; rather, we have traveled
+        a path that breaks from the \u201cstandard\u201d craft brewer. Carving a niche
+        out of the craft industry, we at Founders Brewing Company have built our reputation
+        on producing very unique beer. Our focus is to offer a product that stands
+        alone on the shelf and offers a true drinking experience to our friends: you.","name":"Founders
+        Brewing Co.","parking":{"lot":0,"street":0,"valet":0},"phone":"(616) 776-2182","talking_about_count":2911,"username":"foundersbrewing","website":"www.foundersbrewing.com","were_here_count":10176}'
+    http_version: 
+  recorded_at: Fri, 30 Jan 2015 16:56:33 GMT
+recorded_with: VCR 2.9.3

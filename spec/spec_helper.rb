@@ -24,13 +24,21 @@ require File.expand_path '../../app.rb', __FILE__
 
 ENV['RACK_ENV'] = "test"
 
+module RSpecMixin
+  include Rack::Test::Methods
+  def app() Mantle::App end
+end
+
 VCR.configure do |c|
   c.cassette_library_dir = "spec/cassettes"
   c.hook_into :webmock
   c.configure_rspec_metadata!
+  c.default_cassette_options = { match_requests_on: [:host, :path] }
 end
 
 RSpec.configure do |config|
+  config.include RSpecMixin
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

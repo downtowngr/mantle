@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem "sinatra"
 gem "koala"
 gem "dotenv"
-gem "tux"
+gem "unicorn"
 
 gem "rest-client"
 gem "savon"

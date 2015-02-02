@@ -23,6 +23,8 @@ class FacebookPage
   private
 
   def hours
+    return nil if @page["hours"].nil?
+
     nested = Hash.new {|h,k| h[k] = Hash.new(&h.default_proc) }
 
     @page["hours"].each do |k, hour|

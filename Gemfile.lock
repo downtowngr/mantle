@@ -5,7 +5,6 @@ GEM
     akami (1.2.2)
       gyoku (>= 0.4.0)
       nokogiri
-    bond (0.5.1)
     builder (3.2.2)
     coderay (1.1.0)
     crack (0.4.2)
@@ -18,6 +17,7 @@ GEM
       builder (>= 2.1.2)
     httpi (2.2.7)
       rack
+    kgio (2.9.2)
     koala (1.11.0)
       addressable
       faraday
@@ -40,19 +40,10 @@ GEM
     rack (1.6.0)
     rack-protection (1.5.3)
       rack
-    rack-test (0.6.3)
-      rack (>= 1.0)
+    raindrops (0.13.0)
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    ripl (0.7.1)
-      bond (~> 0.5.1)
-    ripl-multi_line (0.3.1)
-      ripl (>= 0.3.6)
-    ripl-rack (0.2.1)
-      rack (>= 1.0)
-      rack-test (~> 0.6.2)
-      ripl (>= 0.7.0)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
@@ -82,11 +73,10 @@ GEM
     slop (3.6.0)
     systemu (2.6.4)
     tilt (1.4.1)
-    tux (0.3.0)
-      ripl (>= 0.3.5)
-      ripl-multi_line (>= 0.2.4)
-      ripl-rack (>= 0.2.0)
-      sinatra (>= 1.2.1)
+    unicorn (4.8.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     uuid (2.3.7)
       macaddr (~> 1.0)
     vcr (2.9.3)
@@ -109,6 +99,6 @@ DEPENDENCIES
   rspec
   savon
   sinatra
-  tux
+  unicorn
   vcr
   webmock
