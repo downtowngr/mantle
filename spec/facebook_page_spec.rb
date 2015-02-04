@@ -18,8 +18,8 @@ RSpec.describe FacebookPage, vcr: {cassette_name: "facebook_page"} do
       expect(page.attributes[:phone]).to eq("(616) 233-3219")
     end
 
-    it "fb_link" do
-      expect(page.attributes[:fb_link]).to eq("https://www.facebook.com/pages/Bartertown-Diner/175495679140580")
+    it "source_link" do
+      expect(page.attributes[:source_link]).to eq("https://www.facebook.com/pages/Bartertown-Diner/175495679140580")
     end
 
     it "website" do

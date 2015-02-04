@@ -1,9 +1,13 @@
 source "https://rubygems.org"
 
+ruby "2.1.4"
+
 gem "sinatra"
-gem "koala"
 gem "dotenv"
 gem "unicorn"
+
+gem "koala"
+gem "foursquare2"
 
 gem "rest-client"
 gem "savon"
@@ -13,8 +17,11 @@ group :test do
   gem "rspec"
   gem "vcr"
   gem "webmock"
+  gem "rack-test"
 end
 
 group :development, :test do
   gem "pry"
+  gem "better_errors"
+  gem "binding_of_caller"
 end

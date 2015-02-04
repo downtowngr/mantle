@@ -1,5 +1,3 @@
-require "koala"
-
 class FacebookPage
   def initialize(id)
     @graph = Koala::Facebook::API.new(ENV["FB_TOKEN"])
@@ -12,7 +10,7 @@ class FacebookPage
       latitude:    @page["location"]["latitude"],
       longitude:   @page["location"]["longitude"],
       phone:       @page["phone"],
-      fb_link:     @page["link"],
+      source_link: @page["link"],
       website:     @page["website"],
       hours:       hours,
       price_range: @page["price_range"],
