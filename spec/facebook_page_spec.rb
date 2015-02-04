@@ -46,10 +46,6 @@ RSpec.describe FacebookPage, vcr: {cassette_name: "facebook_page"} do
       expect(page.attributes[:delivery]).to eq(false)
     end
 
-    it "walkins" do
-      expect(page.attributes[:walkins]).to eq(true)
-    end
-
     it "reserve" do
       expect(page.attributes[:reserve]).to eq(false)
     end

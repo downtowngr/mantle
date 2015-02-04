@@ -14,11 +14,41 @@ class FacebookPage
       website:     @page["website"],
       hours:       hours,
       price_range: @page["price_range"],
-      tags:        tags,
-    }.merge(nested_attributes)
+      cash_only:   cash_only?,
+      outdoor:     outdoor?,
+      delivery:    delivery?,
+      takeout:     takeout?,
+      reserve:     reserve?,
+      kids:        kids?,
+      tags:        tags
+    }
   end
 
   private
+
+  def cash_only?
+    @page["payment_options"] ? @page["payment_options"]["cash_only"] == 1 : nil
+  end
+
+  def outdoor?
+    @page["restaurant_services"] ? @page["restaurant_services"]["outdoor"] == 1 : nil
+  end
+
+  def delivery?
+    @page["restaurant_services"] ? @page["restaurant_services"]["delivery"] == 1 : nil
+  end
+
+  def takeout?
+    @page["restaurant_services"] ? @page["restaurant_services"]["takeout"] == 1 : nil
+  end
+
+  def reserve?
+    @page["restaurant_services"] ? @page["restaurant_services"]["reserve"] == 1 : nil
+  end
+
+  def kids?
+    @page["restaurant_services"] ? @page["restaurant_services"]["kids"] == 1 : nil
+  end
 
   def hours
     return nil if @page["hours"].nil?
@@ -69,19 +99,4 @@ class FacebookPage
       []
     end
   end
-
-  def nested_attributes
-    attributes = {}
-
-    ["restaurant_services", "payment_options"].each do |category|
-      if @page[category]
-        @page[category].each do |k, v|
-          attributes[k.to_sym] = v.to_s.match(/1$/i) != nil
-        end
-      end
-    end
-
-    attributes
-  end
-
 end
