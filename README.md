@@ -19,34 +19,27 @@ Location API returns a standardized JSON object of business information pulled f
 
 Location API requests are construced as such: GET `/location/:service/:service_id`. The `service_id` is the UUID of the location provided by the particular service. Thus, the `service_id` will vary depending on what service's data being requested.
 
-**TODO:** Need to standardize hours, price_range, source_link, website, phone
+An attribute will return `nil` if the service does not provide the attribute, or if the attribute is not available for the requested location.
 
-| attribute     | Facebook           | Foursquare         | Google *pending*   |
-| ------------- | ------------------ | ------------------ | ------------------ |
-| address       | :white_check_mark: | :white_check_mark: |
-| latitude      | :white_check_mark: | :white_check_mark: |
-| longitude     | :white_check_mark: | :white_check_mark: |
-| phone         | :white_check_mark: | :white_check_mark: |
-| source_link   | :white_check_mark: | :white_check_mark: |
-| website       | :white_check_mark: | :white_check_mark: |
-| hours         | :white_check_mark: | :white_check_mark: |
-| price_range   | :white_check_mark: | :white_check_mark: |
-| delivery      | :white_check_mark: | :white_check_mark: |
-| outdoor       | :white_check_mark: | :white_check_mark: |
-| cash_only     | :white_check_mark: | :white_check_mark: |
-| kids          | :white_check_mark: | :x:                |
-| takeout       | :white_check_mark: | :white_check_mark: |
-| reserve       | :white_check_mark: | :white_check_mark: |
-| tags          | :white_check_mark: | :white_check_mark: |
+**TODO:** Need to standardize output of `hours`, `price_range`, `website`, `phone`
 
-
-### Facebook
-
-`GET /location/facebook/:id`
-
-`id` is the UUID of the location's Facebook page. It can be either the unique numerical UUID like `175495679140580` or the custom UUID like `foundersbrewing`.
-
-Returns a flat JSON object of business information.
+| attribute     | Facebook           | Foursquare         | Google             | format |
+| ------------- | ------------------ | ------------------ | ------------------ | ------ |
+| address       | :white_check_mark: | :white_check_mark: |                    |        |
+| latitude      | :white_check_mark: | :white_check_mark: |                    |        |
+| longitude     | :white_check_mark: | :white_check_mark: |                    |        |
+| phone         | :white_check_mark: | :white_check_mark: |                    | **string** "(xxx) xxx-xxxx" |
+| source_link   | :white_check_mark: | :white_check_mark: |                    |        |
+| website       | :white_check_mark: | :white_check_mark: |                    | **string** "http://www.example.com" |
+| hours         | :white_check_mark: | :white_check_mark: |                    |        |
+| price_range   | :white_check_mark: | :white_check_mark: |                    |        |
+| delivery      | :white_check_mark: | :white_check_mark: |                    | **boolean** |
+| outdoor       | :white_check_mark: | :white_check_mark: |                    | **boolean** |
+| cash_only     | :white_check_mark: | :white_check_mark: |                    | **boolean** |
+| kids          | :white_check_mark: | :x:                |                    | **boolean** |
+| takeout       | :white_check_mark: | :white_check_mark: |                    | **boolean** |
+| reserve       | :white_check_mark: | :white_check_mark: |                    | **boolean** |
+| tags          | :white_check_mark: | :white_check_mark: |                    | **array** |
 
 ```json
 {
@@ -54,7 +47,7 @@ Returns a flat JSON object of business information.
   "latitude":42.962910271139,
   "longitude":-85.664197952905,
   "phone":"(616) 233-3219",
-  "fb_link":"https://www.facebook.com/pages/Bartertown-Diner/175495679140580",
+  "source_link":"https://www.facebook.com/pages/Bartertown-Diner/175495679140580",
   "website":"www.bartertowngr.com",
   "hours":"Mon 11:00am-3:00pm Wed 11:00am-9:00pm Thu 11:00am-9:00pm 10:00pm-03:00am Fri 11:00am-9:00pm 10:00pm-03:00am Sat 09:00am-9:00pm 10:00pm-03:00am Sun 09:00am-2:00pm",
   "price_range":"$ (0-10)",
@@ -68,9 +61,31 @@ Returns a flat JSON object of business information.
 }
 ```
 
+All services return the same flat JSON object of business information.
+
+### Facebook
+
+`GET /location/facebook/:id`
+
+`id` is the UUID of the location's Facebook page. It can be either the unique numerical UUID like `175495679140580` or the custom UUID like `foundersbrewing`.
+
 ### Foursquare
 
-## Events
+`GET /location/foursquare/:id`
+
+`id` is the UUID of the location's Foursqure venue. It is an alphanumeric UUID similar to `4b12c269f964a5208b8d23e3`.
+
+### Google
+
+`GET /location/google/:id`
+
+*to be implemented*
+
+## Events API
+
+*to be implemented*
+
+## Photos API
 
 *to be implemented*
 
