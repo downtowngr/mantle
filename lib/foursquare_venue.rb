@@ -22,6 +22,7 @@ class FoursquareVenue
       delivery:    delivery?,
       takeout:     takeout?,
       reserve:     reserve?,
+      kids:        nil,
       tags:        tags
     }
   end
