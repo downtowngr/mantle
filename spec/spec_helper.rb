@@ -15,14 +15,14 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+ENV['RACK_ENV'] = "test"
+
+require File.expand_path '../../app.rb', __FILE__
+
 require "rack/test"
 require "rspec"
 require "vcr"
 require "pry"
-
-require File.expand_path '../../app.rb', __FILE__
-
-ENV['RACK_ENV'] = "test"
 
 module RSpecMixin
   include Rack::Test::Methods
