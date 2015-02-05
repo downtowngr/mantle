@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.1.4
+addons:
+  code_climate: 2df09946ca6ecb13a8a3573053605b240ba50ddfb86ce163a8461a0f2b704431
+script:
+  - bundle exec rspec
+

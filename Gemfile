@@ -18,6 +18,7 @@ group :test do
   gem "vcr"
   gem "webmock"
   gem "rack-test"
+  gem "codeclimate-test-reporter", require: nil
 end
 
 group :development, :test do

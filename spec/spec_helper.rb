@@ -23,6 +23,9 @@ require "rack/test"
 require "rspec"
 require "vcr"
 require "pry"
+require "codeclimate-test-reporter"
+
+CodeClimate::TestReporter.start
 
 module RSpecMixin
   include Rack::Test::Methods
