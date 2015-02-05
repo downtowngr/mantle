@@ -27,23 +27,25 @@ An attribute will return `nil` if the service does not provide the attribute, or
 
 **TODO:** Need to standardize output of `hours`, `price_range`, `website`, `phone`
 
-| attribute     | Facebook           | Foursquare         | Google             | format |
-| ------------- | ------------------ | ------------------ | ------------------ | ------ |
-| address       | :white_check_mark: | :white_check_mark: |                    |        |
-| latitude      | :white_check_mark: | :white_check_mark: |                    |        |
-| longitude     | :white_check_mark: | :white_check_mark: |                    |        |
-| phone         | :white_check_mark: | :white_check_mark: |                    | **string** "(xxx) xxx-xxxx" |
-| source_link   | :white_check_mark: | :white_check_mark: |                    |        |
-| website       | :white_check_mark: | :white_check_mark: |                    | **string** "http://www.example.com" |
-| hours         | :white_check_mark: | :white_check_mark: |                    |        |
-| price_range   | :white_check_mark: | :white_check_mark: |                    |        |
-| delivery      | :white_check_mark: | :white_check_mark: |                    | **boolean** |
-| outdoor       | :white_check_mark: | :white_check_mark: |                    | **boolean** |
-| cash_only     | :white_check_mark: | :white_check_mark: |                    | **boolean** |
-| kids          | :white_check_mark: | :x:                |                    | **boolean** |
-| takeout       | :white_check_mark: | :white_check_mark: |                    | **boolean** |
-| reserve       | :white_check_mark: | :white_check_mark: |                    | **boolean** |
-| tags          | :white_check_mark: | :white_check_mark: |                    | **array** |
+| attribute     | Facebook           | Foursquare         | format |
+| ------------- | ------------------ | ------------------ | ------ |
+| address       | :white_check_mark: | :white_check_mark: |        |
+| latitude      | :white_check_mark: | :white_check_mark: |        |
+| longitude     | :white_check_mark: | :white_check_mark: |        |
+| phone         | :white_check_mark: | :white_check_mark: | **string** "(xxx) xxx-xxxx" |
+| source_link   | :white_check_mark: | :white_check_mark: |        |
+| website       | :white_check_mark: | :white_check_mark: | **string** "http://www.example.com" |
+| hours         | :white_check_mark: | :white_check_mark: |        |
+| price_range   | :white_check_mark: | :white_check_mark: |        |
+| delivery      | :white_check_mark: | :white_check_mark: | **boolean** |
+| outdoor       | :white_check_mark: | :white_check_mark: | **boolean** |
+| cash_only     | :white_check_mark: | :white_check_mark: | **boolean** |
+| kids          | :white_check_mark: | :x:                | **boolean** |
+| takeout       | :white_check_mark: | :white_check_mark: | **boolean** |
+| reserve       | :white_check_mark: | :white_check_mark: | **boolean** |
+| tags          | :white_check_mark: | :white_check_mark: | **array** |
+
+All services return the same flat JSON object of business information.
 
 ```json
 {
@@ -65,8 +67,6 @@ An attribute will return `nil` if the service does not provide the attribute, or
 }
 ```
 
-All services return the same flat JSON object of business information.
-
 ### Facebook
 
 `GET /location/facebook/:id`
@@ -79,13 +79,11 @@ All services return the same flat JSON object of business information.
 
 `id` is the UUID of the location's Foursqure venue. It is an alphanumeric UUID similar to `4b12c269f964a5208b8d23e3`.
 
-### Google
-
-`GET /location/google/:id`
-
-*to be implemented*
-
 ## Events API
+
+### ExperienceGR
+
+`GET /events/experiencegr/:id`
 
 *to be implemented*
 
