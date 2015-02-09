@@ -54,16 +54,47 @@ RSpec.describe "Mantle" do
         })
       end
     end
-
-    describe "from Google Places" do
-    end
   end
 
   describe "GET /events" do
-    describe "from Facebook" do
+    describe "from Facebook", vcr: {cassette_name: "events_facebook"} do
+      it "returns an array of events" do
+        get "/events/facebook/uicagr"
+
+        response = JSON.parse(last_response.body)
+
+        expect(response).to eq({
+          "events" => [
+            {
+              "name"=>"Bring Your Own Beamer Grand Rapids 02",
+              "start_time"=>"2015-03-06T18:00:00-0500",
+              "end_time"=>"2015-03-06T23:00:00-0500",
+              "external_id"=>"1547366848875583"
+            },
+            {
+              "name"=>"Open Projector Night No. 10",
+              "start_time"=>"2015-02-18T20:00:00-0500",
+              "end_time"=>nil,
+              "external_id"=>"559480167521476"
+            },
+            {
+              "name"=>"Portraits by James LaCroix: Opening Reception",
+              "start_time"=>"2015-02-13T18:00:00-0500",
+              "end_time"=>"2015-02-13T20:00:00-0500",
+              "external_id"=>"900554633308138"
+            },
+            {
+              "name"=>"Looking Forward Collector's Talk and Silent Auction",
+              "start_time"=>"2015-02-06T19:00:00-0500",
+              "end_time"=>"2015-02-06T20:00:00-0500","external_id"=>"1408844586079669"
+            }
+          ]
+        })
+      end
     end
 
-    describe "from ExperienceGR" do
+    describe "from Foursquare" do
+
     end
 
     describe "from GRNow" do

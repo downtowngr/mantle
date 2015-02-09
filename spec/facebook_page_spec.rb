@@ -1,10 +1,10 @@
 require "spec_helper"
 require_relative "../lib/facebook_page"
 
-RSpec.describe FacebookPage, vcr: {cassette_name: "facebook_page"} do
-  let(:page) { FacebookPage.new("175495679140580") }
+RSpec.describe FacebookPage do
+  describe "#attributes", vcr: {cassette_name: "facebook_page"} do
+    let(:page) { FacebookPage.new("175495679140580") }
 
-  describe "#attributes" do
     it "address" do
       expect(page.attributes[:address]).to eq("6 Jefferson Ave SE")
     end
@@ -62,5 +62,34 @@ RSpec.describe FacebookPage, vcr: {cassette_name: "facebook_page"} do
       expect(page.attributes[:tags]).to eq(["Breakfast & Brunch Restaurant", "Vegetarian & Vegan Restaurant",
                                "Sandwich Shop", "Breakfast", "Coffee", "Dinner", "Lunch"])
     end
+  end
+
+  describe "#events", vcr: {cassette_name: "facebook_page_events"} do
+    let(:page) { FacebookPage.new("ThePyramidScheme") }
+
+    it "returns an array of events" do
+      expect(page.events[:events]).to be_an Array
+    end
+
+    describe "an event" do
+      let(:event) { page.events[:events].first }
+
+      it "name" do
+        expect(event[:name]).to eq("REVEREND HORTON HEAT + Nekromantix + Whiskey Shivers @The Pyramid Scheme 6/10")
+      end
+
+      it "start_time" do
+        expect(event[:start_time]).to eq("2015-06-10T20:00:00-0400")
+      end
+
+      it "end_time" do
+        expect(event[:end_time]).to be nil
+      end
+
+      it "external_id" do
+        expect(event[:external_id]).to eq("1418539731769421")
+      end
+    end
+
   end
 end

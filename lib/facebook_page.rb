@@ -1,10 +1,12 @@
 class FacebookPage
   def initialize(id)
-    @graph = Koala::Facebook::API.new(ENV["FB_TOKEN"])
-    @page  = @graph.get_object(id)
+    @graph   = Koala::Facebook::API.new(ENV["FB_TOKEN"])
+    @page_id = id
   end
 
   def attributes
+    @page ||= @graph.get_object(@page_id)
+
     {
       address:     @page["location"]["street"],
       latitude:    @page["location"]["latitude"],
@@ -22,6 +24,21 @@ class FacebookPage
       kids:        kids?,
       tags:        tags
     }
+  end
+
+  def events
+    @events ||= @graph.get_connections(@page_id, "events")
+
+    array = @events.map do |e|
+      {
+        name:        e["name"],
+        start_time:  e["start_time"],
+        end_time:    e["end_time"],
+        external_id: e["id"]
+      }
+    end
+
+    {events: array}
   end
 
   private
