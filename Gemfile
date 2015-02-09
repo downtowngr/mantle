@@ -9,10 +9,6 @@ gem "unicorn"
 gem "koala"
 gem "foursquare2"
 
-gem "rest-client"
-gem "savon"
-gem "builder"
-
 group :test do
   gem "rspec"
   gem "vcr"
