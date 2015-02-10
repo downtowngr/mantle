@@ -28,6 +28,8 @@ Pearl should assume that every location will be pulling from **one** service per
 
 This should allow an administrator of Pearl to determine which source provides the best information per location. For example, Facebook may provide the most accurate business information for Founders, while Foursquare provides the best data for Bartertown.
 
+Mantle provides a standard interface to data per content section provided by a variety of outside services.
+
 ## Location
 
 Location API returns a standardized JSON object of business information pulled from one of several difference services. The request must specify what service to pull from in the path. Currently, the services avaiable are Facebook and Foursquare, identified as `facebook` and `foursquare`, respectively.
@@ -92,7 +94,9 @@ All services return the same flat JSON object of business information.
 
 ## Events
 
-The Events API returns upcoming events for a given location. The location's ID is the ID from the outside service. The returned `external_id` is the event's ID identified by the outside service. This attribute should be used to pair and update existing event records.
+The Events API returns an arry of upcoming events for a given location. The location's ID is the ID from the outside service, similar to the Location API.
+
+The returned `external_id` is the event's UUID identified by the outside service. This attribute should be used to pair and update existing event records within Pearl.
 
 | attribute     | Facebook           | format     |
 | ------------- | ------------------ | ---------- |
@@ -121,23 +125,12 @@ The Events API returns upcoming events for a given location. The location's ID i
 
 ### ExperienceGR
 
-*Their software vendor is working to implement an RSS feed per venue.*
+**Current Status**: Their software vendor is working to implement an RSS feed per venue.
 
 ### GRNow
 
-*Josh of GRNow is investigating RSS feed per venue.*
+**Current Status**: Josh of GRNow is investigating RSS feed per venue.
 
 ## Photos
 
 *to be implemented*
-
-# License
-
-The MIT License (MIT)
-Copyright © 2014 Downtown Grand Rapids Inc.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
