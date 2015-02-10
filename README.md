@@ -1,4 +1,4 @@
-# Mantle
+# Mantle API
 
 [![Build Status](https://img.shields.io/travis/downtowngr/mantle/master.svg?style=flat-square)](https://travis-ci.org/downtowngr/mantle)
 [![Code Climate](http://img.shields.io/codeclimate/github/downtowngr/mantle.svg?style=flat-square)](https://codeclimate.com/github/downtowngr/mantle)
@@ -8,18 +8,29 @@ Service API for Pearl, Downtown Grand Rapids Inc.'s website. Mantle provides a s
 
 # Getting Started
 
+Within the project's directory, start with this:
 ```ruby
 bundle install
 
+cp .env.example .env
+```
+Update `.env` with appropriate service tokens.
+
+Type this to run:
+```ruby
 gem install foreman
 foreman start
 ```
 
 # API
 
-## Location API
+Pearl should assume that every location will be pulling from **one** service per content section (business attributes, events, photos, etc.).
 
-Location API returns a standardized JSON object of business information pulled from one of several difference services. The request must specify what service to pull from in the path. Currently, the services avaiable are Facebook, Foursquare, and Google, identified as `facebook`, `foursquare`, or `google`, respectively. This allows an administrator of Pearl to determine which source provides the best information per location. For example, Facebook may provide the best data for Founders, while Foursquare provides the best data for Bartertown.
+This should allow an administrator of Pearl to determine which source provides the best information per location. For example, Facebook may provide the most accurate business information for Founders, while Foursquare provides the best data for Bartertown.
+
+## Location
+
+Location API returns a standardized JSON object of business information pulled from one of several difference services. The request must specify what service to pull from in the path. Currently, the services avaiable are Facebook and Foursquare, identified as `facebook` and `foursquare`, respectively.
 
 Location API requests are construced as such: GET `/location/:service/:service_id`. The `service_id` is the UUID of the location provided by the particular service. Thus, the `service_id` will vary depending on what service's data being requested.
 
@@ -79,15 +90,44 @@ All services return the same flat JSON object of business information.
 
 `id` is the UUID of the location's Foursqure venue. It is an alphanumeric UUID similar to `4b12c269f964a5208b8d23e3`.
 
-## Events API
+## Events
+
+The Events API returns upcoming events for a given location. The location's ID is the ID from the outside service. The returned `external_id` is the event's ID identified by the outside service. This attribute should be used to pair and update existing event records.
+
+| attribute     | Facebook           | format     |
+| ------------- | ------------------ | ---------- |
+| name          | :white_check_mark: |            |
+| start_time    | :white_check_mark: |            |
+| end_time      | :white_check_mark: | *optional* |
+| external_id   | :white_check_mark: |            |
+
+```json
+{
+  "events":[
+    {
+      "name":"REVEREND HORTON HEAT + Nekromantix + Whiskey Shivers @The Pyramid Scheme 6/10",
+      "start_time":"2015-06-10T20:00:00-0400",
+      "end_time":null,
+      "external_id":"1418539731769421"
+    }
+  ]
+}
+```
+
+### Facebook
+
+`GET /events/facebook/:id`
+
 
 ### ExperienceGR
 
-`GET /events/experiencegr/:id`
+*Their software vendor is working to implement an RSS feed per venue.*
 
-*to be implemented*
+### GRNow
 
-## Photos API
+*Josh of GRNow is investigating RSS feed per venue.*
+
+## Photos
 
 *to be implemented*
 
