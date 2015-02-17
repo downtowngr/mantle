@@ -14,7 +14,7 @@ bundle install
 
 cp .env.example .env
 ```
-Update `.env` with appropriate service tokens.
+Update `.env` with appropriate service tokens. Be sure to set `MANTLE_USER` and `MANTLE_PASS`. You'll need those credentials to access the API.
 
 Type this to run:
 ```ruby
@@ -29,6 +29,10 @@ Pearl should assume that every location will be pulling from **one** service per
 This should allow an administrator of Pearl to determine which source provides the best information per location. For example, Facebook may provide the most accurate business information for Founders, while Foursquare provides the best data for Bartertown.
 
 Mantle provides a standard interface to data per content section provided by a variety of outside services.
+
+### Authentication
+
+Mantle uses Basic Auth. Simply set `MANTLE_USER` and `MANTLE_PASS` to what you want and keep it a secret.
 
 ## Location
 
