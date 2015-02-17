@@ -8,6 +8,7 @@ gem "unicorn"
 
 gem "koala"
 gem "foursquare2"
+gem "instagram", github: "pichot/instagram-ruby-gem", branch: "search-location-by-facebook-id"
 
 group :test do
   gem "rspec"
