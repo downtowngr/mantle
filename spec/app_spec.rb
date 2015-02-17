@@ -2,6 +2,10 @@ require "spec_helper"
 require_relative "../app.rb"
 
 RSpec.describe "Mantle" do
+  before do
+    authorize ENV["MANTLE_USER"], ENV["MANTLE_PASS"]
+  end
+
   describe "GET /location" do
     describe "from Facebook", vcr: {cassette_name: "location_facebook"} do
       it "returns a location json object" do

@@ -12,6 +12,10 @@ module Mantle
       content_type :json
     end
 
+    use Rack::Auth::Basic, "Mantle" do |username, password|
+      username == ENV["MANTLE_USER"] && password == ENV["MANTLE_PASS"]
+    end
+
     # Location
     get "/location/facebook/:id" do
       page = FacebookPage.new(params[:id])
