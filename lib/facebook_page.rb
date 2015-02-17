@@ -8,21 +8,23 @@ class FacebookPage
     @page ||= @graph.get_object(@page_id)
 
     {
-      address:     @page["location"]["street"],
-      latitude:    @page["location"]["latitude"],
-      longitude:   @page["location"]["longitude"],
-      phone:       @page["phone"],
-      source_link: @page["link"],
-      website:     @page["website"],
-      hours:       hours,
-      price_range: @page["price_range"],
-      cash_only:   cash_only?,
-      outdoor:     outdoor?,
-      delivery:    delivery?,
-      takeout:     takeout?,
-      reserve:     reserve?,
-      kids:        kids?,
-      tags:        tags
+      location: {
+        address:     @page["location"]["street"],
+        latitude:    @page["location"]["latitude"],
+        longitude:   @page["location"]["longitude"],
+        phone:       @page["phone"],
+        source_link: @page["link"],
+        website:     @page["website"],
+        hours:       hours,
+        price_range: @page["price_range"],
+        cash_only:   cash_only?,
+        outdoor:     outdoor?,
+        delivery:    delivery?,
+        takeout:     takeout?,
+        reserve:     reserve?,
+        kids:        kids?,
+        tags:        tags
+      }
     }
   end
 

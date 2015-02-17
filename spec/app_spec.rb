@@ -9,7 +9,7 @@ RSpec.describe "Mantle" do
 
         response = JSON.parse(last_response.body)
 
-        expect(response).to eq({
+        expect(response).to eq("location" => {
           "address" => "235 Grandville Ave SW",
           "cash_only" => nil,
           "delivery" => nil,
@@ -35,7 +35,7 @@ RSpec.describe "Mantle" do
 
         response = JSON.parse(last_response.body)
 
-        expect(response).to eq({
+        expect(response).to eq("location" => {
           "address"=>"235 Grandville Ave SW",
           "cash_only" => false,
           "delivery" => false,

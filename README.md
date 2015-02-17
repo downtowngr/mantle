@@ -59,22 +59,24 @@ An attribute will return `nil` if the service does not provide the attribute, or
 All services return the same flat JSON object of business information.
 
 ```json
-{
-  "address":"6 Jefferson Ave SE",
-  "latitude":42.962910271139,
-  "longitude":-85.664197952905,
-  "phone":"(616) 233-3219",
-  "source_link":"https://www.facebook.com/pages/Bartertown-Diner/175495679140580",
-  "website":"www.bartertowngr.com",
-  "hours":"Mon 11:00am-3:00pm Wed 11:00am-9:00pm Thu 11:00am-9:00pm 10:00pm-03:00am Fri 11:00am-9:00pm 10:00pm-03:00am Sat 09:00am-9:00pm 10:00pm-03:00am Sun 09:00am-2:00pm",
-  "price_range":"$ (0-10)",
-  "tags":["Breakfast & Brunch Restaurant","Vegetarian & Vegan Restaurant","Sandwich Shop","Breakfast","Coffee","Dinner","Lunch"],
-  "delivery":false,
-  "kids":false,
-  "outdoor":true,
-  "reserve":false,
-  "takeout":true,
-  "cash_only":false
+{ "location":
+  {
+    "address":"6 Jefferson Ave SE",
+    "latitude":42.962910271139,
+    "longitude":-85.664197952905,
+    "phone":"(616) 233-3219",
+    "source_link":"https://www.facebook.com/pages/Bartertown-Diner/175495679140580",
+    "website":"www.bartertowngr.com",
+    "hours":"Mon 11:00am-3:00pm Wed 11:00am-9:00pm Thu 11:00am-9:00pm 10:00pm-03:00am Fri 11:00am-9:00pm 10:00pm-03:00am Sat 09:00am-9:00pm 10:00pm-03:00am Sun 09:00am-2:00pm",
+    "price_range":"$ (0-10)",
+    "tags":["Breakfast & Brunch Restaurant","Vegetarian & Vegan Restaurant","Sandwich Shop","Breakfast","Coffee","Dinner","Lunch"],
+    "delivery":false,
+    "kids":false,
+    "outdoor":true,
+    "reserve":false,
+    "takeout":true,
+    "cash_only":false
+  }
 }
 ```
 
@@ -131,10 +133,6 @@ The returned `external_id` is the event's UUID identified by the outside service
 
 ## Photos
 
-### Instagram
-
-There are 3 seperate ways to get Instagram images, each depending on the kind of UUID that is being sent.
-
 | attribute     | Instagram          | format     |
 | ------------- | ------------------ | ---------- |
 | photo_url     | :white_check_mark: |            |
@@ -152,6 +150,10 @@ There are 3 seperate ways to get Instagram images, each depending on the kind of
   ]
 }
 ```
+
+### Instagram
+
+There are 3 seperate ways to get Instagram images, each depending on the kind of UUID that is being sent.
 
 #### User
 

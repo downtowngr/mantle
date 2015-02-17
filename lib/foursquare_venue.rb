@@ -8,22 +8,24 @@ class FoursquareVenue
   # Need to standardize hours, price_range, source_link, website, phone
 
   def attributes
-    {
-      address:     @venue.location.address,
-      latitude:    @venue.location.lat,
-      longitude:   @venue.location.lng,
-      phone:       @venue.contact.formattedPhone,
-      source_link: @venue.canonicalUrl,
-      website:     @venue.url,
-      hours:       hours,
-      price_range: attribute_type("price").summary,
-      cash_only:   cash_only?,
-      outdoor:     outdoor?,
-      delivery:    delivery?,
-      takeout:     takeout?,
-      reserve:     reserve?,
-      kids:        nil,
-      tags:        tags
+    { location:
+      {
+        address:     @venue.location.address,
+        latitude:    @venue.location.lat,
+        longitude:   @venue.location.lng,
+        phone:       @venue.contact.formattedPhone,
+        source_link: @venue.canonicalUrl,
+        website:     @venue.url,
+        hours:       hours,
+        price_range: attribute_type("price").summary,
+        cash_only:   cash_only?,
+        outdoor:     outdoor?,
+        delivery:    delivery?,
+        takeout:     takeout?,
+        reserve:     reserve?,
+        kids:        nil,
+        tags:        tags
+      }
     }
   end
 
