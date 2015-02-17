@@ -38,8 +38,6 @@ Location API requests are construced as such: GET `/location/:service/:service_i
 
 An attribute will return `nil` if the service does not provide the attribute, or if the attribute is not available for the requested location.
 
-**TODO:** Need to standardize output of `hours`, `price_range`, `website`, `phone`
-
 | attribute     | Facebook           | Foursquare         | format |
 | ------------- | ------------------ | ------------------ | ------ |
 | address       | :white_check_mark: | :white_check_mark: |        |
@@ -133,4 +131,42 @@ The returned `external_id` is the event's UUID identified by the outside service
 
 ## Photos
 
-*to be implemented*
+### Instagram
+
+There are 3 seperate ways to get Instagram images, each depending on the kind of UUID that is being sent.
+
+| attribute     | Instagram          | format     |
+| ------------- | ------------------ | ---------- |
+| photo_url     | :white_check_mark: |            |
+| external_url  | :white_check_mark: |            |
+| external_id   | :white_check_mark: |            |
+
+```json
+{
+  "photos":[
+    {
+      "photo_url":"http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10963903_1383589831954534_537918980_n.jpg",
+      "external_id":"920420860022976241_917430474",
+      "external_url":"http://instagram.com/p/zF_eVFh27x/"
+    }
+  ]
+}
+```
+
+#### User
+
+Return the 5 most recent images taken by a given Instagram user.
+
+`GET /photos/instagram/user/:id`
+
+#### Facebook
+
+Return the 5 most recent images tagged at the location of this Facebook Page. You can use Facebook Integer UUID or alias like `founderstaproom`.
+
+`GET /photos/instagram/facebook/:id`
+
+#### Foursquare
+
+Return the 5 most recent images tagged at the location of this Foursquare Venue.
+
+`GET /photos/instagram/foursquare/:id`

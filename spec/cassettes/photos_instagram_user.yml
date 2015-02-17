@@ -1,0 +1,285 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/users/search.json?client_id=166a190b16b649d49a836e2a5ac2a058&q=downtowngrinc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Instagram Ruby Gem 1.1.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Language:
+      - en
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 17 Feb 2015 19:27:26 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - csrftoken=0dfc2f95ead8c9d899e48f9bbf204934; expires=Tue, 16-Feb-2016 19:27:26
+        GMT; Max-Age=31449600; Path=/
+      Vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4988'
+      Content-Length:
+      - '291'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"code":200},"data":[{"username":"downtowngrinc","bio":"Sharing
+        our perspective on the happenings in Downtown Grand Rapids \u0026 seeking
+        your involvement in the development of your city. #dgri","website":"http:\/\/www.downtowngr.org","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","id":"917430474"}]}'
+    http_version: 
+  recorded_at: Tue, 17 Feb 2015 19:27:25 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/users/917430474/media/recent.json?client_id=166a190b16b649d49a836e2a5ac2a058
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Instagram Ruby Gem 1.1.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Language:
+      - en
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 17 Feb 2015 19:27:27 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - csrftoken=25ecac3dc58e4d74e3be5f2665339141; expires=Tue, 16-Feb-2016 19:27:27
+        GMT; Max-Age=31449600; Path=/
+      Vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4987'
+      Content-Length:
+      - '8820'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"pagination":{"next_url":"https:\/\/api.instagram.com\/v1\/users\/917430474\/media\/recent?max_id=837826456892960376_917430474\u0026client_id=166a190b16b649d49a836e2a5ac2a058","next_max_id":"837826456892960376_917430474"},"meta":{"code":200},"data":[{"attribution":null,"tags":["valentice","icesculptures","arcticscene","iceguru","grmi"],"location":null,"comments":{"count":1,"data":[{"created_time":"1423945044","text":"@jcwdevan
+        did you see these? So awesome!","from":{"username":"apothecaryoffmain","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_430266778_75sq_1372458872.jpg","id":"430266778","full_name":"Apothecary
+        Off Main"},"id":"920440202500467966"}]},"filter":"Perpetua","created_time":"1423942738","link":"http:\/\/instagram.com\/p\/zF_eVFh27x\/","likes":{"count":36,"data":[{"username":"marmo_jo","profile_picture":"https:\/\/igcdn-photos-b-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/10788002_849299491796713_1375338060_a.jpg","id":"145208970","full_name":"Martina
+        J"},{"username":"liz14jones","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_400618861_75sq_1369968810.jpg","id":"400618861","full_name":"Julia
+        Jones"},{"username":"downtown_tc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_1145925506_75sq_1393948269.jpg","id":"1145925506","full_name":"Downtown
+        Traverse City"},{"username":"tarahwegner","profile_picture":"https:\/\/igcdn-photos-c-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10004304_318617348320258_1533941533_a.jpg","id":"1482324439","full_name":"Tara
+        Wegner"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s306x306\/e15\/10963903_1383589831954534_537918980_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s150x150\/e15\/10963903_1383589831954534_537918980_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/e15\/10963903_1383589831954534_537918980_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1423942738","text":"Some
+        more Arctic fun for this year''s #ValentICE! Say hello to our walrus, penguin,
+        seal and polar bear. #iceguru #grmi #icesculptures #arcticscene","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"920420860224302467"},"type":"image","id":"920420860022976241_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["valentice","speakerseries","peterkageyama"],"location":null,"comments":{"count":1,"data":[{"created_time":"1423782358","text":"So
+        cool!","from":{"username":"eastowngr","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_303994149_75sq_1384291692.jpg","id":"303994149","full_name":"Eastown
+        Community Association"},"id":"919075497294917116"}]},"filter":"Crema","created_time":"1423781628","link":"http:\/\/instagram.com\/p\/zBMLjFh2zJ\/","likes":{"count":43,"data":[{"username":"alisonmedawar","profile_picture":"https:\/\/igcdn-photos-f-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10948864_1588428171376165_97868603_a.jpg","id":"241871681","full_name":"Alison
+        Medawar"},{"username":"downtown_tc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_1145925506_75sq_1393948269.jpg","id":"1145925506","full_name":"Downtown
+        Traverse City"},{"username":"marktdevan","profile_picture":"https:\/\/igcdn-photos-h-a.akamaihd.net\/hphotos-ak-xpf1\/t51.2885-19\/10597331_352397234912087_2066717244_a.jpg","id":"1325004267","full_name":"Mark
+        Devan"},{"username":"colincumming","profile_picture":"https:\/\/igcdn-photos-g-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10986073_1551946795068902_772987222_a.jpg","id":"10547751","full_name":"Colin
+        Cumming"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s306x306\/e15\/10956616_697567707022397_582367148_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s150x150\/e15\/10956616_697567707022397_582367148_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/e15\/10956616_697567707022397_582367148_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1423781628","text":"The
+        icy art has begun to fill the streets. Catch a preview and our @grfwd speaker
+        series tonight at 6pm. #peterkageyama #speakerseries #ValentICE","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"919069369332886588"},"type":"image","id":"919069369106394313_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["grbj"],"location":null,"comments":{"count":0,"data":[]},"filter":"Hefe","created_time":"1422455971","link":"http:\/\/instagram.com\/p\/yZrsRWB2yM\/","likes":{"count":9,"data":[{"username":"littleorangescooter","profile_picture":"https:\/\/igcdn-photos-g-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/925972_386245424866886_1724662220_a.jpg","id":"1537763217","full_name":"Little
+        Orange Scooter"},{"username":"_smash_la_","profile_picture":"https:\/\/igcdn-photos-d-a.akamaihd.net\/hphotos-ak-xap1\/t51.2885-19\/923853_1559008251003699_1691065082_a.jpg","id":"217929170","full_name":"_smash_la_"},{"username":"elysejacqueline","profile_picture":"https:\/\/igcdn-photos-g-a.akamaihd.net\/hphotos-ak-xpf1\/t51.2885-19\/10349711_1412284552397094_2079467290_a.jpg","id":"33561770","full_name":"Elyse"},{"username":"616lofts","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_46668103_75sq_1378526602.jpg","id":"46668103","full_name":"616
+        Lofts"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s306x306\/e15\/10952992_332530126950683_1054510574_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s150x150\/e15\/10952992_332530126950683_1054510574_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/e15\/10952992_332530126950683_1054510574_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1422455971","text":"Congrats
+        to all of the winners of the GR Business Journal''s Newsmakers of the Year!
+        We''re happy to be nominated with all of these incredible organizations. #grbj","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"907948958390119952"},"type":"image","id":"907948958172015756_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["valentice","iceguru","grmi"],"location":null,"comments":{"count":0,"data":[]},"filter":"Normal","created_time":"1422294168","link":"http:\/\/instagram.com\/p\/yU3E0Qh29v\/","likes":{"count":10,"data":[{"username":"kristengray","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_3010952_75sq_1393904948.jpg","id":"3010952","full_name":"kristen
+        gray"},{"username":"jsloanevents","profile_picture":"https:\/\/igcdn-photos-c-a.akamaihd.net\/hphotos-ak-xfa1\/t51.2885-19\/10454140_1442746795983298_1711384262_a.jpg","id":"1388112065","full_name":"J.Sloan
+        Events"},{"username":"mamabearmoore","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_293872589_75sq_1367083257.jpg","id":"293872589","full_name":"Amanda"},{"username":"jcwdevan","profile_picture":"https:\/\/igcdn-photos-d-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/1515703_1430018797270699_1691683313_a.jpg","id":"363508933","full_name":"jcwdevan"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s306x306\/e15\/10903366_899477276751454_249379378_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s150x150\/e15\/10903366_899477276751454_249379378_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/e15\/10903366_899477276751454_249379378_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1422294168","text":"Valent-ICE
+        2015 has begun! This year, we will have more than 25 ice sculptures, but we
+        need your help selecting the design for the 3,000 lb masterpiece. Vote for
+        your favorite design at www.downtowngr.org\/valentice! #ValentICE #iceguru
+        #grmi","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"906591648757542875"},"type":"image","id":"906591648556216175_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["dgri","grmi","grandrapids","stateofthecity","vscocam","downtowngr"],"location":{"latitude":42.968193529,"longitude":-85.673491601},"comments":{"count":0,"data":[]},"filter":"Normal","created_time":"1421509467","link":"http:\/\/instagram.com\/p\/x9eYI8h2_h\/","likes":{"count":16,"data":[{"username":"ktmilano","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_269716882_75sq_1365207530.jpg","id":"269716882","full_name":"Kaylee
+        Milanowski"},{"username":"monicasteimle","profile_picture":"https:\/\/igcdn-photos-e-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/928630_416230878527932_400507688_a.jpg","id":"9627571","full_name":"Monica
+        Steimle"},{"username":"grsymphony","profile_picture":"https:\/\/igcdn-photos-d-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/10424583_1470707216504315_1742492319_a.jpg","id":"251241426","full_name":"Grand
+        Rapids Symphony"},{"username":"downtown_tc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_1145925506_75sq_1393948269.jpg","id":"1145925506","full_name":"Downtown
+        Traverse City"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/s306x306\/e15\/10899518_1523565954584097_1800298994_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/s150x150\/e15\/10899518_1523565954584097_1800298994_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/e15\/10899518_1523565954584097_1800298994_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1421509467","text":"Mayor
+        Heartwell''s final State of the City address. #vscocam #dgri #grandrapids
+        #grmi #downtowngr #stateofthecity","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"900009101164506466"},"type":"image","id":"900009100812185569_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["grfwd","dgri","grmi","vscocam","downtowngr"],"location":{"latitude":42.966587419,"longitude":-85.668787392},"comments":{"count":1,"data":[{"created_time":"1421368840","text":"That''s
+        awesome, I wish I could have been there.","from":{"username":"norteaa","profile_picture":"https:\/\/igcdn-photos-d-a.akamaihd.net\/hphotos-ak-xfa1\/t51.2885-19\/10948907_437837413036155_1092779075_a.jpg","id":"292874478","full_name":"Nick
+        Nortier"},"id":"898829435900751636"}]},"filter":"Normal","created_time":"1421368784","link":"http:\/\/instagram.com\/p\/x5SC-YB27F\/","likes":{"count":34,"data":[{"username":"eickyeicky","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_179494769_75sq_1376649305.jpg","id":"179494769","full_name":"Angela
+        Eick"},{"username":"dtmarketgr","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_487789011_75sq_1375378921.jpg","id":"487789011","full_name":"Downtown
+        Market Grand Rapids"},{"username":"koolchevrolet","profile_picture":"https:\/\/igcdn-photos-h-a.akamaihd.net\/hphotos-ak-xap1\/t51.2885-19\/10691844_710563505691223_1097335780_a.jpg","id":"1471640179","full_name":"Kool
+        Chevrolet"},{"username":"marjw27","profile_picture":"https:\/\/igcdn-photos-f-a.akamaihd.net\/hphotos-ak-xap1\/t51.2885-19\/10554004_307941329365981_361383473_a.jpg","id":"403886513","full_name":"Maggie
+        Whaley"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xap1\/t51.2885-15\/s306x306\/e15\/10727700_843763578999543_1145638034_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xap1\/t51.2885-15\/s150x150\/e15\/10727700_843763578999543_1145638034_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xap1\/t51.2885-15\/e15\/10727700_843763578999543_1145638034_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1421368784","text":"Another
+        great turnout for DGRI and our @grforward public forum. A full house full
+        of great ideas. #grfwd #grmi #downtowngr #dgri #vscocam","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"898828970207178468"},"type":"image","id":"898828969888411333_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["grfwd","dgri","vscocam","downtowngr","forwardthinkingseries"],"location":{"latitude":42.966779793,"longitude":-85.66873206},"comments":{"count":0,"data":[]},"filter":"Normal","created_time":"1421364417","link":"http:\/\/instagram.com\/p\/x5Jt3KB283\/","likes":{"count":20,"data":[{"username":"grfwd","profile_picture":"https:\/\/igcdn-photos-h-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/10413938_503845593076255_1900084113_a.jpg","id":"1368679881","full_name":"Grand
+        Rapids Forward"},{"username":"tblott3","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_8627299_75sq_1389497490.jpg","id":"8627299","full_name":"Ted
+        Lott"},{"username":"mamabearmoore","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_293872589_75sq_1367083257.jpg","id":"293872589","full_name":"Amanda"},{"username":"ldrumm8","profile_picture":"https:\/\/igcdn-photos-d-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10899240_413859378771043_576291147_a.jpg","id":"222553431","full_name":"Danielle"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/s306x306\/e15\/10894994_323674807830393_1790316136_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/s150x150\/e15\/10894994_323674807830393_1790316136_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/e15\/10894994_323674807830393_1790316136_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1421364417","text":"Standing
+        room only for the @grfwd speaker series and public forum! #vscocam #grfwd
+        #downtowngr #dgri #forwardthinkingseries","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"898792335092444188"},"type":"image","id":"898792334656237367_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["happyholidays","vscocam","dgri","downtowngr","propagandadoughnuts"],"location":{"latitude":42.966518793,"longitude":-85.669657102},"comments":{"count":0,"data":[]},"filter":"Normal","created_time":"1419272756","link":"http:\/\/instagram.com\/p\/w60MKcB219\/","likes":{"count":31,"data":[{"username":"laurkenat","profile_picture":"https:\/\/igcdn-photos-d-a.akamaihd.net\/hphotos-ak-xfa1\/t51.2885-19\/10983614_355539077963411_1773917941_a.jpg","id":"406918009","full_name":"Laura
+        Kenat"},{"username":"crystal.alex","profile_picture":"https:\/\/igcdn-photos-g-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/11007925_1556389911289254_333880694_a.jpg","id":"353852293","full_name":"A\uff4c\uff45\uff58\uff41\uff4e\uff44\uff52\uff41\ud83d\ude4b"},{"username":"propagandadoughnuts","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_888823286_75sq_1388425499.jpg","id":"888823286","full_name":"Mr.
+        X"},{"username":"jeremy_abrahams","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_508515399_75sq_1377990068.jpg","id":"508515399","full_name":"Jeremy
+        Abrahams"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/s306x306\/e15\/10838840_1554070454831250_196736447_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/s150x150\/e15\/10838840_1554070454831250_196736447_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/e15\/10838840_1554070454831250_196736447_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1419272756","text":"Many
+        thanks to @propagandadoughnuts for our treats during this Holiday Season!
+        Perfect treat for your next Holiday gathering! #vscocam #dgri #downtowngr
+        #propagandadoughnuts #happyholidays","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"881246211892801142"},"type":"image","id":"881246211364318589_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["vintagegr","fubbleent"],"location":null,"comments":{"count":1,"data":[{"created_time":"1418454110","text":"Good.
+        No snow for a while this time.  I hope Samadi Karim got to see this for me...haha.
+        #GrandRapids #GrandRapidsMichigan","from":{"username":"ronart003","profile_picture":"https:\/\/igcdn-photos-f-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10725150_523178184483981_1461693014_a.jpg","id":"1534729651","full_name":"Ron
+        Porcke"},"id":"874378909771591243"}]},"filter":"Normal","created_time":"1418426910","link":"http:\/\/instagram.com\/p\/whm3gbh23I\/","likes":{"count":37,"data":[{"username":"aslazer","profile_picture":"https:\/\/igcdn-photos-c-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10865160_763297637038738_506163525_a.jpg","id":"1398113475","full_name":"Andrzej
+        S"},{"username":"x94rays","profile_picture":"https:\/\/igcdn-photos-b-a.akamaihd.net\/hphotos-ak-xfp1\/t51.2885-19\/10547235_801272173246577_1119307963_a.jpg","id":"1409759964","full_name":"John
+        Ray"},{"username":"lacristofero","profile_picture":"https:\/\/igcdn-photos-f-a.akamaihd.net\/hphotos-ak-xap1\/t51.2885-19\/10525542_546756618759469_412387145_a.jpg","id":"1477395822","full_name":"Chris
+        Roe"},{"username":"chloe_isabel_kelley","profile_picture":"https:\/\/igcdn-photos-c-a.akamaihd.net\/hphotos-ak-xpf1\/t51.2885-19\/10601735_298228917028930_1641852301_a.jpg","id":"1464627335","full_name":"Kelley
+        Sommers"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s306x306\/e15\/10860109_780657372007581_858490955_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s150x150\/e15\/10860109_780657372007581_858490955_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/e15\/10860109_780657372007581_858490955_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1418426910","text":"In
+        the 50s and 60s, a giant candle was the holiday tradition. This year on your
+        stroll down Fulton, you can see a beautiful 1200 pound re-creation. Amazing!
+        #fubbleent #vintagegr","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"874155630704160490"},"type":"image","id":"874150742846827976_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["windowwonderland"],"location":null,"comments":{"count":0,"data":[]},"filter":"Normal","created_time":"1418232231","link":"http:\/\/instagram.com\/p\/wbzi7HB22v\/","likes":{"count":14,"data":[{"username":"murray_jessica","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_41872243_75sq_1380981767.jpg","id":"41872243","full_name":"Jessica
+        Murray"},{"username":"taybaybay2266","profile_picture":"https:\/\/igcdn-photos-f-a.akamaihd.net\/hphotos-ak-xfa1\/t51.2885-19\/10932335_417894198368117_1599080846_a.jpg","id":"273179203","full_name":"Tayler
+        Spellis"},{"username":"kelseyballast","profile_picture":"https:\/\/igcdn-photos-e-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/1598774_1472559199696348_1401753390_a.jpg","id":"202837259","full_name":"Kelsey
+        Ballast"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s306x306\/e15\/10844061_313974218808228_1800729371_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s150x150\/e15\/10844061_313974218808228_1800729371_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/e15\/10844061_313974218808228_1800729371_n.jpg","width":640,"height":640}},"users_in_photo":[{"position":{"y":0.9296296,"x":0.33333334},"user":{"username":"kcadoffsu","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_487903040_75sq_1375904486.jpg","id":"487903040","full_name":"KCAD"}}],"caption":{"created_time":"1418232231","text":"Congrats
+        to the winners of the #WindowWonderland competition! The lineup is...\nHonorable
+        Mention: Renee Austin\n3rd Place: Taco Bob''s\n2nd Place: One Stop Coney Shop\n1st
+        Place: Cheeky Strut","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"872517653817159088"},"type":"image","id":"872517653129293231_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["windowwonderland"],"location":null,"comments":{"count":2,"data":[{"created_time":"1418055169","text":"Awww,
+        yay!!!!","from":{"username":"jollyjennifer","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_195448545_75sq_1392138098.jpg","id":"195448545","full_name":"Nifer
+        Bafile"},"id":"871032355677498638"},{"created_time":"1418055520","text":"Stop
+        by our office at 29 Pearl Suite 1 by Friday to pick up your prize!","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"871035299189714470"}]},"filter":"Normal","created_time":"1418055106","link":"http:\/\/instagram.com\/p\/wWhtMaB2zf\/","likes":{"count":7,"data":[{"username":"jollyjennifer","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_195448545_75sq_1392138098.jpg","id":"195448545","full_name":"Nifer
+        Bafile"},{"username":"colincumming","profile_picture":"https:\/\/igcdn-photos-g-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10986073_1551946795068902_772987222_a.jpg","id":"10547751","full_name":"Colin
+        Cumming"},{"username":"jcwdevan","profile_picture":"https:\/\/igcdn-photos-d-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/1515703_1430018797270699_1691683313_a.jpg","id":"363508933","full_name":"jcwdevan"},{"username":"iuryhepp","profile_picture":"https:\/\/igcdn-photos-f-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10881949_317729208429557_2057286298_a.jpg","id":"29315733","full_name":"Iury
+        Hepp"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xpa1\/t51.2885-15\/s306x306\/e15\/10784895_1744304022460823_2120885802_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xpa1\/t51.2885-15\/s150x150\/e15\/10784895_1744304022460823_2120885802_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xpa1\/t51.2885-15\/e15\/10784895_1744304022460823_2120885802_n.jpg","width":640,"height":640}},"users_in_photo":[{"position":{"y":0.8787037,"x":0.34537038},"user":{"username":"jollyjennifer","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_195448545_75sq_1392138098.jpg","id":"195448545","full_name":"Nifer
+        Bafile"}}],"caption":{"created_time":"1418055106","text":"Our final #WindowWonderland
+        social media winner has been announced. Congrats to @jollyjennifer on her
+        $50 San Chez gift card. Stay tuned for the announcement of the competition
+        winners on Wednesday!","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"871031819754499296"},"type":"image","id":"871031819175685343_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["windowwonderland"],"location":null,"comments":{"count":0,"data":[]},"filter":"Normal","created_time":"1417788615","link":"http:\/\/instagram.com\/p\/wOlan2B2yp\/","likes":{"count":11,"data":[{"username":"sugarmilkk","profile_picture":"https:\/\/igcdn-photos-g-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10948996_1536019033327542_2133779600_a.jpg","id":"192243295","full_name":"\ud83d\udc8bHaley
+        Scott\ud83d\udc8b"},{"username":"jcwdevan","profile_picture":"https:\/\/igcdn-photos-d-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/1515703_1430018797270699_1691683313_a.jpg","id":"363508933","full_name":"jcwdevan"},{"username":"everythingssunny","profile_picture":"https:\/\/igcdn-photos-b-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10932325_1534313566843273_1341642267_a.jpg","id":"194023717","full_name":"Kristin
+        Reynolds"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/s306x306\/e15\/10843976_846451732041705_1794323290_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/s150x150\/e15\/10843976_846451732041705_1794323290_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/e15\/10843976_846451732041705_1794323290_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1417788615","text":"Last
+        weekend of the #WindowWonderland photo contest! Tag your photos of your favorite
+        windows, \u0026 you could win this week''s prize of $50 to San Caz Bistro.","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"868796335858871466"},"type":"image","id":"868796335338777769_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["grandrapids","vscocam","dgri","grmi","grfwd"],"location":{"latitude":42.963403098,"longitude":-85.670203929},"comments":{"count":0,"data":[]},"filter":"Normal","created_time":"1417545347","link":"http:\/\/instagram.com\/p\/wHVa1EB29M\/","likes":{"count":21,"data":[{"username":"cityflatshotel","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_327685386_75sq_1390337125.jpg","id":"327685386","full_name":"CityFlatsHotel"},{"username":"magicalcloudz","profile_picture":"https:\/\/igcdn-photos-b-a.akamaihd.net\/hphotos-ak-xpf1\/t51.2885-19\/10691767_501757333294633_1145610515_a.jpg","id":"275884940","full_name":"magicalcloudz"},{"username":"mamabearmoore","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_293872589_75sq_1367083257.jpg","id":"293872589","full_name":"Amanda"},{"username":"jcwdevan","profile_picture":"https:\/\/igcdn-photos-d-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/1515703_1430018797270699_1691683313_a.jpg","id":"363508933","full_name":"jcwdevan"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s306x306\/e15\/10817760_798458896859710_1781707171_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s150x150\/e15\/10817760_798458896859710_1781707171_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/e15\/10817760_798458896859710_1781707171_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1417545347","text":"GRPS
+        students visit the @grfwd space and share their big ideas for Grand Rapids!
+        #vscocam #dgri #grfwd #grmi #grandrapids","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"866755656555130701"},"type":"image","id":"866755655951150924_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["windowwonderland"],"location":null,"comments":{"count":2,"data":[{"created_time":"1417462468","text":"Where
+        do I pick it up?","from":{"username":"bigrach23","profile_picture":"https:\/\/igcdn-photos-a-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10919653_1544218632499552_331423307_a.jpg","id":"263101554","full_name":"Rachel
+        Resterhouse"},"id":"866060414126353655"},{"created_time":"1417467889","text":"At
+        our office at 29 Pearl St. Suite 1.","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"866105890062167945"}]},"filter":"Normal","created_time":"1417462418","link":"http:\/\/instagram.com\/p\/wE3Plmh2zH\/","likes":{"count":4,"data":[{"username":"jcwdevan","profile_picture":"https:\/\/igcdn-photos-d-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/1515703_1430018797270699_1691683313_a.jpg","id":"363508933","full_name":"jcwdevan"},{"username":"benschumitz","profile_picture":"https:\/\/igcdn-photos-h-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10818013_1527416314173847_599991710_a.jpg","id":"31617786","full_name":"Ben
+        Schumitz"},{"username":"bigrach23","profile_picture":"https:\/\/igcdn-photos-a-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10919653_1544218632499552_331423307_a.jpg","id":"263101554","full_name":"Rachel
+        Resterhouse"},{"username":"perrinbrewing","profile_picture":"https:\/\/igcdn-photos-f-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/10467928_888961067796781_1633241261_a.jpg","id":"1309031439","full_name":"Perrin
+        Brewing Company"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s306x306\/e15\/10817920_1509455639322425_75787235_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s150x150\/e15\/10817920_1509455639322425_75787235_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/e15\/10817920_1509455639322425_75787235_n.jpg","width":640,"height":640}},"users_in_photo":[{"position":{"y":0.90185183,"x":0.098148145},"user":{"username":"bigrach23","profile_picture":"https:\/\/igcdn-photos-a-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10919653_1544218632499552_331423307_a.jpg","id":"263101554","full_name":"Rachel
+        Resterhouse"}}],"caption":{"created_time":"1417462418","text":"The winner
+        of the holiday weekend #WindowWonderland giveaway is @bigrach23 for showing
+        how easy it is to vote for your favorite window. The prize this week is $25
+        to Vault of Midnight!","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"866059992665910472"},"type":"image","id":"866059992087096519_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["windowwonderland"],"location":null,"comments":{"count":0,"data":[]},"filter":"Normal","created_time":"1416838700","link":"http:\/\/instagram.com\/p\/vyRmODB25_\/","likes":{"count":15,"data":[{"username":"boxedgr","profile_picture":"https:\/\/igcdn-photos-d-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10932457_1544768332427875_909694205_a.jpg","id":"517601792","full_name":"Boxed
+        GR"},{"username":"iheartgr","profile_picture":"https:\/\/igcdn-photos-h-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/925610_724229274309823_691652109_a.jpg","id":"532079076","full_name":"iheartGrandRapids"},{"username":"downtownholland","profile_picture":"https:\/\/scontent-b.cdninstagram.com\/hphotos-xap1\/l\/t51.2885-19\/10623939_906409189387248_1338584278_a.jpg","id":"472480350","full_name":"Downtown
+        Holland"},{"username":"jeremy_abrahams","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_508515399_75sq_1377990068.jpg","id":"508515399","full_name":"Jeremy
+        Abrahams"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xpf1\/t51.2885-15\/s306x306\/e15\/10802591_1572597576291659_147148772_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xpf1\/t51.2885-15\/s150x150\/e15\/10802591_1572597576291659_147148772_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xpf1\/t51.2885-15\/e15\/10802591_1572597576291659_147148772_n.jpg","width":640,"height":640}},"users_in_photo":[{"position":{"y":0.89537036,"x":0.14537036},"user":{"username":"kokow0503","profile_picture":"https:\/\/igcdn-photos-g-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10914145_1386853268287038_1846817921_a.jpg","id":"434812727","full_name":"Koko
+        Watanabe"}}],"caption":{"created_time":"1416838700","text":"Congrats to the
+        second winner of the #WindowWonderland photo contest! @kokow0503 will receive
+        $25 to Memphis Smokehouse. What goes better than bridal gowns and BBQ?","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"860827872699838080"},"type":"image","id":"860827871995195007_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["windowwonderland"],"location":null,"comments":{"count":2,"data":[{"created_time":"1416250638","text":"Sweet.
+        \ud83d\udc4d","from":{"username":"dana_diamonds","profile_picture":"https:\/\/igcdn-photos-a-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/10507856_1502319476672832_1855428309_a.jpg","id":"2647230","full_name":"Dana
+        Martin\ud83d\udd2e\ud83d\udcab"},"id":"855894849273425164"},{"created_time":"1416519605","text":"@dana_diamonds
+        Be sure to stop by our office tomorrow at 29 Pearl St. Suite 1 to claim your
+        prize","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"858151107053448374"}]},"filter":"Normal","created_time":"1416249754","link":"http:\/\/instagram.com\/p\/vguRZoh247\/","likes":{"count":6,"data":[{"username":"kcadoffsu","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_487903040_75sq_1375904486.jpg","id":"487903040","full_name":"KCAD"},{"username":"elysejacqueline","profile_picture":"https:\/\/igcdn-photos-g-a.akamaihd.net\/hphotos-ak-xpf1\/t51.2885-19\/10349711_1412284552397094_2079467290_a.jpg","id":"33561770","full_name":"Elyse"},{"username":"mhersch_99","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_758078836_75sq_1386270460.jpg","id":"758078836","full_name":"Marcia"},{"username":"mxxkxxylxx","profile_picture":"https:\/\/igcdn-photos-a-a.akamaihd.net\/hphotos-ak-xfa1\/t51.2885-19\/10946540_828947503843552_586020353_a.jpg","id":"260939807","full_name":"M    a    k    a    y    l   a"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xpf1\/t51.2885-15\/s306x306\/e15\/10431848_1021979907827951_1149479845_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xpf1\/t51.2885-15\/s150x150\/e15\/10431848_1021979907827951_1149479845_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xpf1\/t51.2885-15\/e15\/10431848_1021979907827951_1149479845_n.jpg","width":640,"height":640}},"users_in_photo":[{"position":{"y":0.88845193,"x":0.11062217},"user":{"username":"dana_diamonds","profile_picture":"https:\/\/igcdn-photos-a-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/10507856_1502319476672832_1855428309_a.jpg","id":"2647230","full_name":"Dana
+        Martin\ud83d\udd2e\ud83d\udcab"}}],"caption":{"created_time":"1416249754","text":"Congrats
+        to @dana_diamonds on winning our 1st #WindowWonderland giveaway! We have a
+        $25 gift card to @denymgrandrapids with your name on it.","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"855887435664944700"},"type":"image","id":"855887435094519355_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["windowwonderland"],"location":null,"comments":{"count":0,"data":[]},"filter":"Normal","created_time":"1415986555","link":"http:\/\/instagram.com\/p\/vY4QlKB2wa\/","likes":{"count":18,"data":[{"username":"kokow0503","profile_picture":"https:\/\/igcdn-photos-g-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10914145_1386853268287038_1846817921_a.jpg","id":"434812727","full_name":"Koko
+        Watanabe"},{"username":"jcwdevan","profile_picture":"https:\/\/igcdn-photos-d-a.akamaihd.net\/hphotos-ak-xpa1\/t51.2885-19\/1515703_1430018797270699_1691683313_a.jpg","id":"363508933","full_name":"jcwdevan"},{"username":"downtownholland","profile_picture":"https:\/\/scontent-b.cdninstagram.com\/hphotos-xap1\/l\/t51.2885-19\/10623939_906409189387248_1338584278_a.jpg","id":"472480350","full_name":"Downtown
+        Holland"},{"username":"otmanh","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_279631351_75sq_1357009582.jpg","id":"279631351","full_name":"Haley
+        Otman"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xap1\/t51.2885-15\/s306x306\/e15\/10808949_1656536757906345_1795947020_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xap1\/t51.2885-15\/s150x150\/e15\/10808949_1656536757906345_1795947020_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-a.cdninstagram.com\/hphotos-xap1\/t51.2885-15\/e15\/10808949_1656536757906345_1795947020_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1415986555","text":"Window
+        Wonderland is here \u0026 we want to see you experience the magic! Capture
+        photos of your favorite windows and tag us in the caption along with the hashtag
+        #WindowWonderland. Each Monday, we will announce a winner of a Downtown gift
+        card!","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"853679559961701403"},"type":"image","id":"853679559399664666_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["vscocam","dgri","downtowngr","windowwonderland","grmi"],"location":{"latitude":42.966607459,"longitude":-85.669865662},"comments":{"count":3,"data":[{"created_time":"1415812223","text":"#dgri
+        #downtowngr #grmi","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"852217160549231796"},{"created_time":"1415814482","text":"Exciting
+        !","from":{"username":"cityflatshotel","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_327685386_75sq_1390337125.jpg","id":"327685386","full_name":"CityFlatsHotel"},"id":"852236109877833387"},{"created_time":"1415822888","text":"So
+        excited!","from":{"username":"616lofts","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_46668103_75sq_1378526602.jpg","id":"46668103","full_name":"616
+        Lofts"},"id":"852306618409774999"}]},"filter":"Normal","created_time":"1415812202","link":"http:\/\/instagram.com\/p\/vTrtM0h2yj\/","likes":{"count":26,"data":[{"username":"kylie_oakes","profile_picture":"https:\/\/igcdn-photos-b-a.akamaihd.net\/hphotos-ak-xfa1\/t51.2885-19\/10894910_441786985971369_1665684026_a.jpg","id":"362337978","full_name":"Kylie
+        Oakes"},{"username":"christinaeileen7","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_349675931_75sq_1399692203.jpg","id":"349675931","full_name":"Christina
+        Eileen Babcock"},{"username":"625paper","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_382839050_75sq_1369794268.jpg","id":"382839050","full_name":"Abbey
+        Fowler"},{"username":"hopsinmy_shorts","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_265752878_75sq_1398650978.jpg","id":"265752878","full_name":"Sam"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xpa1\/t51.2885-15\/s306x306\/e15\/10808614_333277100190256_2023641003_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xpa1\/t51.2885-15\/s150x150\/e15\/10808614_333277100190256_2023641003_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xpa1\/t51.2885-15\/e15\/10808614_333277100190256_2023641003_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1415812202","text":"@625paper
+        and windows all around Downtown are getting ready for the Holidays. Check
+        out the #WindowWonderland competition kicking off November 13th! @kcadoffsu
+        #vscocam","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"852216977383976100"},"type":"image","id":"852216976645778595_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["vscocam","dgri","downtowngr","grmi"],"location":{"latitude":42.966632115,"longitude":-85.669879455},"comments":{"count":0,"data":[]},"filter":"Normal","created_time":"1414685667","link":"http:\/\/instagram.com\/p\/uyHA0gB28J\/","likes":{"count":33,"data":[{"username":"christinaeileen7","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_349675931_75sq_1399692203.jpg","id":"349675931","full_name":"Christina
+        Eileen Babcock"},{"username":"mhersch_99","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_758078836_75sq_1386270460.jpg","id":"758078836","full_name":"Marcia"},{"username":"liz14jones","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_400618861_75sq_1369968810.jpg","id":"400618861","full_name":"Julia
+        Jones"},{"username":"dtmarketgr","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_487789011_75sq_1375378921.jpg","id":"487789011","full_name":"Downtown
+        Market Grand Rapids"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/s306x306\/e15\/10731767_1483933885213447_839976770_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/s150x150\/e15\/10731767_1483933885213447_839976770_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/e15\/10731767_1483933885213447_839976770_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1414685667","text":"The
+        holiday decor is being installed! But have no fear, we won''t be flipping
+        the switch until mid-November. #dgri #downtowngr #grmi #vscocam","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"842766925217360974"},"type":"image","id":"842766922969214729_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}},{"attribution":null,"tags":["vscocam","dgri","downtowngr","grmi","monumentpark"],"location":null,"comments":{"count":1,"data":[{"created_time":"1418454277","text":"Congratulations!
+        What was the date?  Awwww :-( I missed it since back in Houston.","from":{"username":"ronart003","profile_picture":"https:\/\/igcdn-photos-f-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10725150_523178184483981_1461693014_a.jpg","id":"1534729651","full_name":"Ron
+        Porcke"},"id":"874380310727847550"}]},"filter":"Normal","created_time":"1414096718","link":"http:\/\/instagram.com\/p\/ugjrk6h254\/","likes":{"count":25,"data":[{"username":"mandycech","profile_picture":"https:\/\/igcdn-photos-b-a.akamaihd.net\/hphotos-ak-xpf1\/t51.2885-19\/10611179_605670016221993_1450140840_a.jpg","id":"493523130","full_name":"Mandy
+        Cech"},{"username":"aslazer","profile_picture":"https:\/\/igcdn-photos-c-a.akamaihd.net\/hphotos-ak-xaf1\/t51.2885-19\/10865160_763297637038738_506163525_a.jpg","id":"1398113475","full_name":"Andrzej
+        S"},{"username":"blueeyefilmer","profile_picture":"https:\/\/igcdn-photos-e-a.akamaihd.net\/hphotos-ak-xap1\/t51.2885-19\/10693697_700407203361044_1162509309_a.jpg","id":"627302908","full_name":"Liz
+        Merriman"},{"username":"downtown_tc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_1145925506_75sq_1393948269.jpg","id":"1145925506","full_name":"Downtown
+        Traverse City"}]},"images":{"low_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s306x306\/e15\/10735260_1485908511692405_1181206142_n.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s150x150\/e15\/10735260_1485908511692405_1181206142_n.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/scontent-b.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/e15\/10735260_1485908511692405_1181206142_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1414096718","text":"Monument
+        Park Ribbon Cutting! Glad we could be apart of this project! #vscocam #monumentpark
+        #dgri #downtowngr #grmi","from":{"username":"downtowngrinc","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","id":"917430474","full_name":"Downtown
+        Grand Rapids Inc."},"id":"837826459493428690"},"type":"image","id":"837826456892960376_917430474","user":{"username":"downtowngrinc","website":"","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_917430474_75sq_1389033150.jpg","full_name":"Downtown
+        Grand Rapids Inc.","bio":"","id":"917430474"}}]}'
+    http_version: 
+  recorded_at: Tue, 17 Feb 2015 19:27:27 GMT
+recorded_with: VCR 2.9.3
