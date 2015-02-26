@@ -13,6 +13,16 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.6)
+    aws-sdk (2.0.28)
+      aws-sdk-resources (= 2.0.28)
+    aws-sdk-core (2.0.28)
+      builder (~> 3.0)
+      jmespath (~> 1.0)
+      multi_json (~> 1.0)
+      multi_xml (~> 0.5)
+    aws-sdk-resources (2.0.28)
+      aws-sdk-core (= 2.0.28)
+    builder (3.2.2)
     codeclimate-test-reporter (0.4.1)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
@@ -30,6 +40,8 @@ GEM
       faraday_middleware (>= 0.8)
       hashie (>= 1.0, < 3.0.0)
     hashie (2.1.2)
+    jmespath (1.0.2)
+      multi_json (~> 1.0)
     kgio (2.9.2)
     koala (1.11.0)
       addressable
@@ -37,6 +49,7 @@ GEM
       multi_json
     method_source (0.8.2)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     multipart-post (2.0.0)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -48,6 +61,10 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     raindrops (0.13.0)
+    rake (10.4.2)
+    rgeo (0.3.20)
+    rgeo-geojson (0.3.1)
+      rgeo (~> 0.3)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
@@ -85,13 +102,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk
   codeclimate-test-reporter
   dotenv
+  faraday
   foursquare2
   instagram!
   koala
   pry
   rack-test
+  rake
+  rgeo-geojson
   rspec
   sinatra
   unicorn

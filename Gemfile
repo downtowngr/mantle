@@ -5,10 +5,15 @@ ruby "2.1.4"
 gem "sinatra"
 gem "dotenv"
 gem "unicorn"
+gem "rake"
 
 gem "koala"
 gem "foursquare2"
 gem "instagram", github: "pichot/instagram-ruby-gem", branch: "search-location-by-facebook-id"
+
+gem "faraday"
+gem "rgeo-geojson"
+gem "aws-sdk"
 
 group :test do
   gem "rspec"
