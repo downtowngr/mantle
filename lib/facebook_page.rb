@@ -33,7 +33,7 @@ class FacebookPage
 
     array = @events.map do |e|
       {
-        name:        e["name"],
+        event_name:  e["name"],
         start_time:  e["start_time"],
         end_time:    e["end_time"],
         external_id: e["id"]

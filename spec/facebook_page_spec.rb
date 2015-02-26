@@ -75,8 +75,8 @@ RSpec.describe FacebookPage do
     describe "an event" do
       let(:event) { page.events[:events].first }
 
-      it "name" do
-        expect(event[:name]).to eq("REVEREND HORTON HEAT + Nekromantix + Whiskey Shivers @The Pyramid Scheme 6/10")
+      it "event_name" do
+        expect(event[:event_name]).to eq("REVEREND HORTON HEAT + Nekromantix + Whiskey Shivers @The Pyramid Scheme 6/10")
       end
 
       it "start_time" do
