@@ -104,7 +104,7 @@ The returned `external_id` is the event's UUID identified by the outside service
 
 | attribute     | Facebook           | format     |
 | ------------- | ------------------ | ---------- |
-| name          | :white_check_mark: |            |
+| event_name    | :white_check_mark: |            |
 | start_time    | :white_check_mark: |            |
 | end_time      | :white_check_mark: | *optional* |
 | external_id   | :white_check_mark: |            |
@@ -113,7 +113,7 @@ The returned `external_id` is the event's UUID identified by the outside service
 {
   "events":[
     {
-      "name":"REVEREND HORTON HEAT + Nekromantix + Whiskey Shivers @The Pyramid Scheme 6/10",
+      "event_name":"REVEREND HORTON HEAT + Nekromantix + Whiskey Shivers @The Pyramid Scheme 6/10",
       "start_time":"2015-06-10T20:00:00-0400",
       "end_time":null,
       "external_id":"1418539731769421"
