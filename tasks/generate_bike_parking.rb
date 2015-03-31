@@ -5,6 +5,8 @@ require "json"
 
 class GenerateBikeParking
   def initialize
+    Dir.mkdir "tmp" unless File.exists?("tmp")
+
     @conn = Faraday.new(url: 'http://www.overpass-api.de') do |faraday|
       faraday.request  :url_encoded
       faraday.response :logger
@@ -18,7 +20,7 @@ class GenerateBikeParking
       region: "us-east-1"
     })
 
-    @tmp_path = "bike_parking.geojson"
+    @tmp_path = "tmp/bike_parking.geojson"
   end
 
   def perform
