@@ -15,7 +15,6 @@ gem "faraday"
 gem "rgeo-geojson"
 gem "aws-sdk"
 gem "rubyzip"
-gem "sqlite3"
 gem "sequel"
 gem "smarter_csv"
 
@@ -29,4 +28,5 @@ end
 
 group :development, :test do
   gem "pry"
+  gem "sqlite3"
 end
