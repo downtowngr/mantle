@@ -15,7 +15,7 @@ class GenerateTransitStops
     @coder = RGeo::GeoJSON.coder
     @bb = RGeo::Cartesian::BoundingBox.create_from_points(
       @coder.geo_factory.point(-85.68291485309601, 42.97696419731116),
-      @coder.geo_factory.point(-85.65913438796997, 42.95575507582336)
+      @coder.geo_factory.point(-85.65665602684021, 42.95390977598836)
     )
 
     @s3_file = Aws::S3::Object.new("dgri-web", "maps/transit_stops.geojson", {

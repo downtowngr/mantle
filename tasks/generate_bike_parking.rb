@@ -43,7 +43,7 @@ class GenerateBikeParking
 
   def parking_nodes
     @osm_data ||= @conn.get "/api/interpreter", {
-      data: '[out:json][timeout:25];(node["amenity"="bicycle_parking"](42.85633644214852,-85.78742980957031,43.03100396557044,-85.54573059082031););out body;>;out skel qt;'
+      data: '[out:json][timeout:25];(node["amenity"="bicycle_parking"](42.95390977598836, -85.68291485309601, 42.97696419731116, -85.65665602684021););out body;>;out skel qt;'
     }
 
     JSON.parse(@osm_data.body)["elements"]
