@@ -14,6 +14,10 @@ gem "instagram", github: "pichot/instagram-ruby-gem", branch: "search-location-b
 gem "faraday"
 gem "rgeo-geojson"
 gem "aws-sdk"
+gem "rubyzip"
+gem "sqlite3"
+gem "sequel"
+gem "smarter_csv"
 
 group :test do
   gem "rspec"
