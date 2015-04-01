@@ -50,7 +50,7 @@ An attribute will return `nil` if the service does not provide the attribute, or
 | phone         | :white_check_mark: | :white_check_mark: | **string** "(xxx) xxx-xxxx" |
 | source_link   | :white_check_mark: | :white_check_mark: |             |
 | website       | :white_check_mark: | :white_check_mark: | **string** "http://www.example.com" |
-| hours         | :white_check_mark: | :white_check_mark: |             |
+| hours         | :white_check_mark: | :white_check_mark: | **array** "Mon": ["9:00am-5:00pm", "7:00pm-11:00pm"] |
 | price_range   | :white_check_mark: | :white_check_mark: |             |
 | delivery      | :white_check_mark: | :white_check_mark: | **boolean** |
 | outdoor       | :white_check_mark: | :white_check_mark: | **boolean** |
@@ -73,7 +73,15 @@ All services return the same flat JSON object of business information.
     "phone":"(616) 233-3219",
     "source_link":"https://www.facebook.com/pages/Bartertown-Diner/175495679140580",
     "website":"www.bartertowngr.com",
-    "hours":"Mon 11:00am-3:00pm Wed 11:00am-9:00pm Thu 11:00am-9:00pm 10:00pm-03:00am Fri 11:00am-9:00pm 10:00pm-03:00am Sat 09:00am-9:00pm 10:00pm-03:00am Sun 09:00am-2:00pm",
+    "hours": {
+      "Mon": ["11:00am-2:00am"],
+      "Tue": ["11:00am-2:00am"],
+      "Wed": ["11:00am-2:00am"],
+      "Thu": ["11:00am-2:00am"],
+      "Fri": ["11:00am-2:00am"],
+      "Sat": ["11:00am-2:00am"],
+      "Sun": ["12:00pm-0:00am"]
+    },
     "price_range":"$ (0-10)",
     "tags":["Breakfast & Brunch Restaurant","Vegetarian & Vegan Restaurant","Sandwich Shop","Breakfast","Coffee","Dinner","Lunch"],
     "delivery":false,
