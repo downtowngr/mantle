@@ -87,21 +87,20 @@ class FacebookPage
       nested[date[0]][date[1].to_i][date[2]] = hour
     end
 
-    string = ""
-
-    days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+    hours = {}
+    days  = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
 
     days.each_with_index do |day, index|
       unless nested[day].empty?
-        string << day.capitalize + " "
+        hours[day.capitalize] = []
 
         nested[day].each do |_, hour|
-          string << hour12(hour["open"]) + "-" + hour12(hour["close"]) + " "
+          hours[day.capitalize] << hour12(hour["open"]) + "-" + hour12(hour["close"])
         end
       end
     end
 
-    string.strip
+    hours
   end
 
   def hour12(time)
@@ -110,7 +109,7 @@ class FacebookPage
     if digits[0].to_i > 12
       "#{digits[0].to_i - 12}:#{digits[1]}pm"
     else
-      "#{time}am"
+      "#{time.gsub(/^0/, "")}am"
     end
   end
 
