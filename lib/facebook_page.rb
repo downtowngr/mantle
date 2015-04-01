@@ -1,5 +1,6 @@
 class FacebookPage
   def initialize(id)
+    Koala.config.api_version = "v2.3"
     @graph   = Koala::Facebook::API.new(ENV["FB_TOKEN"])
     @page_id = id
   end
@@ -23,7 +24,9 @@ class FacebookPage
         takeout:     takeout?,
         reserve:     reserve?,
         kids:        kids?,
-        tags:        tags
+        tags:        tags,
+        cover_photo: @page["cover"]["source"],
+        primary_photo: primary_photo
       }
     }
   end
@@ -44,6 +47,11 @@ class FacebookPage
   end
 
   private
+
+  def primary_photo
+    photos = @graph.get_connections(@page_id, "photos")
+    photos.nil? ? nil : photos.first["images"].first["source"]
+  end
 
   def cash_only?
     @page["payment_options"] ? @page["payment_options"]["cash_only"] == 1 : nil

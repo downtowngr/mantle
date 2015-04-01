@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/ThePyramidScheme/events?access_token=CAAE3nAAWevABANHtbBh8BwfVFWNKoI4se5Q1C6Ay9BWVjjLE09wOA8gj9RKStSm5znwhyaPDwlZCDCjPGxxhKbdttY0DXLIkzTg484gtPOE36RKoXefSNuOBt9p3ZApXkrsGJSpSoEtcLqWug6nOme5fxySBCES5a5zEMGcuGxhHnnsnteIcBC5JJNnycZD
+    uri: https://graph.facebook.com/v2.3/ThePyramidScheme/events?access_token=CAAE3nAAWevABANHtbBh8BwfVFWNKoI4se5Q1C6Ay9BWVjjLE09wOA8gj9RKStSm5znwhyaPDwlZCDCjPGxxhKbdttY0DXLIkzTg484gtPOE36RKoXefSNuOBt9p3ZApXkrsGJSpSoEtcLqWug6nOme5fxySBCES5a5zEMGcuGxhHnnsnteIcBC5JJNnycZD
     body:
       encoding: US-ASCII
       string: ''
@@ -23,75 +23,59 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Fb-Rev:
-      - '1592818'
+      - '1666949'
       Etag:
-      - '"3705ee604879e60ffec202de0afd94bf4a4f90e6"'
+      - '"951fc27b7271d2817a5c035e95de4585c64c2ef2"'
       Pragma:
       - no-cache
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Facebook-Api-Version:
-      - v2.2
+      - v2.3
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Vary:
       - Accept-Encoding
       X-Fb-Debug:
-      - OP247BbyAtkxTzWqKegyfVJyUfdg79tUSIggAZzeZNwNTZ3xZCPb1sPEfzP2Adkq9m3RJlNfA5x5gbjAD5DVyQ==
+      - w98X36GQJr4m0Kts4kdrmTrczToNkAU8AISTLpI4BhIF3BWSkRVc9mY5sRnxjirWU3JBJ7Fg2aNhqbR2QoLrQw==
       Date:
-      - Mon, 09 Feb 2015 15:18:47 GMT
+      - Tue, 31 Mar 2015 20:37:05 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '1605'
+      - '1724'
     body:
       encoding: UTF-8
-      string: '{"data":[{"location":"The Pyramid Scheme","name":"REVEREND HORTON HEAT
-        + Nekromantix + Whiskey Shivers \u0040The Pyramid Scheme 6\/10","start_time":"2015-06-10T20:00:00-0400","timezone":"America\/Detroit","id":"1418539731769421"},{"location":"The
-        Pyramid Scheme","name":"TEMPLES \u0040 The Pyramid Scheme 6\/2","start_time":"2015-06-02T19:00:00-0400","timezone":"America\/Detroit","id":"339783776226431"},{"location":"The
-        Pyramid Scheme","name":"POKEY LAFARGE + Caroline Rose\u0040 The Pyramid Scheme
-        Thu. 5\/14","start_time":"2015-05-14T20:00:00-0400","timezone":"America\/Detroit","id":"803203189767846"},{"location":"The
-        Pyramid Scheme","name":"THE CAST AWAY TOUR feat. Fable & The Gang \u0040The
-        Pyramid Scheme Thu 4\/30","start_time":"2015-04-30T20:00:00-0400","timezone":"America\/Detroit","id":"415716568583286"},{"location":"The
-        Pyramid Scheme","name":"THE JON SPENCER BLUES EXPLOSION \u0040The Pyramid
-        Scheme Tues. 4\/21","start_time":"2015-04-21T20:00:00-0400","timezone":"America\/Detroit","id":"752526438165397"},{"location":"The
-        Pyramid Scheme","name":"::SOLD OUT:: SHAKEY GRAVES + David Ramirez \u0040The
-        Pyramid Scheme Mon 4\/20","start_time":"2015-04-20T20:00:00-0400","timezone":"America\/Detroit","id":"1547311608844224"},{"location":"The
-        Pyramid Scheme","name":"WEEDEATER + King Parrot + Child Bite + Kill It Again
-        \u0040The Pyramid Scheme Fri 4\/10","start_time":"2015-04-10T20:30:00-0400","timezone":"America\/Detroit","id":"436799969801912"},{"location":"The
-        Pyramid Scheme","name":"TIGERS JAW + Lemuria + Somos \u0040The Pyramid Scheme
-        4\/8","start_time":"2015-04-08T19:00:00-0400","timezone":"America\/Detroit","id":"867932703237254"},{"location":"The
-        Pyramid Scheme","name":"FROM INDIAN LAKES + THE SOIL & THE SUN + Lemolo \u0040
-        The Pyramid Scheme 4\/3","start_time":"2015-04-03T19:00:00-0400","timezone":"America\/Detroit","id":"853005164742793"},{"location":"The
-        Pyramid Scheme","name":"BACK to the 90s \u0040the Pyramid Scheme Sat 3\/28","start_time":"2015-03-28T21:00:00-0400","timezone":"America\/Detroit","id":"393437624168026"},{"location":"The
-        Pyramid Scheme","name":"HEAVIER THAN AIR FLYING MACHINES +Tyranny Is Tyranny
-        + The Real Lazy Genius \u0040The Pyramid Scheme Fri 3\/27","start_time":"2015-03-27T21:00:00-0400","timezone":"America\/Detroit","id":"1577098752535723"},{"location":"The
-        Pyramid Scheme","name":"WATCHING FOR FOXES + Bigfoot Buffalo \u0040 The Pyramid
-        Scheme 3\/22","start_time":"2015-03-22T19:00:00-0400","timezone":"America\/Detroit","id":"425934610895376"},{"location":"The
-        Pyramid Scheme","name":"THE GO ROUNDS + Chris Bathgate + The Antivillains
-        \u0040The Pyramid Scheme: Sat. March 21st","start_time":"2015-03-21T20:00:00-0400","timezone":"America\/Detroit","id":"1590484934521270"},{"location":"The
-        Pyramid Scheme","name":"THE BLAQ ATTAQ + Lambo + A.B.  \u0040The Pyramid Scheme
-        Thu 3\/19","start_time":"2015-03-19T21:00:00-0400","timezone":"America\/Detroit","id":"285462128320394"},{"location":"The
-        Pyramid Scheme","name":"TORCHE + Nothing + Wrong \u0040The Pyramid Scheme
-        Wed 3\/18","start_time":"2015-03-18T20:00:00-0400","timezone":"America\/Detroit","id":"873321156022608"},{"location":"The
-        Pyramid Scheme","name":"SWERVEDRIVER + Gateway Drugs \u0040The Pyramid Scheme
-        Sun 3\/15\/15","start_time":"2015-03-15T20:00:00-0400","timezone":"America\/Detroit","id":"1498910820384679"},{"end_time":"2015-03-14T23:45:00-0400","location":"The
-        Pyramid Scheme","name":"BRIAN POSEHN (Laughfest) \u0040The Pyramid Scheme
-        3\/14","start_time":"2015-03-14T20:00:00-0400","timezone":"America\/Detroit","id":"747371555334112"},{"location":"The
-        Pyramid Scheme","name":"LAUGHFEST''S BEST \u0040The Pyramid Scheme 3\/14","start_time":"2015-03-14","id":"714460221986576"},{"location":"The
-        Pyramid Scheme","name":"BRIAN POSEHN (Laughfest) \u0040The Pyramid Scheme
-        3\/13","start_time":"2015-03-13T20:00:00-0400","timezone":"America\/Detroit","id":"1580426508845630"},{"location":"The
-        Pyramid Scheme","name":"LAUGHFEST''S DIRTY SHOW \u0040The Pyramid Scheme 3\/13","start_time":"2015-03-13","id":"318891418310175"},{"location":"The
-        Pyramid Scheme","name":"LAUGHFEST''S Late Night Stand-Up Showcase \u0040The
-        Pyramid Scheme 3\/12","start_time":"2015-03-12T21:30:00-0400","timezone":"America\/New_York","id":"315042872025288"},{"location":"The
-        Pyramid Scheme","name":"LAUGHFEST''S Amateur Stand-Up Showcase \u0040The Pyramid
-        Scheme 3\/12","start_time":"2015-03-12T19:30:00-0400","timezone":"America\/New_York","id":"1597632780471213"},{"location":"The
-        Pyramid Scheme","name":"LAUGHFEST''S Late Night Stand-Up Showcase \u0040The
-        Pyramid Scheme 3\/11","start_time":"2015-03-11T21:30:00-0400","timezone":"America\/New_York","id":"798926826839567"},{"location":"The
-        Pyramid Scheme","name":"LAUGHFEST''S Amateur Stand-Up Showcase \u0040The Pyramid
-        Scheme 3\/11","start_time":"2015-03-11T19:30:00-0400","timezone":"America\/New_York","id":"332719490268201"},{"location":"The
-        Pyramid Scheme","name":"LAUGHFEST''S Late Night Stand-Up Showcase \u0040The
-        Pyramid Scheme 3\/9","start_time":"2015-03-09T21:30:00-0400","timezone":"America\/New_York","id":"1527429764209672"}],"paging":{"cursors":{"before":"MTQxODUzOTczMTc2OTQyMQ==","after":"MTUyNzQyOTc2NDIwOTY3Mg=="},"next":"https:\/\/graph.facebook.com\/v2.2\/126620357370272\/events?access_token=CAAE3nAAWevABANHtbBh8BwfVFWNKoI4se5Q1C6Ay9BWVjjLE09wOA8gj9RKStSm5znwhyaPDwlZCDCjPGxxhKbdttY0DXLIkzTg484gtPOE36RKoXefSNuOBt9p3ZApXkrsGJSpSoEtcLqWug6nOme5fxySBCES5a5zEMGcuGxhHnnsnteIcBC5JJNnycZD&limit=25&after=MTUyNzQyOTc2NDIwOTY3Mg\u00253D\u00253D"}}'
+      string: '{"data":[{"name":"CLAP YOUR HANDS SAY YEAH (10th Anniversary Tour)
+        + Teen Men \u0040 The Pyramid Scheme 7\/28","start_time":"2015-07-28T20:00:00-0400","timezone":"America\/Detroit","id":"838532796226882"},{"name":"ROYAL
+        THUNDER + Wild Throne + Blue Snaggletooth \u0040The Pyramid Scheme Tues June
+        23","start_time":"2015-06-23T19:00:00-0400","timezone":"America\/Detroit","id":"397218560449978"},{"name":"::SOLD
+        OUT:: MELVINS \u0040The Pyramid Scheme 6\/16","start_time":"2015-06-16T20:00:00-0400","timezone":"America\/Detroit","id":"614943998642023"},{"name":"REVEREND
+        HORTON HEAT + Nekromantix + Whiskey Shivers \u0040The Pyramid Scheme 6\/10","start_time":"2015-06-10T20:00:00-0400","timezone":"America\/Detroit","id":"1418539731769421"},{"name":"COMPLETE
+        VII DANCE PARTY \u0040The Pyramid Scheme Sat 6\/6","start_time":"2015-06-06T22:00:00-0400","timezone":"America\/Detroit","id":"800853076617293"},{"name":"THE
+        MENZINGERS + Chumped + Roger Harvey \u0040 The Pyramid Scheme 6\/5","start_time":"2015-06-05T19:00:00-0400","timezone":"America\/Detroit","id":"1612523145650958"},{"name":"THE
+        FEVER HAZE + Bears and Company + Signals the Band + Good Day Good Sir + All
+        is Well \u0040 The Pyramid Scheme 6\/3","start_time":"2015-06-03T19:00:00-0400","timezone":"America\/Detroit","id":"438546336303809"},{"name":"TEMPLES
+        \u0040 The Pyramid Scheme 6\/2","start_time":"2015-06-02T19:00:00-0400","timezone":"America\/Detroit","id":"339783776226431"},{"name":"CROCODILES
+        + Shark Week \u0040The Pyramid Scheme Mon. 6\/1","start_time":"2015-06-01T20:00:00-0400","timezone":"America\/Detroit","id":"354236558095879"},{"name":"KYLE
+        KINANE + Nolan Graff \u0040 The Pyramid Scheme 5\/29","start_time":"2015-05-29T20:00:00-0400","timezone":"America\/Detroit","id":"897946246893957"},{"name":"RAIN
+        BARREL WORKSHOP \u0040 The Pyramid Scheme 5\/27","start_time":"2015-05-27T17:30:00-0400","timezone":"America\/Detroit","id":"1580359482248950"},{"name":"SEPULTURA
+        + Destruction + Arsis + Boris The Blade + Micawber \u0040The Pyramid Scheme
+        Tues. 5\/26","start_time":"2015-05-26T19:00:00-0400","timezone":"America\/Detroit","id":"738123226302210"},{"name":"OTHER
+        LIVES + Riothorse Royale \u0040 The Pyramid Scheme 5\/23","start_time":"2015-05-23T19:00:00-0400","timezone":"America\/Detroit","id":"1552174191699143"},{"name":"HOLY
+        WAVE + Heaven''s Gateway Drugs + The Omecs \u0040The Pyramid Scheme Wed 5\/20","start_time":"2015-05-20T20:30:00-0400","timezone":"America\/Detroit","id":"1467763386817588"},{"name":"SLIM
+        CESSNA\u2019S AUTO CLUB \u0040The Pyramid Scheme Mon 5\/18","start_time":"2015-05-18T20:00:00-0400","timezone":"America\/Detroit","id":"1553410571595398"},{"name":"STEVE
+        MOAKLER + Neal Carpenter + Michigander \u0040 The Pyramid Scheme 5\/15","start_time":"2015-05-15T19:00:00-0400","timezone":"America\/Detroit","id":"736755849765358"},{"name":"POKEY
+        LAFARGE + Caroline Rose \u0040The Pyramid Scheme Thu. 5\/14","start_time":"2015-05-14T20:00:00-0400","timezone":"America\/Detroit","id":"803203189767846"},{"name":"MELT-BANANA
+        \u0040The Pyramid Scheme 5\/13","start_time":"2015-05-13T20:00:00-0400","timezone":"America\/Detroit","id":"701666419944278"},{"name":"IRON
+        CHIC + Spraynard + Bong Mountain \u0040The Pyramid Scheme 5\/10","start_time":"2015-05-10T19:00:00-0400","timezone":"America\/Detroit","id":"1641990006030598"},{"name":"PIANOS
+        BECOME THE TEETH + Loma Prieta + Gates \u0040 The Pyramid Scheme 5\/9","start_time":"2015-05-09T19:00:00-0400","timezone":"America\/Detroit","id":"453417848142518"},{"name":"SUPER
+        HAPPY FUNTIME BURLESQUE \u0040The Pyramid Scheme Fri 5\/8","start_time":"2015-05-08T21:00:00-0400","timezone":"America\/Detroit","id":"621615161305255"},{"name":"THE
+        ROCKIT KING + Apostles + Creature and the Craft \u0040The Pyramid Scheme Sat
+        5\/2","start_time":"2015-05-02T20:00:00-0400","timezone":"America\/Detroit","id":"827805830620397"},{"name":"GUILTY
+        SIMPSON \u0040The Pyramid Scheme Fri 5\/1","start_time":"2015-05-01T21:00:00-0400","timezone":"America\/Detroit","id":"795299727217964"},{"name":"THE
+        CAST AWAY TOUR feat. Fable & The Gang \u0040The Pyramid Scheme Thu 4\/30","start_time":"2015-04-30T20:00:00-0400","timezone":"America\/Detroit","id":"415716568583286"},{"name":"S\u00d3LSTAFIR
+        + Ancient VVisdom \u0040The Pyramid Scheme Wed 4\/29","start_time":"2015-04-29T20:00:00-0500","timezone":"America\/Chicago","id":"674234946038124"}],"paging":{"cursors":{"before":"ODM4NTMyNzk2MjI2ODgy","after":"Njc0MjM0OTQ2MDM4MTI0"},"next":"https:\/\/graph.facebook.com\/v2.3\/126620357370272\/events?access_token=CAAE3nAAWevABANHtbBh8BwfVFWNKoI4se5Q1C6Ay9BWVjjLE09wOA8gj9RKStSm5znwhyaPDwlZCDCjPGxxhKbdttY0DXLIkzTg484gtPOE36RKoXefSNuOBt9p3ZApXkrsGJSpSoEtcLqWug6nOme5fxySBCES5a5zEMGcuGxhHnnsnteIcBC5JJNnycZD&limit=25&after=Njc0MjM0OTQ2MDM4MTI0"}}'
     http_version: 
-  recorded_at: Mon, 09 Feb 2015 15:18:47 GMT
+  recorded_at: Tue, 31 Mar 2015 20:37:05 GMT
 recorded_with: VCR 2.9.3
