@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/uicagr/events?access_token=CAAE3nAAWevABANHtbBh8BwfVFWNKoI4se5Q1C6Ay9BWVjjLE09wOA8gj9RKStSm5znwhyaPDwlZCDCjPGxxhKbdttY0DXLIkzTg484gtPOE36RKoXefSNuOBt9p3ZApXkrsGJSpSoEtcLqWug6nOme5fxySBCES5a5zEMGcuGxhHnnsnteIcBC5JJNnycZD
+    uri: https://graph.facebook.com/v2.3/uicagr/events?access_token=CAAE3nAAWevABANHtbBh8BwfVFWNKoI4se5Q1C6Ay9BWVjjLE09wOA8gj9RKStSm5znwhyaPDwlZCDCjPGxxhKbdttY0DXLIkzTg484gtPOE36RKoXefSNuOBt9p3ZApXkrsGJSpSoEtcLqWug6nOme5fxySBCES5a5zEMGcuGxhHnnsnteIcBC5JJNnycZD
     body:
       encoding: US-ASCII
       string: ''
@@ -23,34 +23,38 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Fb-Rev:
-      - '1592818'
+      - '1669049'
       Etag:
-      - '"a4f082f26f50446257d82c3de4e4bb6c2ccd37d4"'
+      - '"294cbee4e920063a8cf0053ad3dde798fe046098"'
       Pragma:
       - no-cache
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Facebook-Api-Version:
-      - v2.2
+      - v2.3
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Vary:
       - Accept-Encoding
       X-Fb-Debug:
-      - E65QyASqhsdXHNu5gYI1I/K5NfhevWyf+rWc4fuX2nR6GeqWWdR8QvTNZtQbsRJl3MEKIE086POYuB+Ym1L97w==
+      - i51LK71WXDMKwJE834sZ32QP0wZfGAQX0I8B/QJiZfBdAjb5FcCDw0aKeAzGn5wJWb/L8OJIOr/UZ5H888bciw==
       Date:
-      - Mon, 09 Feb 2015 15:52:11 GMT
+      - Wed, 01 Apr 2015 15:51:25 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '673'
+      - '775'
     body:
       encoding: UTF-8
-      string: '{"data":[{"end_time":"2015-03-06T23:00:00-0500","location":"UICA","name":"Bring
-        Your Own Beamer Grand Rapids 02","start_time":"2015-03-06T18:00:00-0500","timezone":"America\/New_York","id":"1547366848875583"},{"location":"UICA","name":"Open
-        Projector Night No. 10","start_time":"2015-02-18T20:00:00-0500","timezone":"America\/Detroit","id":"559480167521476"},{"end_time":"2015-02-13T20:00:00-0500","location":"UICA","name":"Portraits
-        by James LaCroix: Opening Reception","start_time":"2015-02-13T18:00:00-0500","timezone":"America\/New_York","id":"900554633308138"},{"end_time":"2015-02-06T20:00:00-0500","location":"UICA","name":"Looking
-        Forward Collector''s Talk and Silent Auction","start_time":"2015-02-06T19:00:00-0500","timezone":"America\/New_York","id":"1408844586079669"}],"paging":{"cursors":{"before":"MTU0NzM2Njg0ODg3NTU4Mw==","after":"MTQwODg0NDU4NjA3OTY2OQ=="},"next":"https:\/\/graph.facebook.com\/v2.2\/128013177487\/events?access_token=CAAE3nAAWevABANHtbBh8BwfVFWNKoI4se5Q1C6Ay9BWVjjLE09wOA8gj9RKStSm5znwhyaPDwlZCDCjPGxxhKbdttY0DXLIkzTg484gtPOE36RKoXefSNuOBt9p3ZApXkrsGJSpSoEtcLqWug6nOme5fxySBCES5a5zEMGcuGxhHnnsnteIcBC5JJNnycZD&limit=25&after=MTQwODg0NDU4NjA3OTY2OQ\u00253D\u00253D"}}'
+      string: '{"data":[{"end_time":"2015-05-16T23:00:00-0400","name":"Live Coverage
+        2015 Presented by Wolverine Worldwide","start_time":"2015-05-16T19:00:00-0400","timezone":"America\/Detroit","id":"792930544125499"},{"name":"Mad
+        Max: Beyond the Thunderdome","start_time":"2015-05-12T20:00:00-0400","timezone":"America\/Detroit","id":"811168532300298"},{"name":"Salad
+        Days: A Decade of Punk in Washington, DC (1980-90)","start_time":"2015-05-08","id":"604052006396306"},{"end_time":"2015-04-25T16:00:00-0400","name":"Art
+        of the Lived Experiment: Family Day","start_time":"2015-04-25T13:00:00-0400","timezone":"America\/Detroit","id":"1575017596109096"},{"end_time":"2015-04-18T16:00:00-0400","name":"Art
+        of the Lived Experiment: Family Day","start_time":"2015-04-18T13:00:00-0400","timezone":"America\/Detroit","id":"1621323388089382"},{"end_time":"2015-04-11T16:00:00-0400","name":"Art
+        of the Lived Experiment: Family Day","start_time":"2015-04-11T13:00:00-0400","timezone":"America\/Detroit","id":"462629753891058"},{"end_time":"2015-04-12T15:00:00-0400","name":"Art
+        of the Lived Experiment: Opening Weekend","start_time":"2015-04-11T12:00:00-0400","timezone":"America\/Detroit","id":"1557871697835263"},{"end_time":"2015-04-10T22:00:00-0400","name":"Art
+        of the Lived Experiment: Opening Night","start_time":"2015-04-10T18:00:00-0400","timezone":"America\/Detroit","id":"1812263592331095"}],"paging":{"cursors":{"before":"NzkyOTMwNTQ0MTI1NDk5","after":"MTgxMjI2MzU5MjMzMTA5NQ=="},"next":"https:\/\/graph.facebook.com\/v2.3\/128013177487\/events?access_token=CAAE3nAAWevABANHtbBh8BwfVFWNKoI4se5Q1C6Ay9BWVjjLE09wOA8gj9RKStSm5znwhyaPDwlZCDCjPGxxhKbdttY0DXLIkzTg484gtPOE36RKoXefSNuOBt9p3ZApXkrsGJSpSoEtcLqWug6nOme5fxySBCES5a5zEMGcuGxhHnnsnteIcBC5JJNnycZD&limit=25&after=MTgxMjI2MzU5MjMzMTA5NQ\u00253D\u00253D"}}'
     http_version: 
-  recorded_at: Mon, 09 Feb 2015 15:52:11 GMT
+  recorded_at: Wed, 01 Apr 2015 15:51:25 GMT
 recorded_with: VCR 2.9.3

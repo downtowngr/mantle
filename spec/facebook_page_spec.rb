@@ -11,8 +11,8 @@ RSpec.describe FacebookPage do
     end
 
     it "latitude and longitude" do
-      expect(page_attributes[:latitude]).to eq(42.962910113333)
-      expect(page_attributes[:longitude]).to eq(-85.664197562811)
+      expect(page_attributes[:latitude]).to eq(42.962909436982)
+      expect(page_attributes[:longitude]).to eq(-85.664196992376)
     end
 
     it "phone" do
@@ -28,7 +28,7 @@ RSpec.describe FacebookPage do
     end
 
     it "hours" do
-      expect(page_attributes[:hours]).to eq("Mon 11:00am-3:00pm Wed 11:00am-9:00pm Thu 11:00am-9:00pm 10:00pm-03:00am Fri 11:00am-9:00pm 10:00pm-03:00am Sat 09:00am-9:00pm 10:00pm-03:00am Sun 09:00am-2:00pm")
+      expect(page_attributes[:hours]).to eq("Wed 11:00am-9:00pm Thu 11:00am-9:00pm Fri 11:00am-9:00pm Sat 09:00am-9:00pm Sun 09:00am-2:00pm")
     end
 
     it "price_range" do
@@ -63,6 +63,14 @@ RSpec.describe FacebookPage do
       expect(page_attributes[:tags]).to eq(["Breakfast & Brunch Restaurant", "Vegetarian & Vegan Restaurant",
                                "Sandwich Shop", "Breakfast", "Coffee", "Dinner", "Lunch"])
     end
+
+    it "cover_photo" do
+      expect(page_attributes[:cover_photo]).to eq("https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xtp1/v/t1.0-9/s720x720/10801561_815107695179372_2923279076534289718_n.jpg?oh=4c5cf5702016adf9e3706de16ff78b19&oe=55AAA6DB&__gda__=1436672588_a956d0f0cd5a6cf334e98f4fee30dc91")
+    end
+
+    it "primary_photo" do
+      expect(page_attributes[:primary_photo]).to eq("https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/t31.0-8/134859_175527992470682_887927_o.jpg")
+    end
   end
 
   describe "#events", vcr: {cassette_name: "facebook_page_events"} do
@@ -76,11 +84,11 @@ RSpec.describe FacebookPage do
       let(:event) { page.events[:events].first }
 
       it "event_name" do
-        expect(event[:event_name]).to eq("REVEREND HORTON HEAT + Nekromantix + Whiskey Shivers @The Pyramid Scheme 6/10")
+        expect(event[:event_name]).to eq("CLAP YOUR HANDS SAY YEAH (10th Anniversary Tour) + Teen Men @ The Pyramid Scheme 7/28")
       end
 
       it "start_time" do
-        expect(event[:start_time]).to eq("2015-06-10T20:00:00-0400")
+        expect(event[:start_time]).to eq("2015-07-28T20:00:00-0400")
       end
 
       it "end_time" do
@@ -88,7 +96,7 @@ RSpec.describe FacebookPage do
       end
 
       it "external_id" do
-        expect(event[:external_id]).to eq("1418539731769421")
+        expect(event[:external_id]).to eq("838532796226882")
       end
     end
 

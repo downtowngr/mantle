@@ -32,7 +32,7 @@ class InstagramMedia
 
   def self.from_facebook(facebook_id)
     if facebook_id.to_i == 0
-      page = Koala::Facebook::API.new(ENV["FB_TOKEN"]).get_object(facebook_id)
+      page = Koala::Facebook::API.new(ENV["FB_TOKEN"]).get_object(facebook_id, {}, api_version: "v2.3")
       facebook_id = page["id"]
     end
 

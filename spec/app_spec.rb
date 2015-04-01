@@ -29,6 +29,8 @@ RSpec.describe "Mantle" do
           "tags" => ["Brewery"],
           "takeout" => nil,
           "website" => "www.foundersbrewing.com",
+          "cover_photo"=>"https://scontent.xx.fbcdn.net/hphotos-xaf1/t31.0-8/s720x720/10854487_825597074154410_6550122121799297405_o.jpg",
+          "primary_photo"=>"https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/1015305_665958910118228_1409354474_o.jpg"
         })
       end
     end
@@ -70,28 +72,53 @@ RSpec.describe "Mantle" do
         expect(response).to eq({
           "events" => [
             {
-              "event_name"=>"Bring Your Own Beamer Grand Rapids 02",
-              "start_time"=>"2015-03-06T18:00:00-0500",
-              "end_time"=>"2015-03-06T23:00:00-0500",
-              "external_id"=>"1547366848875583"
+              "event_name"=>"Live Coverage 2015 Presented by Wolverine Worldwide",
+              "start_time"=>"2015-05-16T19:00:00-0400",
+              "end_time"=>"2015-05-16T23:00:00-0400",
+              "external_id"=>"792930544125499"
             },
             {
-              "event_name"=>"Open Projector Night No. 10",
-              "start_time"=>"2015-02-18T20:00:00-0500",
+              "event_name"=>"Mad Max: Beyond the Thunderdome",
+              "start_time"=>"2015-05-12T20:00:00-0400",
               "end_time"=>nil,
-              "external_id"=>"559480167521476"
+              "external_id"=>"811168532300298"
             },
             {
-              "event_name"=>"Portraits by James LaCroix: Opening Reception",
-              "start_time"=>"2015-02-13T18:00:00-0500",
-              "end_time"=>"2015-02-13T20:00:00-0500",
-              "external_id"=>"900554633308138"
+              "event_name"=>"Salad Days: A Decade of Punk in Washington, DC (1980-90)",
+              "start_time"=>"2015-05-08",
+              "end_time"=>nil,
+              "external_id"=>"604052006396306"
             },
             {
-              "event_name"=>"Looking Forward Collector's Talk and Silent Auction",
-              "start_time"=>"2015-02-06T19:00:00-0500",
-              "end_time"=>"2015-02-06T20:00:00-0500","external_id"=>"1408844586079669"
-            }
+              "event_name"=>"Art of the Lived Experiment: Family Day",
+              "start_time"=>"2015-04-25T13:00:00-0400",
+              "end_time"=>"2015-04-25T16:00:00-0400",
+              "external_id"=>"1575017596109096"
+            },
+            {
+              "event_name"=>"Art of the Lived Experiment: Family Day",
+              "start_time"=>"2015-04-18T13:00:00-0400",
+              "end_time"=>"2015-04-18T16:00:00-0400",
+              "external_id"=>"1621323388089382"
+            },
+            {
+              "event_name"=>"Art of the Lived Experiment: Family Day",
+              "start_time"=>"2015-04-11T13:00:00-0400",
+              "end_time"=>"2015-04-11T16:00:00-0400",
+              "external_id"=>"462629753891058"
+            },
+            {
+              "event_name"=>"Art of the Lived Experiment: Opening Weekend",
+              "start_time"=>"2015-04-11T12:00:00-0400",
+              "end_time"=>"2015-04-12T15:00:00-0400",
+              "external_id"=>"1557871697835263"
+            },
+            {
+              "event_name"=>"Art of the Lived Experiment: Opening Night",
+              "start_time"=>"2015-04-10T18:00:00-0400",
+              "end_time"=>"2015-04-10T22:00:00-0400",
+              "external_id"=>"1812263592331095"
+              }
           ]
         })
       end
@@ -144,34 +171,35 @@ RSpec.describe "Mantle" do
 
           response = JSON.parse(last_response.body)
 
-          expect(response).to eq({"photos" =>
-            [
-              {
-                "photo_url"=>"http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10946548_391949857644569_1028718600_n.jpg",
-                "external_id"=>"922148850541115954_512555621",
-                "external_url"=>"http://instagram.com/p/zMIX5qiboy/"
-              },
-              {
-                "photo_url"=>"http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10959225_348598685342143_1299088171_n.jpg",
-                "external_id"=>"920688466242498156_280333002",
-                "external_url"=>"http://instagram.com/p/zG8UgzLu5s/"
-              },
-              {
-                "photo_url"=>"http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10953087_1017722664922078_364453478_n.jpg",
-                "external_id"=>"919720702503172059_13034492",
-                "external_url"=>"http://instagram.com/p/zDgRslRjfb/"
-              },
-              {
-                "photo_url"=>"http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10946674_1577261472513826_512377860_n.jpg",
-                "external_id"=>"917763957854516465_377531228",
-                "external_url"=>"http://instagram.com/p/y8jXUHkzTx/"
-              },
-              {
-                "photo_url"=>"http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10986114_1604680426432313_1538301330_n.jpg",
-                "external_id"=>"917759177144874133_377531228",
-                "external_url"=>"http://instagram.com/p/y8iRvvEzSV/"
-              }
-            ]
+          expect(response).to eq({
+            "photos" =>
+              [
+                {
+                  "photo_url"=>"https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11094476_1080529151963799_1068529237_n.jpg",
+                  "external_id"=>"953533469508992301_680478",
+                  "external_url"=>"https://instagram.com/p/07oaNzh30t/"
+                },
+                {
+                  "photo_url"=>"https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11007922_745080938924401_1294719765_n.jpg",
+                  "external_id"=>"953238980180519173_179503529",
+                  "external_url"=>"https://instagram.com/p/06lc1PtykF/"
+                },
+                {
+                  "photo_url"=>"https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10665359_1567845736818861_2008160158_n.jpg",
+                  "external_id"=>"953192452010032532_16922318",
+                  "external_url"=>"https://instagram.com/p/06a3wgpD2U/"
+                },
+                {
+                  "photo_url"=>"https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11111419_875459132500517_57156612_n.jpg",
+                  "external_id"=>"953153044050351305_32203332",
+                  "external_url"=>"https://instagram.com/p/06R6S_NBTJ/"
+                },
+                {
+                  "photo_url"=>"https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10560913_1402029653447498_788262347_n.jpg",
+                  "external_id"=>"951141777009797400_262318321",
+                  "external_url"=>"https://instagram.com/p/0zImgls-kY/"
+                }
+              ]
           })
         end
       end

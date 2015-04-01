@@ -42,23 +42,25 @@ Location API requests are construced as such: GET `/location/:service/:service_i
 
 An attribute will return `nil` if the service does not provide the attribute, or if the attribute is not available for the requested location.
 
-| attribute     | Facebook           | Foursquare         | format |
-| ------------- | ------------------ | ------------------ | ------ |
-| address       | :white_check_mark: | :white_check_mark: |        |
-| latitude      | :white_check_mark: | :white_check_mark: |        |
-| longitude     | :white_check_mark: | :white_check_mark: |        |
+| attribute     | Facebook           | Foursquare         | format      |
+| ------------- | ------------------ | ------------------ | ----------- |
+| address       | :white_check_mark: | :white_check_mark: |             |
+| latitude      | :white_check_mark: | :white_check_mark: |             |
+| longitude     | :white_check_mark: | :white_check_mark: |             |
 | phone         | :white_check_mark: | :white_check_mark: | **string** "(xxx) xxx-xxxx" |
-| source_link   | :white_check_mark: | :white_check_mark: |        |
+| source_link   | :white_check_mark: | :white_check_mark: |             |
 | website       | :white_check_mark: | :white_check_mark: | **string** "http://www.example.com" |
-| hours         | :white_check_mark: | :white_check_mark: |        |
-| price_range   | :white_check_mark: | :white_check_mark: |        |
+| hours         | :white_check_mark: | :white_check_mark: |             |
+| price_range   | :white_check_mark: | :white_check_mark: |             |
 | delivery      | :white_check_mark: | :white_check_mark: | **boolean** |
 | outdoor       | :white_check_mark: | :white_check_mark: | **boolean** |
 | cash_only     | :white_check_mark: | :white_check_mark: | **boolean** |
 | kids          | :white_check_mark: | :x:                | **boolean** |
 | takeout       | :white_check_mark: | :white_check_mark: | **boolean** |
 | reserve       | :white_check_mark: | :white_check_mark: | **boolean** |
-| tags          | :white_check_mark: | :white_check_mark: | **array** |
+| tags          | :white_check_mark: | :white_check_mark: | **array**   |
+| cover_photo   | :white_check_mark: | :x:                |             |
+| primary_photo | :white_check_mark: | :x:                |             |
 
 All services return the same flat JSON object of business information.
 
@@ -79,7 +81,9 @@ All services return the same flat JSON object of business information.
     "outdoor":true,
     "reserve":false,
     "takeout":true,
-    "cash_only":false
+    "cash_only":false,
+    "cover_photo":"https://fbcdn-sphotos-f-a.akamaihd.net/cover_photo.jpg",
+    "primary_photo":"https://fbcdn-sphotos-f-a.akamaihd.net/photo_location.jpg"
   }
 }
 ```
