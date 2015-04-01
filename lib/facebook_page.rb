@@ -1,4 +1,8 @@
+require_relative "../includes/hour_helper"
+
 class FacebookPage
+  include HourHelper
+
   def initialize(id)
     Koala.config.api_version = "v2.3"
     @graph   = Koala::Facebook::API.new(ENV["FB_TOKEN"])
@@ -101,16 +105,6 @@ class FacebookPage
     end
 
     hours
-  end
-
-  def hour12(time)
-    digits = time.split(":")
-
-    if digits[0].to_i > 12
-      "#{digits[0].to_i - 12}:#{digits[1]}pm"
-    else
-      "#{time.gsub(/^0/, "")}am"
-    end
   end
 
   def tags

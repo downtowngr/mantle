@@ -1,4 +1,8 @@
+require_relative "../includes/hour_helper"
+
 class FoursquareVenue
+  include HourHelper
+
   def initialize(id)
     @client = Foursquare2::Client.new(client_id: ENV["FOURSQUARE_ID"], client_secret: ENV["FOURSQUARE_SECRET"], api_version: "20150201")
     @venue  = @client.venue(id)
@@ -73,19 +77,6 @@ class FoursquareVenue
     end
 
     hours
-  end
-
-  def hour12(time)
-    time.gsub!(/^\+/, "")
-    digits = [time[0..1], time[2..3]]
-
-    if digits[0].to_i > 12
-      "#{digits[0].to_i - 12}:#{digits[1]}pm"
-    elsif digits[0].to_i == 12
-      "#{digits[0]}:#{digits[1]}pm"
-    else
-      "#{digits[0].gsub(/^0/, "")}:#{digits[1]}am"
-    end
   end
 
   def attribute_type(type)
