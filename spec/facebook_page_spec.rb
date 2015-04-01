@@ -28,7 +28,13 @@ RSpec.describe FacebookPage do
     end
 
     it "hours" do
-      expect(page_attributes[:hours]).to eq("Wed 11:00am-9:00pm Thu 11:00am-9:00pm Fri 11:00am-9:00pm Sat 09:00am-9:00pm Sun 09:00am-2:00pm")
+      expect(page_attributes[:hours]).to eq({
+        "Wed" => ["11:00am-9:00pm"],
+        "Thu" => ["11:00am-9:00pm"],
+        "Fri" => ["11:00am-9:00pm"],
+        "Sat" => ["9:00am-9:00pm"],
+        "Sun" => ["9:00am-2:00pm"],
+      })
     end
 
     it "price_range" do

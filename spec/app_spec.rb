@@ -45,7 +45,15 @@ RSpec.describe "Mantle" do
           "address"=>"235 Grandville Ave SW",
           "cash_only" => false,
           "delivery" => false,
-          "hours" => "Mon–Sat 11:00 AM–2:00 AM Sun Noon–Midnight",
+          "hours"=>{
+            "Mon"=>["11:00am-2:00am"],
+            "Tue"=>["11:00am-2:00am"],
+            "Wed"=>["11:00am-2:00am"],
+            "Thu"=>["11:00am-2:00am"],
+            "Fri"=>["11:00am-2:00am"],
+            "Sat"=>["11:00am-2:00am"],
+            "Sun"=>["12:00pm-0:00am"]
+          },
           "kids" => nil,
           "latitude" => 42.958428066366515,
           "longitude" => -85.6737289899219,

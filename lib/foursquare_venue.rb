@@ -1,7 +1,12 @@
+require_relative "../includes/hour_helper"
+
 class FoursquareVenue
+  include HourHelper
+
   def initialize(id)
     @client = Foursquare2::Client.new(client_id: ENV["FOURSQUARE_ID"], client_secret: ENV["FOURSQUARE_SECRET"], api_version: "20150201")
     @venue  = @client.venue(id)
+    @hours  = @client.venue_hours(id)["hours"]
   end
 
   # TODO:
@@ -62,17 +67,16 @@ class FoursquareVenue
   end
 
   def hours
-    string = ""
+    hours = {}
+    days  = {1=>"Mon", 2=>"Tue", 3=>"Wed", 4=>"Thu", 5=>"Fri", 6=>"Sat", 7=>"Sun"}
 
-    @venue.hours.timeframes.each do |s|
-      string << "#{s.days} "
-
-      s.open.each do |t|
-        string << "#{t.renderedTime} "
+    @hours.timeframes.each do |t|
+      t.days.each do |k|
+        hours[days[k]] = t.open.map {|segment| "#{hour12(segment["start"])}-#{hour12(segment["end"])}"}
       end
     end
 
-    string.strip
+    hours
   end
 
   def attribute_type(type)

@@ -28,7 +28,15 @@ RSpec.describe FoursquareVenue, vcr: {cassette_name: "foursquare_venue"} do
     end
 
     it "hours" do
-      expect(page_attributes[:hours]).to eq("Mon–Sat 11:00 AM–2:00 AM Sun Noon–Midnight")
+      expect(page_attributes[:hours]).to eq({
+        "Mon"=>["11:00am-2:00am"],
+        "Tue"=>["11:00am-2:00am"],
+        "Wed"=>["11:00am-2:00am"],
+        "Thu"=>["11:00am-2:00am"],
+        "Fri"=>["11:00am-2:00am"],
+        "Sat"=>["11:00am-2:00am"],
+        "Sun"=>["12:00pm-0:00am"]
+      })
     end
 
     it "price_range" do

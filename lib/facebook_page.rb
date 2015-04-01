@@ -1,4 +1,8 @@
+require_relative "../includes/hour_helper"
+
 class FacebookPage
+  include HourHelper
+
   def initialize(id)
     Koala.config.api_version = "v2.3"
     @graph   = Koala::Facebook::API.new(ENV["FB_TOKEN"])
@@ -87,31 +91,20 @@ class FacebookPage
       nested[date[0]][date[1].to_i][date[2]] = hour
     end
 
-    string = ""
-
-    days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+    hours = {}
+    days  = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
 
     days.each_with_index do |day, index|
       unless nested[day].empty?
-        string << day.capitalize + " "
+        hours[day.capitalize] = []
 
         nested[day].each do |_, hour|
-          string << hour12(hour["open"]) + "-" + hour12(hour["close"]) + " "
+          hours[day.capitalize] << hour12(hour["open"]) + "-" + hour12(hour["close"])
         end
       end
     end
 
-    string.strip
-  end
-
-  def hour12(time)
-    digits = time.split(":")
-
-    if digits[0].to_i > 12
-      "#{digits[0].to_i - 12}:#{digits[1]}pm"
-    else
-      "#{time}am"
-    end
+    hours
   end
 
   def tags
