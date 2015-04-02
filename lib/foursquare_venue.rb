@@ -22,7 +22,7 @@ class FoursquareVenue
         source_link: @venue.canonicalUrl,
         website:     website,
         hours:       hours,
-        price_range: attribute_type("price").summary,
+        price_range: attribute_summary("price"),
         cash_only:   cash_only?,
         outdoor:     outdoor?,
         delivery:    delivery?,
@@ -45,13 +45,17 @@ class FoursquareVenue
   end
 
   def tags
-    tags = []
+    return nil if @venue.categories.nil?
 
-    attribute_type("serves").items.each {|i| tags << i.displayName }
-    attribute_type("drinks").items.each {|i| tags << i.displayName }
+    tags = []
     @venue.categories.each {|c| tags << c.shortName }
 
-    tags
+    ["serves", "drinks"].each do |group|
+      attributes = attribute_type(group)
+      attributes.items.each {|i| tags << i.displayName } unless attributes.nil?
+    end
+
+    tags.uniq
   end
 
   def reserve?
@@ -59,22 +63,24 @@ class FoursquareVenue
   end
 
   def takeout?
-    "Take-out" == attribute_type("diningOptions").summary
+    "Take-out" == attribute_summary("diningOptions")
   end
 
   def delivery?
-    "Delivery" == attribute_type("diningOptions").summary
+    "Delivery" == attribute_summary("diningOptions")
   end
 
   def outdoor?
-    "Outdoor Seating" == attribute_type("outdoorSeating").summary
+    "Outdoor Seating" == attribute_summary("outdoorSeating")
   end
 
   def cash_only?
-    "No Credit Cards" == attribute_type("payments").summary
+    "No Credit Cards" == attribute_summary("payments")
   end
 
   def hours
+    return nil if @hours.timeframes.nil?
+
     hours = {}
     days  = {1=>"Mon", 2=>"Tue", 3=>"Wed", 4=>"Thu", 5=>"Fri", 6=>"Sat", 7=>"Sun"}
 
@@ -85,6 +91,11 @@ class FoursquareVenue
     end
 
     hours
+  end
+
+  def attribute_summary(group)
+    attributes = attribute_type(group)
+    attributes.summary if attributes
   end
 
   def attribute_type(type)

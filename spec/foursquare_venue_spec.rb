@@ -64,7 +64,7 @@ RSpec.describe FoursquareVenue, vcr: {cassette_name: "foursquare_venue"} do
     end
 
     it "tags" do
-      expect(page_attributes[:tags]).to eq(["Brunch", "Lunch", "Dinner", "Beer", "Wine", "Brewery", "Sandwiches"])
+      expect(page_attributes[:tags]).to eq(["Brewery", "Sandwiches", "Brunch", "Lunch", "Dinner", "Beer", "Wine"])
     end
   end
 end

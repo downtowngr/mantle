@@ -62,7 +62,7 @@ RSpec.describe "Mantle" do
           "price_range" => "$$",
           "reserve" => false,
           "source_link" => "https://foursquare.com/v/founders-brewing-co/4b12c269f964a5208b8d23e3",
-          "tags" => ["Brunch", "Lunch", "Dinner", "Beer", "Wine", "Brewery", "Sandwiches"],
+          "tags" => ["Brewery", "Sandwiches", "Brunch", "Lunch", "Dinner", "Beer", "Wine"],
           "takeout" => false,
           "website" => "http://www.foundersbrewing.com",
         })

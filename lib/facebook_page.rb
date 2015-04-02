@@ -116,7 +116,11 @@ class FacebookPage
   end
 
   def tags
-    @page["category_list"].map {|c| c["name"]} + restaurant_specialties
+    category_list + restaurant_specialties
+  end
+
+  def category_list
+    @page["category_list"] ? @page["category_list"].map {|c| c["name"]} : []
   end
 
   def restaurant_specialties

@@ -21,10 +21,12 @@ module AttributeHelpers
   end
 
   def standardize_url(url)
+    return nil if url.nil?
     Domainatrix.parse(url.split(" ").first).url
   end
 
   def standardize_phone(phone)
+    return nil if phone.nil?
     return nil if /^[[:alpha:]]/.match(phone)
 
     number = PhoneWrangler::PhoneNumber.new(phone)
