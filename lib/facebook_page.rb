@@ -1,7 +1,7 @@
-require_relative "../includes/hour_helper"
+require_relative "../includes/attribute_helpers"
 
 class FacebookPage
-  include HourHelper
+  include AttributeHelpers
 
   def initialize(id)
     Koala.config.api_version = "v2.3"
@@ -19,7 +19,7 @@ class FacebookPage
         longitude:   @page["location"]["longitude"],
         phone:       @page["phone"],
         source_link: @page["link"],
-        website:     @page["website"],
+        website:     website,
         hours:       hours,
         price_range: @page["price_range"],
         cash_only:   cash_only?,
@@ -51,6 +51,10 @@ class FacebookPage
   end
 
   private
+
+  def website
+    standardize_url(@page["website"])
+  end
 
   def primary_photo
     photos = @graph.get_connections(@page_id, "photos")

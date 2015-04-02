@@ -1,4 +1,6 @@
-module HourHelper
+module AttributeHelpers
+  require "domainatrix"
+
   def hour12(time)
     time.gsub!(/^\+/, "")
 
@@ -15,5 +17,9 @@ module HourHelper
     else
       "#{digits[0].gsub(/^0/, "")}:#{digits[1]}am"
     end
+  end
+
+  def standardize_url(url)
+    Domainatrix.parse(url.split(" ").first).url
   end
 end

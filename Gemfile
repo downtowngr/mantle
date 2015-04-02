@@ -17,6 +17,7 @@ gem "aws-sdk"
 gem "rubyzip"
 gem "sequel"
 gem "smarter_csv"
+gem "domainatrix"
 
 group :test do
   gem "rspec"
