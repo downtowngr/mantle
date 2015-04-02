@@ -18,6 +18,7 @@ gem "rubyzip"
 gem "sequel"
 gem "smarter_csv"
 gem "domainatrix"
+gem "phone_wrangler"
 
 group :test do
   gem "rspec"

@@ -17,7 +17,7 @@ class FacebookPage
         address:     @page["location"]["street"],
         latitude:    @page["location"]["latitude"],
         longitude:   @page["location"]["longitude"],
-        phone:       @page["phone"],
+        phone:       phone,
         source_link: @page["link"],
         website:     website,
         hours:       hours,
@@ -51,6 +51,10 @@ class FacebookPage
   end
 
   private
+
+  def phone
+    standardize_phone(@page["phone"])
+  end
 
   def website
     standardize_url(@page["website"])

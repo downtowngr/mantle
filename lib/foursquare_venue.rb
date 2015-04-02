@@ -18,7 +18,7 @@ class FoursquareVenue
         address:     @venue.location.address,
         latitude:    @venue.location.lat,
         longitude:   @venue.location.lng,
-        phone:       @venue.contact.formattedPhone,
+        phone:       phone,
         source_link: @venue.canonicalUrl,
         website:     website,
         hours:       hours,
@@ -35,6 +35,10 @@ class FoursquareVenue
   end
 
   private
+
+  def phone
+    standardize_phone(@venue.contact.formattedPhone)
+  end
 
   def website
     standardize_url(@venue.url)
