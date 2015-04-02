@@ -24,7 +24,7 @@ RSpec.describe FacebookPage do
     end
 
     it "website" do
-      expect(page_attributes[:website]).to eq("www.bartertowngr.com")
+      expect(page_attributes[:website]).to eq("http://www.bartertowngr.com")
     end
 
     it "hours" do

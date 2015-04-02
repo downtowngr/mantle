@@ -28,7 +28,7 @@ RSpec.describe "Mantle" do
           "source_link" => "https://www.facebook.com/foundersbrewing",
           "tags" => ["Brewery"],
           "takeout" => nil,
-          "website" => "www.foundersbrewing.com",
+          "website" => "http://www.foundersbrewing.com",
           "cover_photo"=>"https://scontent.xx.fbcdn.net/hphotos-xaf1/t31.0-8/s720x720/10854487_825597074154410_6550122121799297405_o.jpg",
           "primary_photo"=>"https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/1015305_665958910118228_1409354474_o.jpg"
         })

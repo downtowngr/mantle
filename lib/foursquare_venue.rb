@@ -1,7 +1,7 @@
-require_relative "../includes/hour_helper"
+require_relative "../includes/attribute_helpers"
 
 class FoursquareVenue
-  include HourHelper
+  include AttributeHelpers
 
   def initialize(id)
     @client = Foursquare2::Client.new(client_id: ENV["FOURSQUARE_ID"], client_secret: ENV["FOURSQUARE_SECRET"], api_version: "20150201")
@@ -10,7 +10,7 @@ class FoursquareVenue
   end
 
   # TODO:
-  # Need to standardize hours, price_range, source_link, website, phone
+  # Need to standardize source_link, website, phone
 
   def attributes
     { location:
@@ -18,9 +18,9 @@ class FoursquareVenue
         address:     @venue.location.address,
         latitude:    @venue.location.lat,
         longitude:   @venue.location.lng,
-        phone:       @venue.contact.formattedPhone,
+        phone:       phone,
         source_link: @venue.canonicalUrl,
-        website:     @venue.url,
+        website:     website,
         hours:       hours,
         price_range: attribute_type("price").summary,
         cash_only:   cash_only?,
@@ -35,6 +35,14 @@ class FoursquareVenue
   end
 
   private
+
+  def phone
+    standardize_phone(@venue.contact.formattedPhone)
+  end
+
+  def website
+    standardize_url(@venue.url)
+  end
 
   def tags
     tags = []
