@@ -94,7 +94,7 @@ RSpec.describe FacebookPage do
       end
 
       it "start_time" do
-        expect(event[:start_time]).to eq("2015-07-28T20:00:00-0400")
+        expect(event[:start_time]).to eq(1438128000)
       end
 
       it "end_time" do

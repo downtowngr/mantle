@@ -72,7 +72,7 @@ All services return the same flat JSON object of business information.
     "longitude":-85.664197952905,
     "phone":"(616) 233-3219",
     "source_link":"https://www.facebook.com/pages/Bartertown-Diner/175495679140580",
-    "website":"www.bartertowngr.com",
+    "website":"http://www.bartertowngr.com",
     "hours": {
       "Mon": ["11:00am-2:00am"],
       "Tue": ["11:00am-2:00am"],
@@ -117,8 +117,8 @@ The returned `external_id` is the event's UUID identified by the outside service
 | attribute     | Facebook           | format     |
 | ------------- | ------------------ | ---------- |
 | event_name    | :white_check_mark: |            |
-| start_time    | :white_check_mark: |            |
-| end_time      | :white_check_mark: | *optional* |
+| start_time    | :white_check_mark: | *timestamp: midnight EDT if all day*|
+| end_time      | :white_check_mark: | *timestmap: optional* |
 | external_id   | :white_check_mark: |            |
 
 ```json
@@ -126,7 +126,7 @@ The returned `external_id` is the event's UUID identified by the outside service
   "events":[
     {
       "event_name":"REVEREND HORTON HEAT + Nekromantix + Whiskey Shivers @The Pyramid Scheme 6/10",
-      "start_time":"2015-06-10T20:00:00-0400",
+      "start_time":1431057600,
       "end_time":null,
       "external_id":"1418539731769421"
     }
