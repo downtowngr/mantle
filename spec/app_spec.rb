@@ -81,50 +81,50 @@ RSpec.describe "Mantle" do
           "events" => [
             {
               "event_name"=>"Live Coverage 2015 Presented by Wolverine Worldwide",
-              "start_time"=>"2015-05-16T19:00:00-0400",
-              "end_time"=>"2015-05-16T23:00:00-0400",
+              "start_time"=>1431817200,
+              "end_time"=>1431831600,
               "external_id"=>"792930544125499"
             },
             {
               "event_name"=>"Mad Max: Beyond the Thunderdome",
-              "start_time"=>"2015-05-12T20:00:00-0400",
+              "start_time"=>1431475200,
               "end_time"=>nil,
               "external_id"=>"811168532300298"
             },
             {
               "event_name"=>"Salad Days: A Decade of Punk in Washington, DC (1980-90)",
-              "start_time"=>"2015-05-08",
+              "start_time"=>1431057600,
               "end_time"=>nil,
               "external_id"=>"604052006396306"
             },
             {
               "event_name"=>"Art of the Lived Experiment: Family Day",
-              "start_time"=>"2015-04-25T13:00:00-0400",
-              "end_time"=>"2015-04-25T16:00:00-0400",
+              "start_time"=>1429981200,
+              "end_time"=>1429992000,
               "external_id"=>"1575017596109096"
             },
             {
               "event_name"=>"Art of the Lived Experiment: Family Day",
-              "start_time"=>"2015-04-18T13:00:00-0400",
-              "end_time"=>"2015-04-18T16:00:00-0400",
+              "start_time"=>1429376400,
+              "end_time"=>1429387200,
               "external_id"=>"1621323388089382"
             },
             {
               "event_name"=>"Art of the Lived Experiment: Family Day",
-              "start_time"=>"2015-04-11T13:00:00-0400",
-              "end_time"=>"2015-04-11T16:00:00-0400",
+              "start_time"=>1428771600,
+              "end_time"=>1428782400,
               "external_id"=>"462629753891058"
             },
             {
               "event_name"=>"Art of the Lived Experiment: Opening Weekend",
-              "start_time"=>"2015-04-11T12:00:00-0400",
-              "end_time"=>"2015-04-12T15:00:00-0400",
+              "start_time"=>1428768000,
+              "end_time"=>1428865200,
               "external_id"=>"1557871697835263"
             },
             {
               "event_name"=>"Art of the Lived Experiment: Opening Night",
-              "start_time"=>"2015-04-10T18:00:00-0400",
-              "end_time"=>"2015-04-10T22:00:00-0400",
+              "start_time"=>1428703200,
+              "end_time"=>1428717600,
               "external_id"=>"1812263592331095"
               }
           ]
