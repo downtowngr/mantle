@@ -36,12 +36,13 @@ module AttributeHelpers
 
   def standardize_time(time)
     return nil unless time
+    edt = Time.now.strftime("%:z")
 
     if time.include?("T")
-      DateTime.parse(time).to_time.to_i
+      DateTime.parse(time).new_offset(edt).to_time.to_i
     else
       ymd = time.split("-")
-      Time.new(ymd[0], ymd[1], ymd[2], nil, nil, nil, Time.now.strftime("%:z")).to_i
+      Time.new(ymd[0], ymd[1], ymd[2], nil, nil, nil, edt).to_i
     end
   end
 end
