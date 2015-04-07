@@ -117,8 +117,8 @@ The returned `external_id` is the event's UUID identified by the outside service
 | attribute     | Facebook           | format     |
 | ------------- | ------------------ | ---------- |
 | event_name    | :white_check_mark: |            |
-| start_time    | :white_check_mark: | *timestamp: midnight EDT if all day*|
-| end_time      | :white_check_mark: | *timestmap: optional* |
+| start_time    | :white_check_mark: | **timestamp** midnight EDT if all day |
+| end_time      | :white_check_mark: | **timestmap** *optional* |
 | external_id   | :white_check_mark: |            |
 
 ```json
