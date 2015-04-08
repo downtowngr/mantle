@@ -1,0 +1,90 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.grnow.com/events/list/?ical=1&tribe_display=list&tribe_venues%5B%5D=10074
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 08 Apr 2015 17:17:32 GMT
+      Server:
+      - Apache/2.4.10 (Unix) OpenSSL/1.0.1e-fips mod_bwlimited/1.4
+      X-Powered-By:
+      - PHP/5.4.36
+      X-Pingback:
+      - http://www.grnow.com/xmlrpc.php
+      Content-Disposition:
+      - attachment; filename="iCal-TribeEvents.ics"
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/calendar; charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        QkVHSU46VkNBTEVOREFSDQpWRVJTSU9OOjIuMA0KUFJPRElEOi0vL0dSTm93
+        LmNvbcKuIC0gR3JhbmQgUmFwaWRzLCBNSSYjMDM5O3MgbG9jYWwgcmVzdGF1
+        cmFudCwgZXZlbnQgYW5kIGVudGVydGFpbm1lbnQgZ3VpZGUuIC0gRUNQdjMu
+        OS4xLy9OT05TR01MIHYxLjAvL0VODQpDQUxTQ0FMRTpHUkVHT1JJQU4NCk1F
+        VEhPRDpQVUJMSVNIDQpYLVdSLUNBTE5BTUU6R1JOb3cuY29twq4gLSBHcmFu
+        ZCBSYXBpZHMsIE1JJiMwMzk7cyBsb2NhbCByZXN0YXVyYW50LCBldmVudCBh
+        bmQgZW50ZXJ0YWlubWVudCBndWlkZS4NClgtT1JJR0lOQUwtVVJMOmh0dHA6
+        Ly93d3cuZ3Jub3cuY29tDQpYLVdSLUNBTERFU0M6RXZlbnRzIGZvciBHUk5v
+        dy5jb23CriAtIEdyYW5kIFJhcGlkcywgTUkmIzAzOTtzIGxvY2FsIHJlc3Rh
+        dXJhbnQsIGV2ZW50IGFuZCBlbnRlcnRhaW5tZW50IGd1aWRlLg0KWC1XUi1U
+        SU1FWk9ORTpBbWVyaWNhL0RldHJvaXQNCkJFR0lOOlZFVkVOVA0KRFRTVEFS
+        VDtWQUxVRT1EQVRFLVRJTUU6MjAxNTA0MzBUMTgwMDAwDQpEVEVORDtWQUxV
+        RT1EQVRFLVRJTUU6MjAxNTA0MzBUMjIwMDAwDQpEVFNUQU1QOjIwMTUwNDA4
+        VDE3MTczMg0KQ1JFQVRFRDoyMDE0MTIxMFQxNzAzMTgNCkxBU1QtTU9ESUZJ
+        RUQ6MjAxNDEyMTFUMDkzMTExDQpVSUQ6MTA2OTctMTQzMDQxNjgwMC0xNDMw
+        NDMxMjAwQGh0dHA6Ly93d3cuZ3Jub3cuY29tDQpTVU1NQVJZOkhvbWV0b3du
+        IEhlcm9lcyBDZWxlYnJhdGlvbg0KREVTQ1JJUFRJT046Sm9pbiB0aGUgQW1l
+        cmljYW4gUmVkIENyb3NzIG9mIFdlc3QgTWljaGlnYW4gZm9yIEdyYW5kIFJh
+        cGlkcycgbW9zdCBpbnNwaXJpbmcgZXZlbnQuIEVhY2ggeWVhciB0aGUgUmVk
+        IENyb3NzIGNlbGVicmF0ZXMgdGhlIGNvbW11bml0eSBoZXJvZXMgd2hvIGlu
+        c3BpcmUgdXMgdGhyb3VnaCB0aGVpciBjb21taXRtZW50IHRvIHNlcnZpY2Ug
+        YW5kIHRoZWlyIHJlY29nbml0aW9uIG9mIHRoZSBodW1hbml0eSBvZiB0aGVp
+        ciBuZWlnaGJvcnMgZG93biB0aGUgc3RyZWV0IGFjcm9zcyB0aGUgY291bnRy
+        eSBhbmQgYXJvdW5kIHRoZSB3b3JsZC4gQXMgdGhlIGV2ZW5pbmcgYmVnaW5z
+        IGd1ZXN0cyB3aWxsIGVuam95IGEgc3Ryb2xsaW5nIGRpbm5lciBhY2NvbXBh
+        bmllZCBieSBhIFNpbGVudCBBdWN0aW9uLiBUaGUgcHJvZ3JhbSBwcm9taXNl
+        cyB0byBpbnNwaXJlIGFzIHdlIGhvbm9yIG91ciBDb21tdW5pdHkgSGVyb2Vz
+        IGFuZCBndWVzdHMgaW5kdWxnZSBpbiBkZXNzZXJ0IGFuZCBhIGxpdmUgYXVj
+        dGlvbi4NClVSTDpodHRwOi8vd3d3Lmdybm93LmNvbS9ldmVudC9ob21ldG93
+        bi1oZXJvZXMtY2VsZWJyYXRpb24vDQpMT0NBVElPTjozMDMgTW9ucm9lIEF2
+        ZSBOVywgR3JhbmQgUmFwaWRzLCBNSSwgNDk1MDMsIFVuaXRlZCBTdGF0ZXMN
+        CkdFTzotODUuNjcyMTQ0Njs0Mi45Njg4NDIzDQpDQVRFR09SSUVTOkJlbmVm
+        aXQvRnVuZCBSYWlzZXINCk9SR0FOSVpFUjtDTj1BbWFuZGEgTXVsZGVyOk1B
+        SUxUTzphbWFuZGEubXVsZGVyQHJlZGNyb3NzLm9yZw0KRU5EOlZFVkVOVA0K
+        QkVHSU46VkVWRU5UDQpEVFNUQVJUO1ZBTFVFPURBVEUtVElNRToyMDE1MTAx
+        NlQwMDAwMDANCkRURU5EO1ZBTFVFPURBVEUtVElNRToyMDE1MTAxOFQwMDAw
+        MDANCkRUU1RBTVA6MjAxNTA0MDhUMTcxNzMyDQpDUkVBVEVEOjIwMTQxMjEw
+        VDE3MDMyMA0KTEFTVC1NT0RJRklFRDoyMDE0MTIxMVQwOTMxMTANClVJRDox
+        MDc1MC0xNDQ0OTUzNjAwLTE0NDUxMjY0MDBAaHR0cDovL3d3dy5ncm5vdy5j
+        b20NClNVTU1BUlk6R3JhbmQgUmFwaWRzIENvbWljLUNvbiAyMDE1DQpERVND
+        UklQVElPTjpUaGUgbmV4dCBHcmFuZCBSYXBpZHMgQ29taWMtQ29uIHdpbGwg
+        YmUgaGVsZCBvbiBPY3RvYmVyIDE2LTE4IDIwMTUgYXQgdGhlIERlVm9zIFBs
+        YWNlIGluIGRvd250b3duIEdyYW5kIFJhcGlkcy4NClVSTDpodHRwOi8vd3d3
+        Lmdybm93LmNvbS9ldmVudC9ncmFuZC1yYXBpZHMtY29taWMtY29uLTIwMTUv
+        DQpMT0NBVElPTjozMDMgTW9ucm9lIEF2ZSBOVywgR3JhbmQgUmFwaWRzLCBN
+        SSwgNDk1MDMsIFVuaXRlZCBTdGF0ZXMNCkdFTzotODUuNjcyMTQ0Njs0Mi45
+        Njg4NDIzDQpDQVRFR09SSUVTOkRvd250b3duIEdSDQpFTkQ6VkVWRU5UDQpF
+        TkQ6VkNBTEVOREFS
+    http_version: 
+  recorded_at: Wed, 08 Apr 2015 17:17:32 GMT
+recorded_with: VCR 2.9.3

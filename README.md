@@ -114,12 +114,13 @@ The Events API returns an arry of upcoming events for a given location. The loca
 
 The returned `external_id` is the event's UUID identified by the outside service. This attribute should be used to pair and update existing event records within Pearl.
 
-| attribute     | Facebook           | format     |
-| ------------- | ------------------ | ---------- |
-| event_name    | :white_check_mark: |            |
-| start_time    | :white_check_mark: | **timestamp** midnight EDT if all day |
-| end_time      | :white_check_mark: | **timestmap** *optional* |
-| external_id   | :white_check_mark: |            |
+| attribute     | Facebook           | GRNow              | format     |
+| ------------- | ------------------ | ------------------ | ---------- |
+| event_name    | :white_check_mark: | :white_check_mark: |            |
+| start_time    | :white_check_mark: | :white_check_mark: | **timestamp** midnight EDT if all day |
+| end_time      | :white_check_mark: | :white_check_mark: | **timestmap** *optional* |
+| external_id   | :white_check_mark: | :white_check_mark: |            |
+| url           | :x:                | :white_check_mark: |            |
 
 ```json
 {
@@ -138,14 +139,13 @@ The returned `external_id` is the event's UUID identified by the outside service
 
 `GET /events/facebook/:id`
 
+### GRNow
+
+`GET /events/grnow/:id`
 
 ### ExperienceGR
 
-**Current Status**: Their software vendor is working to implement an RSS feed per venue.
-
-### GRNow
-
-**Current Status**: Josh of GRNow is investigating RSS feed per venue.
+**To Be Implemented**
 
 ## Photos
 

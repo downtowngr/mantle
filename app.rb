@@ -33,6 +33,11 @@ module Mantle
       page.events.to_json
     end
 
+    get "/events/grnow/:id" do
+      grnow = GrnowEvents.new(params[:id])
+      grnow.events.to_json
+    end
+
     # Photos
     get "/photos/instagram/user/:id" do
       media = InstagramMedia.from_user(params[:id])
