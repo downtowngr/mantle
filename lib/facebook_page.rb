@@ -52,6 +52,17 @@ class FacebookPage
 
   private
 
+  def standardize_time(time)
+    return nil unless time
+
+    if time.include?("T")
+      Time.parse(time).to_i
+    else
+      ymd = time.split("-")
+      Time.new(ymd[0], ymd[1], ymd[2], nil, nil, nil, Time.zone_offset('EDT')).to_i
+    end
+  end
+
   def phone
     standardize_phone(@page["phone"])
   end

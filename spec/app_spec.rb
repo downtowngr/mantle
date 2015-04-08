@@ -10,7 +10,6 @@ RSpec.describe "Mantle" do
     describe "from Facebook", vcr: {cassette_name: "location_facebook"} do
       it "returns a location json object" do
         get "/location/facebook/foundersbrewing"
-
         response = JSON.parse(last_response.body)
 
         expect(response).to eq("location" => {
@@ -38,7 +37,6 @@ RSpec.describe "Mantle" do
     describe "from Foursquare", vcr: {cassette_name: "location_foursquare"}  do
       it "returns a location json object" do
         get "/location/foursquare/4b12c269f964a5208b8d23e3"
-
         response = JSON.parse(last_response.body)
 
         expect(response).to eq("location" => {
@@ -74,7 +72,6 @@ RSpec.describe "Mantle" do
     describe "from Facebook", vcr: {cassette_name: "events_facebook"} do
       it "returns an array of events" do
         get "/events/facebook/uicagr"
-
         response = JSON.parse(last_response.body)
 
         expect(response).to eq({
@@ -131,6 +128,32 @@ RSpec.describe "Mantle" do
         })
       end
     end
+
+    describe "from GRNow", vcr: {cassette_name: "events_grnow"} do
+      it "returns array of events" do
+        get "/events/grnow/10074"
+        response = JSON.parse(last_response.body)
+
+        expect(response).to eq({
+          "events" => [
+            {
+              "event_name"=>"Hometown Heroes Celebration",
+              "start_time"=>1430431200,
+              "end_time"=>1430445600,
+              "external_id"=>"10697-1430416800-1430431200@http://www.grnow.com",
+              "url"=>"http://www.grnow.com/event/hometown-heroes-celebration/"
+            },
+            {
+              "event_name"=>"Grand Rapids Comic-Con 2015",
+              "start_time"=>1444968000,
+              "end_time"=>1445140800,
+              "external_id"=>"10750-1444953600-1445126400@http://www.grnow.com",
+              "url"=>"http://www.grnow.com/event/grand-rapids-comic-con-2015/"
+            }
+          ]
+        })
+      end
+    end
   end
 
   describe "GET /photos" do
@@ -138,7 +161,6 @@ RSpec.describe "Mantle" do
       context "with Instagram user alias", vcr: {cassette_name: "photos_instagram_user"} do
         it "returns an array of photos" do
           get "/photos/instagram/user/downtowngrinc"
-
           response = JSON.parse(last_response.body)
 
           expect(response).to eq({"photos" =>
@@ -176,7 +198,6 @@ RSpec.describe "Mantle" do
       context "with Facebook ID", vcr: {cassette_name: "photos_instagram_facebook"} do
         it "returns an array of photos" do
           get "/photos/instagram/facebook/founderstaproom"
-
           response = JSON.parse(last_response.body)
 
           expect(response).to eq({
@@ -215,7 +236,6 @@ RSpec.describe "Mantle" do
       context "with Foursquare ID", vcr: {cassette_name: "photos_instagram_foursquare"} do
         it "returns an array of photos" do
           get "/photos/instagram/foursquare/4b12c269f964a5208b8d23e3"
-
           response = JSON.parse(last_response.body)
 
           expect(response).to eq({"photos" =>

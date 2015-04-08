@@ -105,6 +105,21 @@ RSpec.describe FacebookPage do
         expect(event[:external_id]).to eq("838532796226882")
       end
     end
+  end
 
+  describe "#standardize_time" do
+    let(:page) { FacebookPage.new(1) }
+
+    it "returns nil for empty time string" do
+      expect(page.send(:standardize_time, nil)).to be nil
+    end
+
+    it "returns timestamp if provided complete datetime" do
+      expect(page.send(:standardize_time, "2015-07-28T20:00:00-0400")).to eq(1438128000)
+    end
+
+    it "returns timestamp at midnight EDT for same day event" do
+      expect(page.send(:standardize_time, "1987-09-17")).to eq(558849600)
+    end
   end
 end
