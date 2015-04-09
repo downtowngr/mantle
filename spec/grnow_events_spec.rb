@@ -28,8 +28,8 @@ RSpec.describe GrnowEvents do
         expect(event[:external_id]).to eq("10676-1429041600-1429041600@http://www.grnow.com")
       end
 
-      it "url" do
-        expect(event[:url]).to eq("http://www.grnow.com/event/joe-bonamassa-at-devos-performance-hall/")
+      it "event_url" do
+        expect(event[:event_url]).to eq("http://www.grnow.com/event/joe-bonamassa-at-devos-performance-hall/")
       end
     end
   end

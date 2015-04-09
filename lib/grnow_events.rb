@@ -16,7 +16,7 @@ class GrnowEvents
         start_time:  start_time(e),
         end_time:    end_time(e),
         external_id: e.uid,
-        url:         e.url.to_s
+        event_url:   e.url.to_s
       }
     end
 

@@ -141,14 +141,14 @@ RSpec.describe "Mantle" do
               "start_time"=>1430431200,
               "end_time"=>1430445600,
               "external_id"=>"10697-1430416800-1430431200@http://www.grnow.com",
-              "url"=>"http://www.grnow.com/event/hometown-heroes-celebration/"
+              "event_url"=>"http://www.grnow.com/event/hometown-heroes-celebration/"
             },
             {
               "event_name"=>"Grand Rapids Comic-Con 2015",
               "start_time"=>1444968000,
               "end_time"=>1445140800,
               "external_id"=>"10750-1444953600-1445126400@http://www.grnow.com",
-              "url"=>"http://www.grnow.com/event/grand-rapids-comic-con-2015/"
+              "event_url"=>"http://www.grnow.com/event/grand-rapids-comic-con-2015/"
             }
           ]
         })

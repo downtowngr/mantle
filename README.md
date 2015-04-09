@@ -120,7 +120,7 @@ The returned `external_id` is the event's UUID identified by the outside service
 | start_time    | :white_check_mark: | :white_check_mark: | **timestamp** midnight EDT if all day |
 | end_time      | :white_check_mark: | :white_check_mark: | **timestmap** *optional* |
 | external_id   | :white_check_mark: | :white_check_mark: |            |
-| url           | :x:                | :white_check_mark: |            |
+| event_url     | :x:                | :white_check_mark: |            |
 
 ```json
 {
@@ -129,7 +129,8 @@ The returned `external_id` is the event's UUID identified by the outside service
       "event_name":"REVEREND HORTON HEAT + Nekromantix + Whiskey Shivers @The Pyramid Scheme 6/10",
       "start_time":1431057600,
       "end_time":null,
-      "external_id":"1418539731769421"
+      "external_id":"1418539731769421",
+      "event_url":"http://www.grnow.com/some_event_path"
     }
   ]
 }
