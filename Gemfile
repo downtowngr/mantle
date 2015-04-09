@@ -20,6 +20,7 @@ gem "smarter_csv"
 gem "domainatrix"
 gem "phone_wrangler"
 gem "icalendar"
+gem "pry"
 
 group :test do
   gem "rspec"
@@ -30,6 +31,5 @@ group :test do
 end
 
 group :development, :test do
-  gem "pry"
   gem "sqlite3"
 end
