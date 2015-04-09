@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.foursquare.com/v2/venues/2?client_id=FTHVA1CAJUU4PLMR0PUY4MD2DOK4GOLDMRLSWM3O3F1YCH4Q&client_secret=EZJ3GV5OAZUEUIJ5NBAP5BV5SAQCBQF3HNDSBPCCEG1GAKJY&v=20150201
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby gem
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 09 Apr 2015 18:02:05 GMT
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Access-Control-Allow-Origin:
+      - "*"
+      Tracer-Time:
+      - '5'
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4988'
+      Content-Length:
+      - '109'
+      Accept-Ranges:
+      - bytes
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-ord1731-ORD
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"code":400,"errorType":"param_error","errorDetail":"Value
+        2 is invalid for venue id"},"response":{}}'
+    http_version: 
+  recorded_at: Thu, 09 Apr 2015 18:02:05 GMT
+recorded_with: VCR 2.9.3

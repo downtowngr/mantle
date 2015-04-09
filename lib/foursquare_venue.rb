@@ -5,14 +5,12 @@ class FoursquareVenue
 
   def initialize(id)
     @client = Foursquare2::Client.new(client_id: ENV["FOURSQUARE_ID"], client_secret: ENV["FOURSQUARE_SECRET"], api_version: "20150201")
-    @venue  = @client.venue(id)
-    @hours  = @client.venue_hours(id)["hours"]
+    @id = id
   end
 
-  # TODO:
-  # Need to standardize source_link, website, phone
-
   def attributes
+    @venue ||= @client.venue(@id)
+
     { location:
       {
         address:     @venue.location.address,
@@ -32,6 +30,8 @@ class FoursquareVenue
         tags:        tags
       }
     }
+  rescue Foursquare2::APIError
+    nil
   end
 
   private
@@ -79,12 +79,13 @@ class FoursquareVenue
   end
 
   def hours
-    return nil if @hours.timeframes.nil?
+    foursquare_hours = @client.venue_hours(@id)["hours"]
+    return nil if foursquare_hours.timeframes.nil?
 
     hours = {}
     days  = {1=>"Mon", 2=>"Tue", 3=>"Wed", 4=>"Thu", 5=>"Fri", 6=>"Sat", 7=>"Sun"}
 
-    @hours.timeframes.each do |t|
+    foursquare_hours.timeframes.each do |t|
       t.days.each do |k|
         hours[days[k]] = t.open.map {|segment| "#{hour12(segment["start"])}-#{hour12(segment["end"])}"}
       end

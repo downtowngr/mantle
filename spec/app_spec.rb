@@ -7,8 +7,8 @@ RSpec.describe "Mantle" do
   end
 
   describe "GET /location" do
-    describe "from Facebook", vcr: {cassette_name: "location_facebook"} do
-      it "returns a location json object" do
+    describe "from Facebook" do
+      it "returns a location json object", vcr: {cassette_name: "location_facebook"} do
         get "/location/facebook/foundersbrewing"
         response = JSON.parse(last_response.body)
 
@@ -32,10 +32,16 @@ RSpec.describe "Mantle" do
           "primary_photo"=>"https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/1015305_665958910118228_1409354474_o.jpg"
         })
       end
+
+      it "returns 404 if given an incorrect ID", vcr: {cassette_name: "location_facebook_404"} do
+        get "/location/facebook/1"
+        expect(last_response.status).to eq(404)
+        expect(JSON.parse(last_response.body)).to eq({"error" => "No data for that Facebook ID"})
+      end
     end
 
-    describe "from Foursquare", vcr: {cassette_name: "location_foursquare"}  do
-      it "returns a location json object" do
+    describe "from Foursquare" do
+      it "returns a location json object", vcr: {cassette_name: "location_foursquare"} do
         get "/location/foursquare/4b12c269f964a5208b8d23e3"
         response = JSON.parse(last_response.body)
 
@@ -65,12 +71,18 @@ RSpec.describe "Mantle" do
           "website" => "http://www.foundersbrewing.com",
         })
       end
+
+      it "returns 404 if given an incorrect ID", vcr: {cassette_name: "location_foursquare_404"} do
+        get "/location/foursquare/2"
+        expect(last_response.status).to eq(404)
+        expect(JSON.parse(last_response.body)).to eq({"error" => "No data for that Foursquare ID"})
+      end
     end
   end
 
   describe "GET /events" do
-    describe "from Facebook", vcr: {cassette_name: "events_facebook"} do
-      it "returns an array of events" do
+    describe "from Facebook" do
+      it "returns an array of events", vcr: {cassette_name: "events_facebook"} do
         get "/events/facebook/uicagr"
         response = JSON.parse(last_response.body)
 
@@ -127,10 +139,16 @@ RSpec.describe "Mantle" do
           ]
         })
       end
+
+      it "returns 404 if given an incorrect ID", vcr: {cassette_name: "events_facebook_404"} do
+        get "/events/facebook/1"
+        expect(last_response.status).to eq(404)
+        expect(JSON.parse(last_response.body)).to eq({"error" => "Facebook ID does not exist"})
+      end
     end
 
-    describe "from GRNow", vcr: {cassette_name: "events_grnow"} do
-      it "returns array of events" do
+    describe "from GRNow" do
+      it "returns array of events", vcr: {cassette_name: "events_grnow"} do
         get "/events/grnow/10074"
         response = JSON.parse(last_response.body)
 
@@ -153,13 +171,19 @@ RSpec.describe "Mantle" do
           ]
         })
       end
+
+      it "returns 404 if given an incorrect ID", vcr: {cassette_name: "events_grnow_404"} do
+        get "/events/grnow/1000"
+        expect(last_response.status).to eq(404)
+        expect(JSON.parse(last_response.body)).to eq({"error" => "GRNow ID does not exist"})
+      end
     end
   end
 
   describe "GET /photos" do
     describe "from Instagram" do
-      context "with Instagram user alias", vcr: {cassette_name: "photos_instagram_user"} do
-        it "returns an array of photos" do
+      context "with Instagram user alias" do
+        it "returns an array of photos", vcr: {cassette_name: "photos_instagram_user"} do
           get "/photos/instagram/user/downtowngrinc"
           response = JSON.parse(last_response.body)
 
@@ -193,10 +217,16 @@ RSpec.describe "Mantle" do
             ]
           })
         end
+
+        it "returns 404 if Instagram User ID is incorrect", vcr: {cassette_name: "photos_instagram_user_404"} do
+          get "/photos/instagram/user/145271862204424"
+          expect(last_response.status).to eq(404)
+          expect(JSON.parse(last_response.body)).to eq({"error" => "Instagram user not found"})
+        end
       end
 
-      context "with Facebook ID", vcr: {cassette_name: "photos_instagram_facebook"} do
-        it "returns an array of photos" do
+      context "with Facebook ID" do
+        it "returns an array of photos", vcr: {cassette_name: "photos_instagram_facebook"} do
           get "/photos/instagram/facebook/founderstaproom"
           response = JSON.parse(last_response.body)
 
@@ -231,10 +261,16 @@ RSpec.describe "Mantle" do
               ]
           })
         end
+
+        it "returns 404 if Facebook ID does not return Instagram location", vcr: {cassette_name: "photos_instagram_facebook_404"} do
+          get "/photos/instagram/facebook/164671786881055"
+          expect(last_response.status).to eq(404)
+          expect(JSON.parse(last_response.body)).to eq({"error" => "Facebook location in Instagram not found"})
+        end
       end
 
-      context "with Foursquare ID", vcr: {cassette_name: "photos_instagram_foursquare"} do
-        it "returns an array of photos" do
+      context "with Foursquare ID" do
+        it "returns an array of photos", vcr: {cassette_name: "photos_instagram_foursquare"} do
           get "/photos/instagram/foursquare/4b12c269f964a5208b8d23e3"
           response = JSON.parse(last_response.body)
 
@@ -267,6 +303,12 @@ RSpec.describe "Mantle" do
               }
             ]
           })
+        end
+
+        it "returns 404 if Foursquare ID does not return Instagram location", vcr: {cassette_name: "photos_instagram_foursquare_404"} do
+          get "/photos/instagram/foursquare/4b69b40ff964a520c8ae2be3"
+          expect(last_response.status).to eq(404)
+          expect(JSON.parse(last_response.body)).to eq({"error" => "Foursquare location in Instagram not found"})
         end
       end
     end

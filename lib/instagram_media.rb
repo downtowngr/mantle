@@ -27,21 +27,21 @@ class InstagramMedia
 
   def self.from_user(instagram_id)
     user = Instagram.client(client_id: ENV["INSTAGRAM_ID"]).user_search(instagram_id)
-    user ? self.new(user.first["id"], :user) : nil
+    user.empty? ? nil : self.new(user.first["id"], :user)
   end
 
   def self.from_facebook(facebook_id)
-    if facebook_id.to_i == 0
+    unless facebook_id.match(/\A\d+\z/) # Test if FB ID is integer
       page = Koala::Facebook::API.new(ENV["FB_TOKEN"]).get_object(facebook_id, {}, api_version: "v2.3")
       facebook_id = page["id"]
     end
 
     location = Instagram.client(client_id: ENV["INSTAGRAM_ID"]).location_search_facebook_places_id(facebook_id)
-    location ? self.new(location.first["id"], :location) : nil
+    location.empty? ? nil : self.new(location.first["id"], :location)
   end
 
   def self.from_foursquare(foursquare_id)
     location = Instagram.client(client_id: ENV["INSTAGRAM_ID"]).location_search(foursquare_id)
-    location ? self.new(location.first["id"], :location) : nil
+    location.empty? ? nil : self.new(location.first["id"], :location)
   end
 end

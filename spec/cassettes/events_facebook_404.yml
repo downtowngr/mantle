@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v2.3/1/events?access_token=CAAE3nAAWevABAFv3uHALBqUHMWIqogd11HrdsXgAV2oFXfp7iPVrWXKFNmZAEsYKbN2DZAcDoAJthr3l2BiUqi2MGNVwS2DmgMuQE6x0XV51QweUFKleYALsCjN0p9WK28LFWZC8kIf3LwGfuUqSknmZBFEH1iAGbsj1yJTr1Wxi5NTK8JtkkScmpwyZAxHjfAZASAkAJHGgZDZD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Www-Authenticate:
+      - 'OAuth "Facebook Platform" "not_found" "(#803) Some of the aliases you requested
+        do not exist: 1"'
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Rev:
+      - '1682606'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-store
+      Facebook-Api-Version:
+      - v2.3
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - 2tghEc6pqZ5qY9piLyAR82ZAQdHoYzE2X+z/HY9OquXdmrAhp7v+m6Cj24tguAPtsvdymPQn1ho1kDYm6Og0SQ==
+      Date:
+      - Thu, 09 Apr 2015 17:22:43 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '115'
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"(#803) Some of the aliases you requested do not
+        exist: 1","type":"OAuthException","code":803}}'
+    http_version: 
+  recorded_at: Thu, 09 Apr 2015 17:22:43 GMT
+recorded_with: VCR 2.9.3
