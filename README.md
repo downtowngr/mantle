@@ -118,7 +118,7 @@ The returned `external_id` is the event's UUID identified by the outside service
 | ------------- | ------------------ | ------------------ | ---------- |
 | event_name    | :white_check_mark: | :white_check_mark: |            |
 | start_time    | :white_check_mark: | :white_check_mark: | **timestamp** midnight EDT if all day |
-| end_time      | :white_check_mark: | :white_check_mark: | **timestmap** *optional* |
+| end_time      | :white_check_mark: | :white_check_mark: | **timestamp** *optional* |
 | external_id   | :white_check_mark: | :white_check_mark: |            |
 | event_url     | :x:                | :white_check_mark: |            |
 
@@ -146,7 +146,7 @@ The returned `external_id` is the event's UUID identified by the outside service
 
 ### ExperienceGR
 
-**To Be Implemented**
+*To Be Implemented*
 
 ## Photos
 

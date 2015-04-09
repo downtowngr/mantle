@@ -6,17 +6,18 @@ class FacebookPage
   def initialize(id)
     Koala.config.api_version = "v2.3"
     @graph   = Koala::Facebook::API.new(ENV["FB_TOKEN"])
-    @page_id = id
+    @id      = id
   end
 
   def attributes
-    @page ||= @graph.get_object(@page_id)
+    @page   ||= @graph.get_object(@id)
+    @photos ||= @graph.get_connections(@id, "photos")
 
     {
       location: {
-        address:     @page["location"]["street"],
-        latitude:    @page["location"]["latitude"],
-        longitude:   @page["location"]["longitude"],
+        address:     @page["location"] && @page["location"]["street"],
+        latitude:    @page["location"] && @page["location"]["latitude"],
+        longitude:   @page["location"] && @page["location"]["longitude"],
         phone:       phone,
         source_link: @page["link"],
         website:     website,
@@ -29,14 +30,16 @@ class FacebookPage
         reserve:     reserve?,
         kids:        kids?,
         tags:        tags,
-        cover_photo: @page["cover"]["source"],
-        primary_photo: primary_photo
+        cover_photo: @page["cover"] && @page["cover"]["source"],
+        primary_photo: @photos && @photos.first["images"].first["source"]
       }
     }
+  rescue Koala::Facebook::ClientError
+    nil
   end
 
   def events
-    @events ||= @graph.get_connections(@page_id, "events")
+    @events ||= @graph.get_connections(@id, "events")
 
     array = @events.map do |e|
       {
@@ -48,6 +51,8 @@ class FacebookPage
     end
 
     {events: array}
+  rescue Koala::Facebook::ClientError
+    nil
   end
 
   private
@@ -69,11 +74,6 @@ class FacebookPage
 
   def website
     standardize_url(@page["website"])
-  end
-
-  def primary_photo
-    photos = @graph.get_connections(@page_id, "photos")
-    photos.nil? ? nil : photos.first["images"].first["source"]
   end
 
   def cash_only?

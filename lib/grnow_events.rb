@@ -8,7 +8,7 @@ class GrnowEvents
   end
 
   def events
-    @events ||= Icalendar.parse(File.open(ical_file)).first.events
+    @events ||= ical_events
 
     array = @events.map do |e|
       {
@@ -21,6 +21,8 @@ class GrnowEvents
     end
 
     {events: array}
+  rescue
+    nil
   end
 
   def start_time(event)
@@ -40,11 +42,13 @@ class GrnowEvents
     end
   end
 
-  def ical_file
+  def ical_events
     path = "tmp/#{rand(36**16).to_s(36)}.ics"
+
     open(path, 'wb') do |file|
       file << open("http://www.grnow.com/events/list/?tribe_venues%5B%5D=#{@id}&ical=1&tribe_display=list").read
     end
-    path
+
+    Icalendar.parse(File.open(path)).first.events
   end
 end

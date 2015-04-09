@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.grnow.com/events/list/?ical=1&tribe_display=list&tribe_venues%5B%5D=1000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Thu, 09 Apr 2015 16:57:37 GMT
+      Server:
+      - Apache/2.4.10 (Unix) OpenSSL/1.0.1e-fips mod_bwlimited/1.4
+      X-Powered-By:
+      - PHP/5.4.36
+      X-Pingback:
+      - http://www.grnow.com/xmlrpc.php
+      Expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate, max-age=0
+      Pragma:
+      - no-cache
+      Content-Disposition:
+      - attachment; filename="iCal-TribeEvents.ics"
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/calendar; charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        QkVHSU46VkNBTEVOREFSDQpWRVJTSU9OOjIuMA0KUFJPRElEOi0vL0dSTm93
+        LmNvbcKuIC0gR3JhbmQgUmFwaWRzLCBNSSYjMDM5O3MgbG9jYWwgcmVzdGF1
+        cmFudCwgZXZlbnQgYW5kIGVudGVydGFpbm1lbnQgZ3VpZGUuIC0gRUNQdjMu
+        OS4xLy9OT05TR01MIHYxLjAvL0VODQpDQUxTQ0FMRTpHUkVHT1JJQU4NCk1F
+        VEhPRDpQVUJMSVNIDQpYLVdSLUNBTE5BTUU6R1JOb3cuY29twq4gLSBHcmFu
+        ZCBSYXBpZHMsIE1JJiMwMzk7cyBsb2NhbCByZXN0YXVyYW50LCBldmVudCBh
+        bmQgZW50ZXJ0YWlubWVudCBndWlkZS4NClgtT1JJR0lOQUwtVVJMOmh0dHA6
+        Ly93d3cuZ3Jub3cuY29tDQpYLVdSLUNBTERFU0M6RXZlbnRzIGZvciBHUk5v
+        dy5jb23CriAtIEdyYW5kIFJhcGlkcywgTUkmIzAzOTtzIGxvY2FsIHJlc3Rh
+        dXJhbnQsIGV2ZW50IGFuZCBlbnRlcnRhaW5tZW50IGd1aWRlLg0KWC1XUi1U
+        SU1FWk9ORTpBbWVyaWNhL0RldHJvaXQNCkVORDpWQ0FMRU5EQVI=
+    http_version: 
+  recorded_at: Thu, 09 Apr 2015 16:57:38 GMT
+recorded_with: VCR 2.9.3

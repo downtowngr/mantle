@@ -23,6 +23,8 @@ module AttributeHelpers
   def standardize_url(url)
     return nil if url.nil?
     Domainatrix.parse(url.split(" ").first).url
+  rescue
+    nil
   end
 
   def standardize_phone(phone)
