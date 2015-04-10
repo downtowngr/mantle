@@ -31,7 +31,7 @@ class FacebookPage
         kids:        kids?,
         tags:        tags,
         cover_photo: @page["cover"] && @page["cover"]["source"],
-        primary_photo: @photos && @photos.first["images"].first["source"]
+        primary_photo: @photos && @photos.first && @photos.first["images"].first["source"]
       }
     }
   rescue Koala::Facebook::ClientError
