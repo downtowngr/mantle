@@ -7,7 +7,7 @@ Dotenv.load
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 module Mantle
-  class App < Sinatra::Application
+  class Api < Sinatra::Base
     before do
       content_type :json
     end
@@ -86,6 +86,18 @@ module Mantle
         status [404, {error: "Foursquare location in Instagram not found"}.to_json]
       else
         media.photos.to_json
+      end
+    end
+  end
+
+  class Nationbuilder < Sinatra::Base
+    post "/subscription/:email" do
+      nationbuilder = NationbuilderSignup.new(params[:email])
+
+      if nationbuilder.subscribe
+        status 201
+      else
+        status [404, {error: "Misformed or invalid email address"}.to_json]
       end
     end
   end

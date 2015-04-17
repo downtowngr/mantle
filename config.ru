@@ -1,2 +1,6 @@
 require "./app"
-run Mantle::App
+
+run Rack::URLMap.new({
+  "/nationbuilder" => Mantle::Nationbuilder,
+  "/" => Mantle::Api
+})
