@@ -21,6 +21,7 @@ gem "domainatrix"
 gem "phone_wrangler"
 gem "icalendar"
 gem "pry"
+gem "nationbuilder-rb", require: 'nationbuilder'
 
 group :test do
   gem "rspec"

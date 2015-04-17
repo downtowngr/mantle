@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://dgritest.nationbuilder.com/api/v1/people/push?access_token=97df9786df0ba35267c1291e61731148c72093828789a22f0dfb3fd7c96b4578
+    body:
+      encoding: UTF-8
+      string: '{"person":{"email":"lectus.quis","email_opt_in":true},"access_token":"97df9786df0ba35267c1291e61731148c72093828789a22f0dfb3fd7c96b4578"}'
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.4.0, ruby 2.1.4 (2014-10-27))
+      Accept:
+      - application/json
+      Date:
+      - Fri, 17 Apr 2015 17:21:58 GMT
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Fri, 17 Apr 2015 17:21:58 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dd52272f9cb459f3678f6f11b54f8f6d71429291318; expires=Sat, 16-Apr-16
+        17:21:58 GMT; path=/; domain=.nationbuilder.com; HttpOnly
+      Cache-Control:
+      - no-cache
+      Nation-Ratelimit-Limit:
+      - '10000'
+      Nation-Ratelimit-Remaining:
+      - '9987'
+      Nation-Ratelimit-Reset:
+      - '1429315200'
+      Status:
+      - 400 Bad Request
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - Phusion Passenger 4.0.53
+      X-Pulse-Approved:
+      - 'true'
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Ratelimit-Limit:
+      - 10s
+      X-Ratelimit-Remaining:
+      - '97'
+      X-Ratelimit-Reset:
+      - '1429291327'
+      X-Request-Id:
+      - 71e785fb7ad53afc0a2db48963f09f2e
+      X-Runtime:
+      - '0.093616'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Via:
+      - 1.1 nationbuilder.com
+      Cf-Ray:
+      - 1d89cf35595509b2-ORD
+    body:
+      encoding: UTF-8
+      string: '{"code":"validation_failed","message":"Validation Failed.","validation_errors":["email
+        ''lectus.quis'' should look like an email address"]}'
+    http_version: 
+  recorded_at: Fri, 17 Apr 2015 17:21:58 GMT
+recorded_with: VCR 2.9.3

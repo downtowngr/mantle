@@ -189,3 +189,13 @@ Return the 5 most recent images tagged at the location of this Facebook Page. Yo
 Return the 5 most recent images tagged at the location of this Foursquare Venue.
 
 `GET /photos/instagram/foursquare/:id`
+
+## Nationbuilder
+
+To subscribe an email to the DGRI mailing list, you will need to `POST` that email to the subscription endpoint:
+
+`POST /nationbuilder/subscription/:email`
+
+- `201` status code if email has been successfully subscribed
+- `404` status code if email is invalid or malformed
+
