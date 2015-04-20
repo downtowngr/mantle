@@ -18,7 +18,7 @@ class GenerateTransitStops
       @coder.geo_factory.point(-85.65665602684021, 42.95390977598836)
     )
 
-    @s3_file = Aws::S3::Object.new("dgri-web", "maps/transit_stops.geojson", {
+    @s3_file = Aws::S3::Object.new(ENV["AWS_BUCKET"], "maps/transit_stops.geojson", {
       access_key_id: ENV["AWS_SECRET_KEY_ID"],
       secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
       region: "us-east-1"

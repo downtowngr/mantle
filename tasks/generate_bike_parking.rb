@@ -14,7 +14,7 @@ class GenerateBikeParking
     end
 
     @coder   = RGeo::GeoJSON.coder
-    @s3_file = Aws::S3::Object.new("dgri-web", "maps/bike_parking.geojson", {
+    @s3_file = Aws::S3::Object.new(ENV["AWS_BUCKET"], "maps/bike_parking.geojson", {
       access_key_id: ENV["AWS_SECRET_KEY_ID"],
       secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
       region: "us-east-1"
