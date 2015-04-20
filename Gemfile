@@ -6,6 +6,7 @@ gem "sinatra"
 gem "dotenv"
 gem "unicorn"
 gem "rake"
+gem "airbrake"
 
 gem "koala"
 gem "foursquare2"

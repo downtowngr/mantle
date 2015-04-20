@@ -13,6 +13,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.6)
+    airbrake (4.1.0)
+      builder
+      multi_json
     aws-sdk (2.0.28)
       aws-sdk-resources (= 2.0.28)
     aws-sdk-core (2.0.28)
@@ -113,6 +116,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   aws-sdk
   codeclimate-test-reporter
   domainatrix
