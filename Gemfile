@@ -7,10 +7,12 @@ gem "dotenv"
 gem "unicorn"
 gem "rake"
 gem "airbrake"
+gem "pry"
 
 gem "koala"
 gem "foursquare2"
 gem "instagram", github: "pichot/instagram-ruby-gem", branch: "search-location-by-facebook-id"
+gem "nationbuilder-rb", require: 'nationbuilder'
 
 gem "faraday"
 gem "rgeo-geojson"
@@ -21,8 +23,7 @@ gem "smarter_csv"
 gem "domainatrix"
 gem "phone_wrangler"
 gem "icalendar"
-gem "pry"
-gem "nationbuilder-rb", require: 'nationbuilder'
+gem "json-minify"
 
 group :test do
   gem "rspec"

@@ -49,6 +49,9 @@ GEM
     icalendar (2.2.2)
     jmespath (1.0.2)
       multi_json (~> 1.0)
+    json (1.8.2)
+    json-minify (0.0.2)
+      json (> 0)
     kgio (2.9.2)
     koala (1.11.0)
       addressable
@@ -125,6 +128,7 @@ DEPENDENCIES
   foursquare2
   icalendar
   instagram!
+  json-minify
   koala
   nationbuilder-rb
   phone_wrangler
