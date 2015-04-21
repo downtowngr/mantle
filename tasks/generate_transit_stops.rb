@@ -5,6 +5,7 @@ require "sequel"
 require "rgeo/geo_json"
 require "smarter_csv"
 require "aws-sdk"
+require "json/minify"
 
 class GenerateTransitStops
   def initialize
@@ -34,7 +35,7 @@ class GenerateTransitStops
 
     @gtfs_files.each {|f| populate_db(f)}
 
-    File.write(@layer_path, @coder.encode(feature_collection).to_json)
+    File.write(@layer_path, JSON.minify(@coder.encode(feature_collection).to_json))
     @s3_file.upload_file(@layer_path, acl: "public-read")
   end
 
@@ -56,7 +57,18 @@ class GenerateTransitStops
       @coder.entity_factory.feature(
         @coder.geo_factory.point(stop[:stop_lon], stop[:stop_lat]),
         stop[:stop_id],
-        {stop_number: stop[:stop_code], name: stop[:stop_name], routes: routes}
+        {
+          stop_number: stop[:stop_code],
+          name: stop[:stop_name],
+          routes: routes,
+          icon: {
+            iconUrl: "/maps/icons/transit_stop.svg",
+            iconSize: [28, 28],
+            iconAnchor: [14, 14],
+            popupAnchor: [0, -22],
+            className: "transit_stop"
+          }
+        }
       )
     end
 

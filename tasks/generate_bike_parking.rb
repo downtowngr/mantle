@@ -2,6 +2,7 @@ require "faraday"
 require "aws-sdk"
 require "rgeo/geo_json"
 require "json"
+require "json/minify"
 
 class GenerateBikeParking
   def initialize
@@ -24,7 +25,7 @@ class GenerateBikeParking
   end
 
   def perform
-    File.write(@tmp_path, @coder.encode(feature_collection).to_json)
+    File.write(@tmp_path, JSON.minify(@coder.encode(feature_collection).to_json))
     @s3_file.upload_file(@tmp_path, acl: "public-read")
   end
 
@@ -34,7 +35,17 @@ class GenerateBikeParking
       @coder.entity_factory.feature(
         @coder.geo_factory.point(node["lon"], node["lat"]),
         node["id"],
-        {type: node["tags"]["bicycle_parking"], capacity: node["tags"]["capacity"]}
+        {
+          type: node["tags"]["bicycle_parking"],
+          capacity: node["tags"]["capacity"],
+          icon: {
+            iconUrl: "/maps/icons/bike_parking.svg",
+            iconSize: [28, 28],
+            iconAnchor: [14, 14],
+            popupAnchor: [0, -22],
+            className: "bike_parking"
+          }
+        }
       )
     end
 
