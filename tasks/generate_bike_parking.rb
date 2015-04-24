@@ -39,7 +39,7 @@ class GenerateBikeParking
           type: node["tags"]["bicycle_parking"],
           capacity: node["tags"]["capacity"],
           icon: {
-            iconUrl: "/maps/icons/bike_parking.svg",
+            iconUrl: "/assets/images/bike_parking.svg",
             iconSize: [28, 28],
             iconAnchor: [14, 14],
             popupAnchor: [0, -22],
