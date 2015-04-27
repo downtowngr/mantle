@@ -146,7 +146,7 @@ The returned `external_id` is the event's UUID identified by the outside service
 
 ### ExperienceGR
 
-*To Be Implemented*
+`GET /events/experiencegr/:id`
 
 ## Photos
 

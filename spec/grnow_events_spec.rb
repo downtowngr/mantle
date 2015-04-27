@@ -1,5 +1,5 @@
-require "spec_helper"
 require_relative "../lib/grnow_events"
+require "spec_helper"
 
 RSpec.describe GrnowEvents do
   describe "#events", vcr: {cassette_name: "grnow_events"} do

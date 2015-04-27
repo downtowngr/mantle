@@ -24,6 +24,8 @@ gem "domainatrix"
 gem "phone_wrangler"
 gem "icalendar"
 gem "json-minify"
+gem "nokogiri"
+gem "pg"
 
 group :test do
   gem "rspec"

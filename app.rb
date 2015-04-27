@@ -58,6 +58,16 @@ module Mantle
       end
     end
 
+    get "/events/experiencegr/:id" do
+      experiencegr = ExperienceGrEvents.new(params[:id])
+
+      if experiencegr.events.nil?
+        status [404, {error: "ExperienceGR does not exist"}.to_json]
+      else
+        experiencegr.events.to_json
+      end
+    end
+
     # Photos
     get "/photos/instagram/user/:id" do
       media = InstagramMedia.from_user(params[:id])
