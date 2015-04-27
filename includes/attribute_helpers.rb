@@ -35,4 +35,12 @@ module AttributeHelpers
     number.area_code = "616" if number.area_code.nil?
     number.to_s
   end
+
+  def standardize_datetime(dt)
+    if dt.zone == "+00:00"
+      Time.new(dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second, Time.zone_offset('EDT')).to_i
+    else
+      dt.to_time.to_i
+    end
+  end
 end

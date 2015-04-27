@@ -8,12 +8,9 @@ class NationbuilderSignup
 
   def subscribe
     response = @client.call(:people, :push, {person: {email: @email, email_opt_in: true}})
-
-    if response["code"] == "validation_failed"
-      false
-    else
-      @client.call(:people, :tag_person, id: response["person"]["id"], tagging: {tag: ENV["NATIONBUILDER_TAG"]})
-      true
-    end
+    @client.call(:people, :tag_person, id: response["person"]["id"], tagging: {tag: ENV["NATIONBUILDER_TAG"]})
+    true
+  rescue NationBuilder::ClientError
+    false
   end
 end

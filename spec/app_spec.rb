@@ -200,6 +200,25 @@ RSpec.describe "Mantle" do
           expect(JSON.parse(last_response.body)).to eq({"error" => "GRNow ID does not exist"})
         end
       end
+
+      xdescribe "from Experience GR" do
+        it "returns array of events" do
+          get "/events/experiencegr/2146"
+          response = JSON.parse(last_response.body)
+
+          expect(response).to eq({
+            "events" => [
+              {
+                "event_name"=>"Passionate Expressions",
+                "start_time"=>1429761600,
+                "end_time"=>nil,
+                "external_id"=>"39208",
+                "event_url"=>"http://www.scmc-online.org/passionate-expressions/"
+              }
+            ]
+          })
+        end
+      end
     end
 
     describe "GET /photos" do
