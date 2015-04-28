@@ -114,13 +114,13 @@ The Events API returns an arry of upcoming events for a given location. The loca
 
 The returned `external_id` is the event's UUID identified by the outside service. This attribute should be used to pair and update existing event records within Pearl.
 
-| attribute     | Facebook           | GRNow              | format     |
-| ------------- | ------------------ | ------------------ | ---------- |
-| event_name    | :white_check_mark: | :white_check_mark: |            |
-| start_time    | :white_check_mark: | :white_check_mark: | **timestamp** midnight EDT if all day |
-| end_time      | :white_check_mark: | :white_check_mark: | **timestamp** *optional* |
-| external_id   | :white_check_mark: | :white_check_mark: |            |
-| event_url     | :x:                | :white_check_mark: |            |
+| attribute     | Facebook           | GRNow              | ExperienceGR       | format     |
+| ------------- | ------------------ | ------------------ | ------------------ | ---------- |
+| event_name    | :white_check_mark: | :white_check_mark: | :white_check_mark: |            |
+| start_time    | :white_check_mark: | :white_check_mark: | :white_check_mark: | **timestamp** midnight EDT if all day |
+| end_time      | :white_check_mark: | :white_check_mark: | :white_check_mark: | **timestamp** *optional* |
+| external_id   | :white_check_mark: | :white_check_mark: | :white_check_mark: |            |
+| event_url     | :x:                | :white_check_mark: | :white_check_mark: |            |
 
 ```json
 {
