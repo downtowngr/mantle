@@ -6,7 +6,7 @@ class ExperienceGrEvents
 
   def initialize(id)
     @table = Sequel.connect(ENV["DATABASE_URL"])[:experience_gr_events]
-    @id    = id
+    @id    = id.to_i
   end
 
   def events
