@@ -25,7 +25,7 @@ class GrnowEvents
 
     {events: array}
   rescue
-    nil
+    raise MissingResourceError, "GRNow events"
   end
 
   def start_time(event)

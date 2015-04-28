@@ -35,7 +35,7 @@ class FacebookPage
       }
     }
   rescue Koala::Facebook::ClientError
-    nil
+    raise MissingResourceError, "Facebook location"
   end
 
   def events
@@ -52,7 +52,7 @@ class FacebookPage
 
     {events: array}
   rescue Koala::Facebook::ClientError
-    nil
+    raise MissingResourceError, "Facebook events"
   end
 
   private

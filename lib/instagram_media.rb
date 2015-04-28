@@ -27,7 +27,12 @@ class InstagramMedia
 
   def self.from_user(instagram_id)
     user = Instagram.client(client_id: ENV["INSTAGRAM_ID"]).user_search(instagram_id)
-    user.empty? ? nil : self.new(user.first["id"], :user)
+
+    if user.empty?
+      raise MissingResourceError, "Instagram photos from user"
+    else
+      self.new(user.first["id"], :user)
+    end
   end
 
   def self.from_facebook(facebook_id)
@@ -37,11 +42,24 @@ class InstagramMedia
     end
 
     location = Instagram.client(client_id: ENV["INSTAGRAM_ID"]).location_search_facebook_places_id(facebook_id)
-    location.empty? ? nil : self.new(location.first["id"], :location)
+
+    if location.empty?
+      raise MissingResourceError, "Instagram photos from Facebook"
+    else
+      self.new(location.first["id"], :location)
+    end
+
+  rescue Koala::Facebook::ClientError
+    raise MissingResourceError, "Instagram photos from Facebook"
   end
 
   def self.from_foursquare(foursquare_id)
     location = Instagram.client(client_id: ENV["INSTAGRAM_ID"]).location_search(foursquare_id)
-    location.empty? ? nil : self.new(location.first["id"], :location)
+
+    if location.empty?
+      raise MissingResourceError, "Instagram photos from Foursquare"
+    else
+      self.new(location.first["id"], :location)
+    end
   end
 end

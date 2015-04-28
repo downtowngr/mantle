@@ -1,0 +1,2 @@
+class MissingResourceError < StandardError
+end

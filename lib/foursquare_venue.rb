@@ -31,7 +31,7 @@ class FoursquareVenue
       }
     }
   rescue Foursquare2::APIError
-    nil
+    raise MissingResourceError, "Foursquare location"
   end
 
   private
