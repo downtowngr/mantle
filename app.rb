@@ -67,6 +67,11 @@ module Mantle
       media = InstagramMedia.from_foursquare(params[:id])
       media.photos.to_json
     end
+
+    get "/photos/foursquare/:id" do
+      venue = FoursquareVenue.new(params[:id])
+      venue.photos.to_json
+    end
   end
 
   class Nationbuilder < Sinatra::Base

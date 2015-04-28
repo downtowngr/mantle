@@ -235,6 +235,43 @@ RSpec.describe "Mantle" do
     end
 
     describe "GET /photos" do
+      describe "from Foursquare" do
+        it "returns an array of photos", vcr: {cassette_name: "photos_foursquare"} do
+          get "/photos/foursquare/4abfea57f964a520f89220e3"
+          response = JSON.parse(last_response.body)
+
+          expect(response).to eq({"photos" =>
+            [
+              {
+                "photo_url"=>"https://irs2.4sqi.net/img/general/360x360/51026340_wQ9aPGg1Dopd0NUrKDN1AGQU1tRpe9bg-RSVUuOmHN8.jpg",
+                "external_id"=>"534c71dd11d251f5603747de",
+                "external_url"=>nil
+              },
+              {
+                "photo_url"=>"https://irs1.4sqi.net/img/general/360x360/51026340_VahiLuFxZZbD7v4a1DL6enVgcc20mwbPDNcvFle2KQ0.jpg",
+                "external_id"=>"534c71eb11d251f5603748e5",
+                "external_url"=>nil
+              },
+              {
+                "photo_url"=>"https://irs0.4sqi.net/img/general/360x360/51026340_eAVqUsz04P42eal1dejCPVjTZjPW0WbQom7RWTif1qA.jpg",
+                "external_id"=>"534c71f911d251f560374a50",
+                "external_url"=>nil
+              },
+              {
+                "photo_url"=>"https://irs3.4sqi.net/img/general/360x360/51026340_wG1gSLVcmPdiZDYnvEiLVLRPFUB0naf498ceFvAcSLE.jpg",
+                "external_id"=>"534c720b11d251f560374e4f",
+                "external_url"=>nil
+              },
+              {
+                "photo_url"=>"https://irs0.4sqi.net/img/general/360x360/51026340_seeCOBZiaF-hZhcu98jpBFLKdOMq8rY8xEjceiqXgO8.jpg",
+                "external_id"=>"534c738911d251f560378d95",
+                "external_url"=>nil
+              }
+            ]
+          })
+        end
+      end
+
       describe "from Instagram" do
         context "with Instagram user alias" do
           it "returns an array of photos", vcr: {cassette_name: "photos_instagram_user"} do
