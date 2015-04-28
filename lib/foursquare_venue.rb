@@ -34,6 +34,20 @@ class FoursquareVenue
     raise MissingResourceError, "Foursquare location"
   end
 
+  def photos
+    @venue_photos ||= @client.venue_photos(@id, limit: 5)
+
+    photos = @venue_photos.items.map do |p|
+      {
+        photo_url:    "#{p.prefix}360x360#{p.suffix}",
+        external_id:  p.id,
+        external_url: nil
+      }
+    end
+
+    {photos: photos}
+  end
+
   private
 
   def phone

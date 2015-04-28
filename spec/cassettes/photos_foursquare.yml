@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.foursquare.com/v2/venues/4abfea57f964a520f89220e3/photos?client_id=FTHVA1CAJUU4PLMR0PUY4MD2DOK4GOLDMRLSWM3O3F1YCH4Q&client_secret=EZJ3GV5OAZUEUIJ5NBAP5BV5SAQCBQF3HNDSBPCCEG1GAKJY&limit=5&v=20150201
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby gem
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Access-Control-Allow-Origin:
+      - "*"
+      Tracer-Time:
+      - '14'
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4997'
+      Strict-Transport-Security:
+      - max-age=864000
+      X-Ex:
+      - fastly_cdn
+      Transfer-Encoding:
+      - chunked
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 28 Apr 2015 17:53:06 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-ord1725-ORD
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding,User-Agent,Accept-Language
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"code":200},"response":{"photos":{"count":5,"items":[{"id":"534c71dd11d251f5603747de","createdAt":1397518813,"source":{"name":"Foursquare
+        Web","url":"https:\/\/foursquare.com"},"prefix":"https:\/\/irs2.4sqi.net\/img\/general\/","suffix":"\/51026340_wQ9aPGg1Dopd0NUrKDN1AGQU1tRpe9bg-RSVUuOmHN8.jpg","width":1200,"height":800,"user":{"id":"51026340","firstName":"San
+        Chez, A Tapas Bistro","gender":"none","photo":{"prefix":"https:\/\/irs1.4sqi.net\/img\/user\/","suffix":"\/51026340-SZWWVMOBIYF5UUQM.png"},"type":"venuePage","venue":{"id":"4abfea57f964a520f89220e3"}},"visibility":"public"},{"id":"534c71eb11d251f5603748e5","createdAt":1397518827,"source":{"name":"Foursquare
+        Web","url":"https:\/\/foursquare.com"},"prefix":"https:\/\/irs1.4sqi.net\/img\/general\/","suffix":"\/51026340_VahiLuFxZZbD7v4a1DL6enVgcc20mwbPDNcvFle2KQ0.jpg","width":1200,"height":800,"user":{"id":"51026340","firstName":"San
+        Chez, A Tapas Bistro","gender":"none","photo":{"prefix":"https:\/\/irs1.4sqi.net\/img\/user\/","suffix":"\/51026340-SZWWVMOBIYF5UUQM.png"},"type":"venuePage","venue":{"id":"4abfea57f964a520f89220e3"}},"visibility":"public"},{"id":"534c71f911d251f560374a50","createdAt":1397518841,"source":{"name":"Foursquare
+        Web","url":"https:\/\/foursquare.com"},"prefix":"https:\/\/irs0.4sqi.net\/img\/general\/","suffix":"\/51026340_eAVqUsz04P42eal1dejCPVjTZjPW0WbQom7RWTif1qA.jpg","width":1200,"height":800,"user":{"id":"51026340","firstName":"San
+        Chez, A Tapas Bistro","gender":"none","photo":{"prefix":"https:\/\/irs1.4sqi.net\/img\/user\/","suffix":"\/51026340-SZWWVMOBIYF5UUQM.png"},"type":"venuePage","venue":{"id":"4abfea57f964a520f89220e3"}},"visibility":"public"},{"id":"534c720b11d251f560374e4f","createdAt":1397518859,"source":{"name":"Foursquare
+        Web","url":"https:\/\/foursquare.com"},"prefix":"https:\/\/irs3.4sqi.net\/img\/general\/","suffix":"\/51026340_wG1gSLVcmPdiZDYnvEiLVLRPFUB0naf498ceFvAcSLE.jpg","width":800,"height":1200,"user":{"id":"51026340","firstName":"San
+        Chez, A Tapas Bistro","gender":"none","photo":{"prefix":"https:\/\/irs1.4sqi.net\/img\/user\/","suffix":"\/51026340-SZWWVMOBIYF5UUQM.png"},"type":"venuePage","venue":{"id":"4abfea57f964a520f89220e3"}},"visibility":"public"},{"id":"534c738911d251f560378d95","createdAt":1397519241,"source":{"name":"Foursquare
+        Web","url":"https:\/\/foursquare.com"},"prefix":"https:\/\/irs0.4sqi.net\/img\/general\/","suffix":"\/51026340_seeCOBZiaF-hZhcu98jpBFLKdOMq8rY8xEjceiqXgO8.jpg","width":1200,"height":800,"user":{"id":"51026340","firstName":"San
+        Chez, A Tapas Bistro","gender":"none","photo":{"prefix":"https:\/\/irs1.4sqi.net\/img\/user\/","suffix":"\/51026340-SZWWVMOBIYF5UUQM.png"},"type":"venuePage","venue":{"id":"4abfea57f964a520f89220e3"}},"visibility":"public"}],"dupesRemoved":0}}}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 17:53:06 GMT
+recorded_with: VCR 2.9.3

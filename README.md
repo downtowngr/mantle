@@ -150,11 +150,11 @@ The returned `external_id` is the event's UUID identified by the outside service
 
 ## Photos
 
-| attribute     | Instagram          | format     |
-| ------------- | ------------------ | ---------- |
-| photo_url     | :white_check_mark: |            |
-| external_url  | :white_check_mark: |            |
-| external_id   | :white_check_mark: |            |
+| attribute     | Instagram          | Foursquare         | format     |
+| ------------- | ------------------ | ------------------ | ---------- |
+| photo_url     | :white_check_mark: | :white_check_mark: |            |
+| external_id   | :white_check_mark: | :x:                |            |
+| external_url  | :white_check_mark: | :white_check_mark: |            |
 
 ```json
 {
@@ -167,6 +167,12 @@ The returned `external_id` is the event's UUID identified by the outside service
   ]
 }
 ```
+
+### Foursquare
+
+`GET /photos/foursquare/:id`
+
+Returns 5 most highly rated photos for the given Foursquare venue. Do not confuse this endpoint with the Instagram endpoint that returns photos tagged at a location given the venue's coordinates on Foursquare.
 
 ### Instagram
 
