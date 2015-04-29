@@ -53,18 +53,8 @@ module Mantle
     end
 
     # Photos
-    get "/photos/instagram/user/:id" do
-      media = InstagramMedia.from_user(params[:id])
-      media.photos.to_json
-    end
-
-    get "/photos/instagram/facebook/:id" do
-      media = InstagramMedia.from_facebook(params[:id])
-      media.photos.to_json
-    end
-
-    get "/photos/instagram/foursquare/:id" do
-      media = InstagramMedia.from_foursquare(params[:id])
+    get "/photos/instagram/:id" do
+      media = InstagramMedia.new(params[:id])
       media.photos.to_json
     end
 

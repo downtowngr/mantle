@@ -168,33 +168,17 @@ The returned `external_id` is the event's UUID identified by the outside service
 }
 ```
 
+### Instagram
+
+`GET /photos/instagram/:id`
+
+Returns 5 most recent photos for a given Instagram user.
+
 ### Foursquare
 
 `GET /photos/foursquare/:id`
 
-Returns 5 most highly rated photos for the given Foursquare venue. Do not confuse this endpoint with the Instagram endpoint that returns photos tagged at a location given the venue's coordinates on Foursquare.
-
-### Instagram
-
-There are 3 seperate ways to get Instagram images, each depending on the kind of UUID that is being sent.
-
-#### User
-
-Return the 5 most recent images taken by a given Instagram user.
-
-`GET /photos/instagram/user/:id`
-
-#### Facebook
-
-Return the 5 most recent images tagged at the location of this Facebook Page. You can use Facebook Integer UUID or alias like `founderstaproom`.
-
-`GET /photos/instagram/facebook/:id`
-
-#### Foursquare
-
-Return the 5 most recent images tagged at the location of this Foursquare Venue.
-
-`GET /photos/instagram/foursquare/:id`
+Returns 5 most highly rated photos for the given Foursquare venue.
 
 ## Nationbuilder
 

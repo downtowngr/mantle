@@ -1,15 +1,15 @@
 class InstagramMedia
-  def initialize(id, feed)
-    @client = Instagram.client(client_id: ENV["INSTAGRAM_ID"])
-    @photos = @client.send("#{feed}_recent_media", id)
+  def initialize(username)
+    @client   = Instagram.client(client_id: ENV["INSTAGRAM_ID"])
+    @username = username
   end
 
   def photos
     photos = []
-    number = [5, @photos.count].min
+    number = [5, photo_array.count].min
     count  = 0
 
-    @photos.each do |p|
+    photo_array.each do |p|
       break if count == number
       next if p["type"] != "image"
 
@@ -25,41 +25,17 @@ class InstagramMedia
     {photos: photos}
   end
 
-  def self.from_user(instagram_id)
-    user = Instagram.client(client_id: ENV["INSTAGRAM_ID"]).user_search(instagram_id)
+  private
 
-    if user.empty?
-      raise MissingResourceError, "Instagram photos from user"
-    else
-      self.new(user.first["id"], :user)
-    end
+  def photo_array
+    @photo_array ||= @client.send("user_recent_media", user.id)
   end
 
-  def self.from_facebook(facebook_id)
-    unless facebook_id.match(/\A\d+\z/) # Test if FB ID is integer
-      page = Koala::Facebook::API.new(ENV["FB_TOKEN"]).get_object(facebook_id, {}, api_version: "v2.3")
-      facebook_id = page["id"]
+  def user
+    @user ||= @client.user_search(@username)
+    if @user.empty? || @user.first.username != @username
+      raise MissingResourceError, "Instagram photos"
     end
-
-    location = Instagram.client(client_id: ENV["INSTAGRAM_ID"]).location_search_facebook_places_id(facebook_id)
-
-    if location.empty?
-      raise MissingResourceError, "Instagram photos from Facebook"
-    else
-      self.new(location.first["id"], :location)
-    end
-
-  rescue Koala::Facebook::ClientError
-    raise MissingResourceError, "Instagram photos from Facebook"
-  end
-
-  def self.from_foursquare(foursquare_id)
-    location = Instagram.client(client_id: ENV["INSTAGRAM_ID"]).location_search(foursquare_id)
-
-    if location.empty?
-      raise MissingResourceError, "Instagram photos from Foursquare"
-    else
-      self.new(location.first["id"], :location)
-    end
+    @user.first
   end
 end
