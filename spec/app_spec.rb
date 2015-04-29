@@ -270,137 +270,54 @@ RSpec.describe "Mantle" do
             ]
           })
         end
+
+        it "returns 404 if Instagram User ID is incorrect", vcr: {cassette_name: "photos_foursquare_404"} do
+          get "/photos/foursquare/145271862204424"
+          expect(last_response.status).to eq(404)
+          expect(JSON.parse(last_response.body)).to eq({"error" => "The requested Foursquare photos resource could not be found"})
+        end
       end
 
       describe "from Instagram" do
-        context "with Instagram user alias" do
-          it "returns an array of photos", vcr: {cassette_name: "photos_instagram_user"} do
-            get "/photos/instagram/user/downtowngrinc"
-            response = JSON.parse(last_response.body)
+        it "returns an array of photos", vcr: {cassette_name: "photos_instagram"} do
+          get "/photos/instagram/downtowngrinc"
+          response = JSON.parse(last_response.body)
 
-            expect(response).to eq({"photos" =>
-              [
-                {
-                  "photo_url"=>"http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10963903_1383589831954534_537918980_n.jpg",
-                  "external_id"=>"920420860022976241_917430474",
-                  "external_url"=>"http://instagram.com/p/zF_eVFh27x/"
-                },
-                {
-                  "photo_url"=>"http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10956616_697567707022397_582367148_n.jpg",
-                  "external_id"=>"919069369106394313_917430474",
-                  "external_url"=>"http://instagram.com/p/zBMLjFh2zJ/"
-                },
-                {
-                  "photo_url"=>"http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10952992_332530126950683_1054510574_n.jpg",
-                  "external_id"=>"907948958172015756_917430474",
-                  "external_url"=>"http://instagram.com/p/yZrsRWB2yM/"
-                },
-                {
-                  "photo_url"=>"http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10903366_899477276751454_249379378_n.jpg",
-                  "external_id"=>"906591648556216175_917430474",
-                  "external_url"=>"http://instagram.com/p/yU3E0Qh29v/"
-                },
-                {
-                  "photo_url"=>"http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10899518_1523565954584097_1800298994_n.jpg",
-                  "external_id"=>"900009100812185569_917430474",
-                  "external_url"=>"http://instagram.com/p/x9eYI8h2_h/"
-                }
-              ]
-            })
-          end
-
-          it "returns 404 if Instagram User ID is incorrect", vcr: {cassette_name: "photos_instagram_user_404"} do
-            get "/photos/instagram/user/145271862204424"
-            expect(last_response.status).to eq(404)
-            expect(JSON.parse(last_response.body)).to eq({"error" => "The requested Instagram photos from user resource could not be found"})
-          end
+          expect(response).to eq({"photos" =>
+            [
+              {
+                "photo_url"=>"http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10963903_1383589831954534_537918980_n.jpg",
+                "external_id"=>"920420860022976241_917430474",
+                "external_url"=>"http://instagram.com/p/zF_eVFh27x/"
+              },
+              {
+                "photo_url"=>"http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10956616_697567707022397_582367148_n.jpg",
+                "external_id"=>"919069369106394313_917430474",
+                "external_url"=>"http://instagram.com/p/zBMLjFh2zJ/"
+              },
+              {
+                "photo_url"=>"http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10952992_332530126950683_1054510574_n.jpg",
+                "external_id"=>"907948958172015756_917430474",
+                "external_url"=>"http://instagram.com/p/yZrsRWB2yM/"
+              },
+              {
+                "photo_url"=>"http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10903366_899477276751454_249379378_n.jpg",
+                "external_id"=>"906591648556216175_917430474",
+                "external_url"=>"http://instagram.com/p/yU3E0Qh29v/"
+              },
+              {
+                "photo_url"=>"http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10899518_1523565954584097_1800298994_n.jpg",
+                "external_id"=>"900009100812185569_917430474",
+                "external_url"=>"http://instagram.com/p/x9eYI8h2_h/"
+              }
+            ]
+          })
         end
 
-        context "with Facebook ID" do
-          it "returns an array of photos", vcr: {cassette_name: "photos_instagram_facebook"} do
-            get "/photos/instagram/facebook/founderstaproom"
-            response = JSON.parse(last_response.body)
-
-            expect(response).to eq({
-              "photos" =>
-                [
-                  {
-                    "photo_url"=>"https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11094476_1080529151963799_1068529237_n.jpg",
-                    "external_id"=>"953533469508992301_680478",
-                    "external_url"=>"https://instagram.com/p/07oaNzh30t/"
-                  },
-                  {
-                    "photo_url"=>"https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11007922_745080938924401_1294719765_n.jpg",
-                    "external_id"=>"953238980180519173_179503529",
-                    "external_url"=>"https://instagram.com/p/06lc1PtykF/"
-                  },
-                  {
-                    "photo_url"=>"https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10665359_1567845736818861_2008160158_n.jpg",
-                    "external_id"=>"953192452010032532_16922318",
-                    "external_url"=>"https://instagram.com/p/06a3wgpD2U/"
-                  },
-                  {
-                    "photo_url"=>"https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11111419_875459132500517_57156612_n.jpg",
-                    "external_id"=>"953153044050351305_32203332",
-                    "external_url"=>"https://instagram.com/p/06R6S_NBTJ/"
-                  },
-                  {
-                    "photo_url"=>"https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10560913_1402029653447498_788262347_n.jpg",
-                    "external_id"=>"951141777009797400_262318321",
-                    "external_url"=>"https://instagram.com/p/0zImgls-kY/"
-                  }
-                ]
-            })
-          end
-
-          it "returns 404 if Facebook ID does not return Instagram location", vcr: {cassette_name: "photos_instagram_facebook_404"} do
-            get "/photos/instagram/facebook/164671786881055"
-            expect(last_response.status).to eq(404)
-            expect(JSON.parse(last_response.body)).to eq({"error" => "The requested Instagram photos from Facebook resource could not be found"})
-          end
-        end
-
-        context "with Foursquare ID" do
-          it "returns an array of photos", vcr: {cassette_name: "photos_instagram_foursquare"} do
-            get "/photos/instagram/foursquare/4b12c269f964a5208b8d23e3"
-            response = JSON.parse(last_response.body)
-
-            expect(response).to eq({"photos" =>
-              [
-                {
-                  "photo_url"=>"http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10946548_391949857644569_1028718600_n.jpg",
-                  "external_id"=>"922148850541115954_512555621",
-                  "external_url"=>"http://instagram.com/p/zMIX5qiboy/"
-                },
-                {
-                  "photo_url"=>"http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10959225_348598685342143_1299088171_n.jpg",
-                  "external_id"=>"920688466242498156_280333002",
-                  "external_url"=>"http://instagram.com/p/zG8UgzLu5s/"
-                },
-                {
-                  "photo_url"=>"http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10953087_1017722664922078_364453478_n.jpg",
-                  "external_id"=>"919720702503172059_13034492",
-                  "external_url"=>"http://instagram.com/p/zDgRslRjfb/"
-                },
-                {
-                  "photo_url"=>"http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10946674_1577261472513826_512377860_n.jpg",
-                  "external_id"=>"917763957854516465_377531228",
-                  "external_url"=>"http://instagram.com/p/y8jXUHkzTx/"
-                },
-                {
-                  "photo_url"=>"http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10986114_1604680426432313_1538301330_n.jpg",
-                  "external_id"=>"917759177144874133_377531228",
-                  "external_url"=>"http://instagram.com/p/y8iRvvEzSV/"
-                }
-              ]
-            })
-          end
-
-          it "returns 404 if Foursquare ID does not return Instagram location", vcr: {cassette_name: "photos_instagram_foursquare_404"} do
-            get "/photos/instagram/foursquare/4b69b40ff964a520c8ae2be3"
-            expect(last_response.status).to eq(404)
-            expect(JSON.parse(last_response.body)).to eq({"error" => "The requested Instagram photos from Foursquare resource could not be found"})
-          end
+        it "returns 404 if Instagram User ID is incorrect", vcr: {cassette_name: "photos_instagram_404"} do
+          get "/photos/instagram/145271862204424"
+          expect(last_response.status).to eq(404)
+          expect(JSON.parse(last_response.body)).to eq({"error" => "The requested Instagram photos resource could not be found"})
         end
       end
     end

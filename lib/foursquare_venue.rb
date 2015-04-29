@@ -46,6 +46,8 @@ class FoursquareVenue
     end
 
     {photos: photos}
+  rescue Foursquare2::APIError
+    raise MissingResourceError, "Foursquare photos"
   end
 
   private
