@@ -1,7 +1,7 @@
 class InstagramMedia
   def initialize(username)
     @client   = Instagram.client(client_id: ENV["INSTAGRAM_ID"])
-    @username = username
+    @username = username.downcase
   end
 
   def photos
