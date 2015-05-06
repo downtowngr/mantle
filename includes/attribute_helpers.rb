@@ -33,7 +33,7 @@ module AttributeHelpers
 
   def standardize_phone(phone)
     return nil if phone.nil?
-    return nil if /^[[:alpha:]]/.match(phone)
+    return nil if /[[:alpha:]]/.match(phone)
 
     number = PhoneWrangler::PhoneNumber.new(phone)
     number.area_code = "616" if number.area_code.nil?

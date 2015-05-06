@@ -2,9 +2,9 @@ require_relative "../includes/attribute_helpers.rb"
 require "spec_helper"
 
 RSpec.describe AttributeHelpers do
-  describe "#hour12" do
-    let(:helper) { (Class.new {include AttributeHelpers}).new }
+  let(:helper) { (Class.new {include AttributeHelpers}).new }
 
+  describe "#hour12" do
     context "in the am" do
       it "converts string with semicolon" do
         expect(helper.hour12("10:00")).to eq("10:00am")
@@ -39,6 +39,27 @@ RSpec.describe AttributeHelpers do
         expect(helper.hour12("1230")).to eq("12:30pm")
         expect(helper.hour12("12:30")).to eq("12:30pm")
       end
+    end
+  end
+
+  describe "#standardize_phone" do
+    it "converts phone without area code" do
+      expect(helper.standardize_phone("555-1212")).to eq("(616) 555-1212")
+      expect(helper.standardize_phone("5551212")).to eq("(616) 555-1212")
+    end
+
+    it "converts phone with area code" do
+      expect(helper.standardize_phone("(616) 555-1212")).to eq("(616) 555-1212")
+      expect(helper.standardize_phone("6165551212")).to eq("(616) 555-1212")
+    end
+
+    it "ignores nil phone" do
+      expect(helper.standardize_phone(nil)).to be_nil
+    end
+
+    it "ignores phone number with letters" do
+      expect(helper.standardize_phone("555 IMSTUPID")).to eq(nil)
+      expect(helper.standardize_phone("BORNLIKETHIS")).to eq(nil)
     end
   end
 end
