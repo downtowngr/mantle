@@ -32,6 +32,7 @@ group :test do
   gem "vcr"
   gem "webmock"
   gem "rack-test"
+  gem "simplecov"
   gem "codeclimate-test-reporter", require: nil
 end
 
