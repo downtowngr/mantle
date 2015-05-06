@@ -77,7 +77,8 @@ class FacebookPage
   end
 
   def cash_only?
-    @page["payment_options"] ? @page["payment_options"]["cash_only"] == 1 : nil
+    @page["payment_options"] ?
+      @page["payment_options"]["cash_only"] == 1 && @page["payment_options"].select {|k,v| v == 1}.count == 1 : nil
   end
 
   def outdoor?

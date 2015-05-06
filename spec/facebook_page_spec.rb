@@ -122,4 +122,25 @@ RSpec.describe FacebookPage do
       expect(page.send(:standardize_time, "1987-09-17")).to eq(558849600)
     end
   end
+
+  describe "attribute helpers" do
+    describe "#cash_only?" do
+      let(:page) { FacebookPage.new(1) }
+
+      it "return nil when cash_only is not the only true option" do
+        page.instance_variable_set(:@page, {"payment_options" => {"amex"=>1, "cash_only"=>1, "discover"=>0, "mastercard"=>1, "visa"=>1}})
+        expect(page.send(:cash_only?)).to be(false)
+      end
+
+      it "return nil when cash_only is not a true option" do
+        page.instance_variable_set(:@page, {"payment_options" => {"amex"=>1, "cash_only"=>0, "discover"=>0, "mastercard"=>1, "visa"=>1}})
+        expect(page.send(:cash_only?)).to be(false)
+      end
+
+      it "return true when cash_only the only true option" do
+        page.instance_variable_set(:@page, {"payment_options" => {"amex"=>0, "cash_only"=>1, "discover"=>0, "mastercard"=>0, "visa"=>0}})
+        expect(page.send(:cash_only?)).to be(true)
+      end
+    end
+  end
 end
