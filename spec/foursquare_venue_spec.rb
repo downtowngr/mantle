@@ -35,7 +35,7 @@ RSpec.describe FoursquareVenue do
         "Thu"=>["11:00am-2:00am"],
         "Fri"=>["11:00am-2:00am"],
         "Sat"=>["11:00am-2:00am"],
-        "Sun"=>["12:00pm-0:00am"]
+        "Sun"=>["12:00pm-12:00am"]
       })
     end
 

@@ -3,6 +3,8 @@ module AttributeHelpers
   require "phone_wrangler"
 
   def hour12(time)
+    # Converts 24-hour string into 12-hour string.
+
     time.gsub!(/^\+/, "")
 
     if time.include?(":")
@@ -15,6 +17,8 @@ module AttributeHelpers
       "#{digits[0].to_i - 12}:#{digits[1]}pm"
     elsif digits[0].to_i == 12
       "#{digits[0]}:#{digits[1]}pm"
+    elsif digits[0].to_i == 0
+      "12:#{digits[1]}am"
     else
       "#{digits[0].gsub(/^0/, "")}:#{digits[1]}am"
     end
