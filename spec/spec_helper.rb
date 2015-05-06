@@ -17,6 +17,12 @@
 
 ENV['RACK_ENV'] = "test"
 
+require 'simplecov'
+SimpleCov.start do
+  add_filter "/spec/"
+  add_group "Tasks", "tasks"
+end
+
 require File.expand_path '../../app.rb', __FILE__
 
 require "rack/test"
