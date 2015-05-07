@@ -66,29 +66,19 @@ RSpec.describe AttributeHelpers do
   describe "#standardize_datetime" do
     context "timezone is UTC" do
       it "sets timezone as EDT without changing relative time and returns timestampe" do
-        dt = DateTime.new(2015, 3, 15, 5, 30, 0, "UTC")
-        time = Time.at(helper.standardize_datetime(dt))
-
-        expect(time.year).to eq(2015)
-        expect(time.month).to eq(3)
-        expect(time.day).to eq(15)
-        expect(time.hour).to eq(5)
-        expect(time.min).to eq(30)
-        expect(time.zone).to eq("EDT")
+        dt = DateTime.new(2015, 3, 15, 5, 30, 0, 0)
+        expect(dt.zone).to eq("+00:00")
+        
+        expect(helper.standardize_datetime(dt)).to eq(1426411800)
       end
     end
 
     context "timezone is not UTC" do
       it "returns timestamp" do
-        dt = DateTime.new(2015, 3, 15, 5, 30, 0, "EDT")
-        time = Time.at(helper.standardize_datetime(dt))
+        dt = DateTime.new(2015, 3, 15, 5, 30, 0, 'EDT')
+        expect(dt.zone).not_to eq("+00:00")
 
-        expect(time.year).to eq(2015)
-        expect(time.month).to eq(3)
-        expect(time.day).to eq(15)
-        expect(time.hour).to eq(5)
-        expect(time.min).to eq(30)
-        expect(time.zone).to eq("EDT")
+        expect(helper.standardize_datetime(dt)).to eq(1426411800)
       end
     end
   end
