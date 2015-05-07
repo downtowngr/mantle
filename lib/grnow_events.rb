@@ -24,17 +24,17 @@ class GrnowEvents
     end
 
     {events: array}
-  rescue
+  rescue OpenURI::HTTPError
     raise MissingResourceError, "GRNow events"
   end
 
   def start_time(event)
-    standardize_datetime(event.dtstart)
+    standardize_datetime(event.dtstart.to_datetime)
   end
 
   def end_time(event)
     return nil if event.dtstart.to_s == event.dtend.to_s
-    standardize_datetime(event.dtend)
+    standardize_datetime(event.dtend.to_datetime)
   end
 
   def ical_events
