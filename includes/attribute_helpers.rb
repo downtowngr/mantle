@@ -41,6 +41,8 @@ module AttributeHelpers
   end
 
   def standardize_datetime(dt)
+    # Datetime to EDT unix timestamp
+
     if dt.zone == "+00:00"
       Time.new(dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second, Time.zone_offset('EDT')).to_i
     else
