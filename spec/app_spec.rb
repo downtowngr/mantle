@@ -202,10 +202,10 @@ RSpec.describe "Mantle" do
           })
         end
 
-        it "returns 404 if given an incorrect ID", vcr: {cassette_name: "events_grnow_404"} do
+        it "returns empty array if no events", vcr: {cassette_name: "events_grnow_404"} do
           get "/events/grnow/1000"
-          expect(last_response.status).to eq(404)
-          expect(JSON.parse(last_response.body)).to eq({"error" => "The requested GRNow events resource could not be found"})
+          expect(last_response.status).to eq(200)
+          expect(JSON.parse(last_response.body)).to eq({"events" => []})
         end
       end
 

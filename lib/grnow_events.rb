@@ -25,7 +25,7 @@ class GrnowEvents
 
     {events: array}
   rescue OpenURI::HTTPError
-    raise MissingResourceError, "GRNow events"
+    {events: []}
   end
 
   def start_time(event)
