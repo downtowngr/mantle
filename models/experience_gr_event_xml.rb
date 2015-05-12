@@ -1,4 +1,4 @@
-class ExperienceGrXml
+class ExperienceGrEventXml
   attr_reader :xml
 
   def initialize(id, xml)

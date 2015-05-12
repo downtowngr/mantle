@@ -5,8 +5,8 @@ class ExperienceGrEvents
   include AttributeHelpers
 
   def initialize(id)
-    @table = Sequel.connect(ENV["DATABASE_URL"])[:experience_gr_events]
-    @id    = id.to_i
+    @db = Sequel.connect(ENV["DATABASE_URL"])
+    @id = id.to_i
   end
 
   def events
@@ -40,6 +40,8 @@ class ExperienceGrEvents
   end
 
   def results
-    @results ||= @table.filter(venue_id: @id).all
+    listing_ids = []
+    @db[:experience_gr_listings].filter(account_id: @id).all.each { |a| listing_ids << a[:venue_id] }
+    @db[:experience_gr_events].filter(venue_id: listing_ids).all
   end
 end
