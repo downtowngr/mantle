@@ -148,6 +148,8 @@ The returned `external_id` is the event's UUID identified by the outside service
 
 `GET /events/experiencegr/:id`
 
+**Note:** the ExperienceGR endpoint accepts a venue's `Listing ID`. Some venues have multiple `Listing ID`s in ExperienceGR's database, with unique events per ID. Mantle will try to match the given venue with it's other IDs using a shared `Account ID`. Not all `Listing ID`s currently have an `Account ID` returned by ExperienceGR's Listing endpoint, so not all events are guaranteed to be returned.
+
 ## Photos
 
 | attribute     | Instagram          | Foursquare         | format     |
@@ -188,4 +190,3 @@ To subscribe an email to the DGRI mailing list, you will need to `POST` that ema
 
 - `201` status code if email has been successfully subscribed
 - `404` status code if email is invalid or malformed
-
