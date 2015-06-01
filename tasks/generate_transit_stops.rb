@@ -60,14 +60,7 @@ class GenerateTransitStops
         {
           stop_number: stop[:stop_code],
           name: stop[:stop_name],
-          routes: routes,
-          icon: {
-            iconUrl: "/assets/images/transit_stop.svg",
-            iconSize: [28, 28],
-            iconAnchor: [14, 14],
-            popupAnchor: [0, -22],
-            className: "transit_stop"
-          }
+          routes: routes
         }
       )
     end
@@ -116,5 +109,3 @@ class GenerateTransitStops
     end
   end
 end
-
-

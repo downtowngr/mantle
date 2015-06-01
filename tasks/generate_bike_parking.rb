@@ -37,14 +37,7 @@ class GenerateBikeParking
         node["id"],
         {
           type: node["tags"]["bicycle_parking"],
-          capacity: node["tags"]["capacity"],
-          icon: {
-            iconUrl: "/assets/images/bike_parking.svg",
-            iconSize: [28, 28],
-            iconAnchor: [14, 14],
-            popupAnchor: [0, -22],
-            className: "bike_parking"
-          }
+          capacity: node["tags"]["capacity"]
         }
       )
     end
@@ -62,4 +55,3 @@ class GenerateBikeParking
     JSON.parse(@osm_data.body)["elements"]
   end
 end
-
