@@ -4,23 +4,6 @@ require_relative "../app.rb"
 RSpec.describe "Mantle" do
   include Rack::Test::Methods
 
-  describe "Nationbuilder" do
-    def app() Mantle::Nationbuilder end
-
-    describe "POST /nationbuilder/subscription" do
-      it "returns 201 when subscription created", vcr: {cassette_name: "nationbuilder_201"} do
-        post "/subscription/lectus.quis@Vivamusnibh.org"
-        expect(last_response.status).to eq(201)
-      end
-
-      it "returns 404 when email was malformed", vcr: {cassette_name: "nationbuilder_404"} do
-        post "/subscription/lectus.quis"
-        expect(last_response.status).to eq(404)
-        expect(JSON.parse(last_response.body)).to eq({"error" => "Misformed or invalid email address"})
-      end
-    end
-  end
-
   describe "API" do
     def app() Mantle::Api end
 

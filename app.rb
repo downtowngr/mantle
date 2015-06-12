@@ -64,15 +64,6 @@ module Mantle
     end
   end
 
-  class Nationbuilder < Sinatra::Base
-    post "/subscription/:email" do
-      nationbuilder = NationbuilderSignup.new(params[:email])
-
-      if nationbuilder.subscribe
-        status 201
-      else
-        status [404, {error: "Misformed or invalid email address"}.to_json]
-      end
     end
   end
 end
