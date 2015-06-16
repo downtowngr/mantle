@@ -3,6 +3,11 @@ rvm:
   - 2.1.4
 addons:
   code_climate: 2df09946ca6ecb13a8a3573053605b240ba50ddfb86ce163a8461a0f2b704431
+  postgresql: "9.3"
 script:
   - bundle exec rspec
-
+env:
+  - DATABASE_URL=postgres://postgres@localhost/mantle_test
+before_script:
+  - psql -c 'create database mantle_test;' -U postgres
+  - rake db:migrate
