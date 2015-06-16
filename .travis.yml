@@ -10,4 +10,4 @@ env:
   - DATABASE_URL=postgres://postgres@localhost/mantle_test
 before_script:
   - psql -c 'create database mantle_test;' -U postgres
-  - rake db:migrate
+  - bundle exec rake db:migrate
