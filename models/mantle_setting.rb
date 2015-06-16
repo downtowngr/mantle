@@ -1,7 +1,7 @@
 require_relative "../db/load_db"
 
 class MantleSetting < Sequel::Model
-  set_dataset $db[:mantle_settings]
+  set_dataset DB[:mantle_settings]
 
   def self.fb_token
     result = self.first(key: "fb_token")
