@@ -1,11 +1,12 @@
 require_relative "../includes/attribute_helpers"
+require_relative "../models/mantle_setting"
 
 class FacebookPage
   include AttributeHelpers
 
   def initialize(id)
     Koala.config.api_version = "v2.3"
-    @graph   = Koala::Facebook::API.new(ENV["FB_TOKEN"])
+    @graph   = Koala::Facebook::API.new(MantleSetting.fb_token)
     @id      = id
   end
 

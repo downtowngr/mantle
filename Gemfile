@@ -26,6 +26,7 @@ gem "icalendar"
 gem "json-minify"
 gem "nokogiri"
 gem "pg"
+gem "pony"
 
 group :test do
   gem "rspec"

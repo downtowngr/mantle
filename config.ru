@@ -8,10 +8,6 @@ configure :production do
   use Airbrake::Sinatra
 end
 
-configure do
-  $db = Sequel.connect(ENV["DATABASE_URL"])
-end
-
 run Rack::URLMap.new({
   "/admin" => Mantle::Admin,
   "/" => Mantle::Api

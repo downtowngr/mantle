@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Facebook Token
+    <% if !@oauth.token_set? %>
+      <span class="label label-danger">No token - Reauthorize now!</span>
+    <% elsif @oauth.expired? %>
+      <span class="label label-danger">Expired on <%= @oauth.expiration.strftime("%B %d, %Y") %> - Reauthorize now!</span>
+    <% elsif @oauth.expires_within?(7) %>
+      <span class="label label-warning">Expires soon <%= @oauth.expiration.strftime("%B %d, %Y") %> - Reauthorize now!</span>
+    <% else %>
+      <span class="label label-success">Valid until <%= @oauth.expiration.strftime("%B %d, %Y") %></span>
+    <% end %>
+  </div>
+  <div class="panel-body">
+    <a class="btn btn-primary" href="<%= @oauth.koala.url_for_oauth_code %>">Authorize Facebook</a>
+  </div>
+</div>

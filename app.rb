@@ -2,9 +2,16 @@ require "rubygems"
 require "bundler"
 
 Bundler.require
-Dotenv.load
+
+configure :development, :test do
+  require "dotenv"
+  Dotenv.load
+end
+
+require_relative "db/load_db"
 
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
+Dir[File.dirname(__FILE__) + '/models/*.rb'].each { |file| require file }
 
 module Mantle
   class Api < Sinatra::Base
@@ -13,7 +20,7 @@ module Mantle
     end
 
     use Rack::Auth::Basic, "Mantle" do |username, password|
-      username == ENV["MANTLE_USER"] && password == ENV["MANTLE_PASS"]
+      username == ENV["MANTLE_API_USER"] && password == ENV["MANTLE_API_PASS"]
     end
 
     # Error Handling
@@ -64,6 +71,21 @@ module Mantle
     end
   end
 
+  class Admin < Sinatra::Base
+    use Rack::Auth::Basic, "Admin" do |username, password|
+      username == ENV["MANTLE_ADMIN_USER"] && password == ENV["MANTLE_ADMIN_PASS"]
+    end
+
+    get "/" do
+      @oauth = FacebookOauth.new
+      erb :admin
+    end
+
+    get "/oauth" do
+      @oauth = FacebookOauth.new
+      @oauth.fetch_access_token_from_code(params[:code])
+
+      redirect "/admin"
     end
   end
 end

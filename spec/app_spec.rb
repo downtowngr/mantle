@@ -8,7 +8,7 @@ RSpec.describe "Mantle" do
     def app() Mantle::Api end
 
     before do
-      authorize ENV["MANTLE_USER"], ENV["MANTLE_PASS"]
+      authorize ENV["MANTLE_API_USER"], ENV["MANTLE_API_PASS"]
     end
 
     describe "Not found error" do
