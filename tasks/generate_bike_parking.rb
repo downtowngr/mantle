@@ -36,6 +36,7 @@ class GenerateBikeParking
         @coder.geo_factory.point(node["lon"], node["lat"]),
         node["id"],
         {
+          amenity: node["tags"]["amenity"],
           type: node["tags"]["bicycle_parking"],
           capacity: node["tags"]["capacity"]
         }
@@ -49,7 +50,7 @@ class GenerateBikeParking
 
   def parking_nodes
     @osm_data ||= @conn.get "/api/interpreter", {
-      data: '[out:json][timeout:25];(node["amenity"="bicycle_parking"](42.95390977598836, -85.68291485309601, 42.97696419731116, -85.65665602684021););out body;>;out skel qt;'
+      data: '[out:json][timeout:25];(node["amenity"="bicycle_parking"](42.95390977598836, -85.68291485309601, 42.97696419731116, -85.65665602684021);node["amenity"="bicycle_repair_station"](42.95390977598836, -85.68291485309601, 42.97696419731116, -85.65665602684021););out body;>;out skel qt;'
     }
 
     JSON.parse(@osm_data.body)["elements"]
