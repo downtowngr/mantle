@@ -32,10 +32,18 @@ class InstagramMedia
   end
 
   def user
-    @user ||= @client.user_search(@username)
-    if @user.empty? || @user.first.username != @username
+    @user ||= find_user_with(@username)
+
+    if @user.nil?
       raise MissingResourceError, "Instagram photos"
     end
-    @user.first
+
+    @user
+  end
+
+  def find_user_with(username)
+    user_list = @client.user_search(username)
+    return nil if user_list.empty?
+    user_list.find { |user| user.username == username }
   end
 end
