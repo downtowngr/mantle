@@ -40,7 +40,7 @@ class FacebookPage
   end
 
   def events
-    @events ||= @graph.get_connections(@id, "events")
+    @events ||= @graph.get_connections(@id, "events", { "limit" => "50", "since" => "now"})
 
     array = @events.map do |e|
       {
