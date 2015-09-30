@@ -6,7 +6,9 @@
 
 Service API for Pearl, Downtown Grand Rapids Inc.'s website. Mantle provides a standardized interface for Pearl to access data from various endpoints providing event, business, and location information.
 
-# Getting Started
+## Getting Started
+
+Dependencies: `postgresql`, `ruby 2.1.4`
 
 Within the project's directory, start with this:
 ```ruby
@@ -16,11 +18,23 @@ cp .env.example .env
 ```
 Update `.env` with appropriate service tokens. Be sure to set `MANTLE_USER` and `MANTLE_PASS`. You'll need those credentials to access the API.
 
-Type this to run:
+[Setup a local database](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup). Heroku recommends running the same database locally as in production.
+
+```
+heroku config
+```
+Update `.env` with the appropriate database url.
+
+To run the Procfile-based app locally:
 ```ruby
 gem install foreman
 foreman start
 ```
+Alternatively, with [heroku local](https://devcenter.heroku.com/articles/getting-started-with-ruby#run-the-app-locally): `heroku local`
+
+### Tests
+
+- rspec `bundle exec rspec`
 
 # API
 
