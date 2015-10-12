@@ -1,4 +1,3 @@
-require_relative "../includes/attribute_helpers"
 require "icalendar"
 require "open-uri"
 
@@ -29,12 +28,19 @@ class GrnowEvents
   end
 
   def start_time(event)
-    standardize_datetime(event.dtstart.to_datetime)
+    if event.dtstart.class == Icalendar::Values::Date
+      date = event.dtstart
+      Time.new(date.year, date.month, date.day, 0, 0, 0, Time.zone_offset('EDT')).to_i
+    else event.dtstart.class == Icalendar::Values::DateTime
+      event.dtstart.to_time.to_i
+    end
   end
 
   def end_time(event)
+    return nil if event.dtstart.class == Icalendar::Values::Date
     return nil if event.dtstart.to_s == event.dtend.to_s
-    standardize_datetime(event.dtend.to_datetime)
+
+    event.dtend.to_time.to_i
   end
 
   def ical_events
