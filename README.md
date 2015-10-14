@@ -34,7 +34,9 @@ Alternatively, with [heroku local](https://devcenter.heroku.com/articles/getting
 
 ### Tests
 
+- start postgresql if desired `postgres -D /usr/local/var/postgres` (assumes postgresql installed through homebrew)
 - rspec `bundle exec rspec`
+
 
 # API
 
