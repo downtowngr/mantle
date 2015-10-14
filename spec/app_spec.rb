@@ -168,18 +168,74 @@ RSpec.describe "Mantle" do
           expect(response).to eq({
             "events" => [
               {
-                "event_name"=>"Hometown Heroes Celebration",
-                "start_time"=>1430431200,
-                "end_time"=>1430445600,
-                "external_id"=>"10697-1430416800-1430431200@http://www.grnow.com",
-                "event_url"=>"http://www.grnow.com/event/hometown-heroes-celebration/"
+                "event_name"=>"Focus on Life Benefit Dinner",
+                "start_time"=>1444689000,
+                "end_time"=>1444698000,
+                "external_id"=>"34899-1444689000-1444698000@www.grnow.com",
+                "event_url"=>"http://www.grnow.com/event/focus-life-benefit-dinner/"
               },
               {
                 "event_name"=>"Grand Rapids Comic-Con 2015",
                 "start_time"=>1444968000,
                 "end_time"=>1445140800,
-                "external_id"=>"10750-1444953600-1445126400@http://www.grnow.com",
+                "external_id"=>"10750-1444968000-1445140800@www.grnow.com",
                 "event_url"=>"http://www.grnow.com/event/grand-rapids-comic-con-2015/"
+              },
+              {
+                "event_name"=>"Acton Institute 25th Anniversary Dinner",
+                "start_time"=>1445464800,
+                "end_time"=>1445479200,
+                "external_id"=>"42175-1445464800-1445479200@www.grnow.com",
+                "event_url"=>"http://www.grnow.com/event/acton-institute-25th-anniversary-dinner/"
+              },
+              {
+                "event_name"=>"West Michigan Wedding Association Fall Bridal Show",
+                "start_time"=>1445709600,
+                "end_time"=>1445727600,
+                "external_id"=>"42176-1445709600-1445727600@www.grnow.com",
+                "event_url"=>"http://www.grnow.com/event/west-michigan-wedding-association-fall-bridal-show/"
+              },
+              {
+                "event_name"=>"West Michigan Wedding Association Fall Bridal Show",
+                "start_time"=>1445788800,
+                "end_time"=>1445803200,
+                "external_id"=>"42178-1445788800-1445803200@www.grnow.com",
+                "event_url"=>"http://www.grnow.com/event/west-michigan-wedding-association-fall-bridal-show-2015-10-25/"
+              },
+              {
+                "event_name"=>"2015 Signature Chefs Auction",
+                "start_time"=>1446503400,
+                "end_time"=>nil,
+                "external_id"=>"42179-1446503400-1446503400@www.grnow.com",
+                "event_url"=>"http://www.grnow.com/event/2015-signature-chefs-auction/"
+              },
+              {
+                "event_name"=>"Grand Rapids Antiques Market",
+                "start_time"=>1448114400,
+                "end_time"=>1448150400,
+                "external_id"=>"46774-1448114400-1448150400@www.grnow.com",
+                "event_url"=>"http://www.grnow.com/event/grand-rapids-antiques-market-2/2015-11-21/"
+              },
+              {
+                "event_name"=>"Grand Rapids Antiques Market",
+                "start_time"=>1448204400,
+                "end_time"=>1448226000,
+                "external_id"=>"47808-1448204400-1448226000@www.grnow.com",
+                "event_url"=>"http://www.grnow.com/event/grand-rapids-antiques-market-2-2015-11-22/"
+              },
+              {
+                "event_name"=>"Gymnastics on the Grand Invitational 2015",
+                "start_time"=>1449201600,
+                "end_time"=>nil,
+                "external_id"=>"47253-1449205200-1449291599@www.grnow.com",
+                "event_url"=>"http://www.grnow.com/event/gymnastics-grand-invitational-2015/2015-12-04/"
+              },
+              {
+                "event_name"=>"Gymnastics on the Grand Invitational 2015",
+                "start_time"=>1449288000,
+                "end_time"=>nil,
+                "external_id"=>"47817-1449291600-1449377999@www.grnow.com",
+                "event_url"=>"http://www.grnow.com/event/gymnastics-grand-invitational-2015/2015-12-05/"
               }
             ]
           })
