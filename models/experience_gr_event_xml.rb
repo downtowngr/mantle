@@ -7,28 +7,44 @@ class ExperienceGrEventXml
   end
 
   def event_name
-    standardize(xml.xpath("//events/event[eventid/text()='#{@id}']/title").text)
+    get_xml_field("title")
   end
 
   def start_date
-    standardize(xml.xpath("//events/event[eventid/text()='#{@id}']/startdate").text)
+    get_xml_field("startdate")
   end
 
   def end_date
-    standardize(xml.xpath("//events/event[eventid/text()='#{@id}']/enddate").text)
+    get_xml_field("enddate")
+  end
+
+  def start_time
+    get_xml_field("starttime")
+  end
+
+  def end_time
+    get_xml_field("endtime")
+  end
+
+  def times
+    get_xml_field("times")
+  end
+
+  def recurrence
+    get_xml_field("recurrence")
   end
 
   def external_id
-    standardize(xml.xpath("//events/event[eventid/text()='#{@id}']/eventid").text)
+    get_xml_field("eventid")
   end
 
   def event_url
-    standardize(xml.xpath("//events/event[eventid/text()='#{@id}']/website").text)
+    get_xml_field("website")
   end
 
   def venue_id
-    value = xml.xpath("//events/event[eventid/text()='#{@id}']/listingid").text
-    value.empty? ? nil : value.to_i
+    value = get_xml_field("listingid")
+    value ? nil : value.to_i
   end
 
   def has_venue?
@@ -37,7 +53,8 @@ class ExperienceGrEventXml
 
   private
 
-  def standardize(string)
+  def get_xml_field(field)
+    string = xml.xpath("//events/event[eventid/text()='#{@id}']/#{field}").text
     string.empty? ? nil : string
   end
 end
