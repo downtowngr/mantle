@@ -65,7 +65,7 @@ class FacebookPage
       Time.parse(time).to_i
     else
       ymd = time.split("-")
-      Time.new(ymd[0], ymd[1], ymd[2], nil, nil, nil, Time.zone_offset('EDT')).to_i
+      Time.new(ymd[0], ymd[1], ymd[2], nil, nil, nil).to_i
     end
   end
 

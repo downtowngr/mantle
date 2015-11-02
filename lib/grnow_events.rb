@@ -30,7 +30,7 @@ class GrnowEvents
   def start_time(event)
     if event.dtstart.class == Icalendar::Values::Date
       date = event.dtstart
-      Time.new(date.year, date.month, date.day, 0, 0, 0, Time.zone_offset('EDT')).to_i
+      Time.new(date.year, date.month, date.day, 0, 0, 0).to_i
     else event.dtstart.class == Icalendar::Values::DateTime
       event.dtstart.to_time.to_i
     end
