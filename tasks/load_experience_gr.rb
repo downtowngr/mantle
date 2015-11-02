@@ -6,6 +6,7 @@ require "sequel"
 class LoadExperienceGr
   def initialize
     @db = Sequel.connect(ENV["DATABASE_URL"])
+    @db.extension :pg_array
   end
 
   def prepare_db
@@ -16,6 +17,11 @@ class LoadExperienceGr
       column :event_name, :text
       column :start_date, :date
       column :end_date, :date
+      column :start_time, :text
+      column :end_time, :text
+      column :event_dates, "text[]"
+      column :times, :text
+      column :recurrence, :text
       column :external_id, :text
       column :event_url, :text
       column :venue_id, :integer
@@ -44,6 +50,11 @@ class LoadExperienceGr
         event_name:  model.event_name,
         start_date:  model.start_date,
         end_date:    model.end_date,
+        start_time:  model.start_time,
+        end_time:    model.end_time,
+        event_dates: Sequel.pg_array(model.event_dates),
+        times:       model.times,
+        recurrence:  model.recurrence,
         external_id: model.external_id,
         event_url:   model.event_url,
         venue_id:    model.venue_id

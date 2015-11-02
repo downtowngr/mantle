@@ -42,11 +42,11 @@ RSpec.describe ExperienceGrEventXml do
       end
 
       it "#venue_id" do
-        expect(event.venue_id).to be(nil)
+        expect(event.venue_id).to eq(6461)
       end
 
       it "#has_venue?" do
-        expect(event.has_venue?).to be(false)
+        expect(event.has_venue?).to be(true)
       end
     end
 
@@ -83,11 +83,11 @@ RSpec.describe ExperienceGrEventXml do
       end
 
       it "#venue_id" do
-        expect(event.venue_id).to be(nil)
+        expect(event.venue_id).to eq(6368)
       end
 
       it "#has_venue?" do
-        expect(event.has_venue?).to be(false)
+        expect(event.has_venue?).to be(true)
       end
     end
   end

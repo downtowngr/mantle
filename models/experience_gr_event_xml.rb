@@ -26,6 +26,10 @@ class ExperienceGrEventXml
     get_xml_field("endtime")
   end
 
+  def event_dates
+    xml.xpath("//events/event[eventid/text()='#{@id}']/eventdates/eventdate").map &:text
+  end
+
   def times
     get_xml_field("times")
   end
@@ -43,8 +47,8 @@ class ExperienceGrEventXml
   end
 
   def venue_id
-    value = get_xml_field("listingid")
-    value ? nil : value.to_i
+    value = xml.xpath("//events/event[eventid/text()='#{@id}']/listingid").text
+    value.empty? ? nil : value.to_i
   end
 
   def has_venue?
