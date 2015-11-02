@@ -29,9 +29,9 @@ class ExperienceGrEvents
 
   def start_time(date, time)
     if time.nil? || time.empty?
-      Time.strptime("#{date} 00:00:00 EDT", "%m/%d/%Y %T %Z").to_i
+      Time.strptime("#{date} 00:00:00", "%m/%d/%Y %T").to_i
     else
-      Time.strptime("#{date} #{time} EDT", "%m/%d/%Y %T %Z").to_i
+      Time.strptime("#{date} #{time}", "%m/%d/%Y %T").to_i
     end
   end
 
@@ -40,7 +40,7 @@ class ExperienceGrEvents
     if time.nil? || time.empty?
       nil
     else
-      Time.strptime("#{date} #{time} EDT", "%m/%d/%Y %T %Z").to_i
+      Time.strptime("#{date} #{time}", "%m/%d/%Y %T").to_i
     end
   end
 
