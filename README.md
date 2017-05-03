@@ -8,7 +8,14 @@ Service API for Pearl, Downtown Grand Rapids Inc.'s website. Mantle provides a s
 
 ## Getting Started
 
+This repo follows the [git-flow](http://nvie.com/posts/a-successful-git-branching-model/) workflow using the [default naming conventions](https://danielkummer.github.io/git-flow-cheatsheet/). If you don't have gitflow installed you can get it [here](https://github.com/nvie/gitflow/wiki/Installation).
+```
+git flow init --defaults
+```
+
 Dependencies: `postgresql`, `ruby 2.1.4`
+
+To install Ruby, I suggest using rbenv via homebrew. Install it with `brew install rbenv`. Then install the latest version of Ruby with `rbenv install 2.1.4`. Confirm you're on the correct version of ruby (as specified by `.ruby-version`) with `rbenv version`. Finally, install Bundler with `gem install bundler`.
 
 Within the project's directory, start with this:
 ```ruby
@@ -18,12 +25,22 @@ cp .env.example .env
 ```
 Update `.env` with appropriate service tokens. Be sure to set `MANTLE_USER` and `MANTLE_PASS`. You'll need those credentials to access the API.
 
-[Setup a local database](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup). Heroku recommends running the same database locally as in production.
+[Setup a local database](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup) Heroku recommends running Postgres locally to ensure parity between environments.
 
+Start postgresql in the foreground
 ```
-heroku config
+postgres -D /usr/local/var/postgres
 ```
-Update `.env` with the appropriate database url.
+
+Check the latest postgresql production status
+```
+heroku ph:info
+```
+
+Import the latest production database into postgres via heroku pg:pull
+```
+heroku pg:pull HEROKU_POSTGRESQL_MAROON_URL dgri-mantle --app dgri-mantle
+```
 
 To run the Procfile-based app locally:
 ```ruby

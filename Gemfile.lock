@@ -149,3 +149,9 @@ DEPENDENCIES
   unicorn
   vcr
   webmock
+
+RUBY VERSION
+   ruby 2.1.4p265
+
+BUNDLED WITH
+   1.14.6
