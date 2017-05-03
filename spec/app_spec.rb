@@ -225,14 +225,14 @@ RSpec.describe "Mantle" do
               },
               {
                 "event_name"=>"Gymnastics on the Grand Invitational 2015",
-                "start_time"=>1449201600,
+                "start_time"=>1449205200,
                 "end_time"=>nil,
                 "external_id"=>"47253-1449205200-1449291599@www.grnow.com",
                 "event_url"=>"http://www.grnow.com/event/gymnastics-grand-invitational-2015/2015-12-04/"
               },
               {
                 "event_name"=>"Gymnastics on the Grand Invitational 2015",
-                "start_time"=>1449288000,
+                "start_time"=>1449291600,
                 "end_time"=>nil,
                 "external_id"=>"47817-1449291600-1449377999@www.grnow.com",
                 "event_url"=>"http://www.grnow.com/event/gymnastics-grand-invitational-2015/2015-12-05/"

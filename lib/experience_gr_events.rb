@@ -9,14 +9,17 @@ class ExperienceGrEvents
   end
 
   def events
-    array = results.map do |e|
-      {
-        event_name:  e[:event_name],
-        start_time:  start_time(e),
-        end_time:    end_time(e),
-        external_id: e[:external_id],
-        event_url:   e[:event_url]
-      }
+    array = []
+    results.each do |e|
+      e[:event_dates].each do |date|
+        array << {
+          event_name:  e[:event_name],
+          start_time:  start_time(date, e[:start_time]),
+          end_time:    end_time(date, e[:end_time]),
+          external_id: e[:external_id],
+          event_url:   e[:event_url]
+        }
+      end
     end
 
     {events: array}
@@ -24,17 +27,20 @@ class ExperienceGrEvents
 
   private
 
-  def start_time(event)
-    standardize_datetime(event[:start_date].to_datetime)
+  def start_time(date, time)
+    if time.nil? || time.empty?
+      Time.strptime("#{date} 00:00:00", "%m/%d/%Y %T").to_i
+    else
+      Time.strptime("#{date} #{time}", "%m/%d/%Y %T").to_i
+    end
   end
 
-  def end_time(event)
-    if event[:start_date].to_s == event[:end_date].to_s
-      nil
-    elsif event[:end_date].nil?
+  def end_time(date, time)
+    puts time
+    if time.nil? || time.empty?
       nil
     else
-      standardize_datetime(event[:end_date].to_datetime)
+      Time.strptime("#{date} #{time}", "%m/%d/%Y %T").to_i
     end
   end
 
