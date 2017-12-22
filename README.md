@@ -13,7 +13,9 @@ This repo follows the [git-flow](http://nvie.com/posts/a-successful-git-branchin
 git flow init --defaults
 ```
 
-Dependencies: `postgresql`, `ruby 2.1.4`
+Dependencies: `postgresql 9.6.x`, `ruby 2.1.4`
+
+To install Postgres, `brew install postgresql@9.6`. Follow any post-install instructions from homebrew.
 
 To install Ruby, I suggest using rbenv via homebrew. Install it with `brew install rbenv`. Then install the latest version of Ruby with `rbenv install 2.1.4`. Confirm you're on the correct version of ruby (as specified by `.ruby-version`) with `rbenv version`. Finally, install Bundler with `gem install bundler`.
 
@@ -29,12 +31,12 @@ Update `.env` with appropriate service tokens. Be sure to set `MANTLE_USER` and 
 
 Start postgresql in the foreground
 ```
-postgres -D /usr/local/var/postgres
+pg_ctl -D /usr/local/var/postgresql@9.6 start
 ```
 
 Check the latest postgresql production status
 ```
-heroku ph:info
+heroku pg:info
 ```
 
 Import the latest production database into postgres via heroku pg:pull
@@ -53,7 +55,6 @@ Alternatively, with [heroku local](https://devcenter.heroku.com/articles/getting
 
 - start postgresql if desired `postgres -D /usr/local/var/postgres` (assumes postgresql installed through homebrew)
 - rspec `bundle exec rspec`
-
 
 # API
 

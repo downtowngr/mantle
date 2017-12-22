@@ -5,14 +5,16 @@ class FacebookPage
   include AttributeHelpers
 
   def initialize(id)
-    Koala.config.api_version = "v2.3"
+    Koala.config.api_version = "v2.5"
     @graph   = Koala::Facebook::API.new(MantleSetting.fb_token)
     @id      = id
   end
 
   def attributes
-    @page   ||= @graph.get_object(@id)
-    @photos ||= @graph.get_connections(@id, "photos")
+    #@page   ||= @graph.get_object(@id)
+    # id,name,location,phone,link,website,hours,price_range,payment_options,restaurant_services,category_list,restaurant_specialties,cover,photos.limit(1){images}
+    @page   ||= @graph.get_object(@id, fields: [:id, :name, :location, :phone, :link, :website, :hours, :price_range, :payment_options, :restaurant_services, :category_list, :restaurant_specialties, :cover] )
+    @photos ||= @graph.get_connections(@id, "photos", { fields: ['images'] } )
 
     {
       location: {
